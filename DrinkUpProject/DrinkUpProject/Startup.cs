@@ -16,6 +16,7 @@ namespace DrinkUpProject
         public void ConfigureServices(IServiceCollection services)
         {
             //Henrik Was Here
+            //Simon Was here
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
