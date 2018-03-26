@@ -19,7 +19,7 @@ namespace DrinkUpProject
         {
             //Hanna was here
             //Henrik Was Here
-            //Oscar äger!
+            //Oscar bajsar dagligen!
             //Simon är bäst
 
         }
