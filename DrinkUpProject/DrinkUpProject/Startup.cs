@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
+//Åsa
+
 namespace DrinkUpProject
 {
     public class Startup
@@ -16,6 +18,8 @@ namespace DrinkUpProject
         public void ConfigureServices(IServiceCollection services)
         {
             //Hanna was here
+            //Henrik Was Here
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
