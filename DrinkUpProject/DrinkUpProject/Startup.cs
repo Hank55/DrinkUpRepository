@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
+//Åsa säger: Hej!
+
 namespace DrinkUpProject
 {
     public class Startup
