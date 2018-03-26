@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-//Åsa
-
 namespace DrinkUpProject
 {
     public class Startup
@@ -17,13 +15,8 @@ namespace DrinkUpProject
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //Hanna was here
-            //Henrik Was Here
-            //Oscar bajsar dagligen!
-            //Simon är bäst
 
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
