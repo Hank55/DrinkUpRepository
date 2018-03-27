@@ -19,5 +19,13 @@ namespace DrinkUpProject.Controllers
         {
             return View(await repository.GetRandomDrink());
         }
+
+        [Route("/Results")]
+        public async Task<IActionResult> SearchResult()
+        {
+            return View(await repository.SearchResultDrinkName());
+
+        }
+
     }
 }

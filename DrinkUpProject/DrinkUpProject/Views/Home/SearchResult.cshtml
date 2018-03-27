@@ -1,0 +1,13 @@
+﻿@model DrinkUpProject.Models.ViewModels.ResultVM[]
+
+
+
+
+@foreach (var item in @Model)
+{
+    <p>
+        name: @item.DrinkName
+    </p>
+    <img src="@item.DrinkImg" />
+
+}
