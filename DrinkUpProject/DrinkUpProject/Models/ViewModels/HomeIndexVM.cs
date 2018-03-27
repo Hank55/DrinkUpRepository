@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class ResultVM
+    public class HomeIndexVM
     {
-        public string DrinkName { get; set; }
-        public string DrinkImg { get; set; }
+
+        public string SearchItem { get; set; }
+       
+
+
     }
 }

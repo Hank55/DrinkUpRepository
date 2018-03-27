@@ -1,10 +1,13 @@
-﻿@model DrinkUpProject.Models.Drink
+﻿@model DrinkUpProject.Models.ViewModels.HomeIndexVM
+<form asp-controller="home" asp-action="index">
+    <input asp-for="@Model.SearchItem" /><br />
+    @foreach (var item in Model.Param)
+    {
+        <input asp-for="SelectedRole" type="radio" value="@item.Id" /> @item.RoleName
+    }
 
-<p>
-    Name: @Model.strDrink
-</p>
-<img src="@Model.strDrinkThumb" />
+    <input type="submit" name="SubmitButton" value="Search" />
+</form>
 
-<p>
-    Hej
-</p>
+@*<input type="radio" name="SearchParameter" value="Drink" checked> Drink
+<input type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>*@
