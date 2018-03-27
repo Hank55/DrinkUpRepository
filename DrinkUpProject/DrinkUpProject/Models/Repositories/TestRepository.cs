@@ -41,16 +41,21 @@ namespace DrinkUpProject.Models.Repositories
              
         }
 
-        internal async Task<HomeResultVM[]> SearchResultIngredient()
+        internal async Task<HomeResultVM[]> SearchResultIngredient(string ingredient)
         {
-            string searchURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka";
+
+
+            string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={ingredient}";
+
+            
 
             return await SearchResult(searchURL);
+
         }
 
-        internal async Task<HomeResultVM[]> SearchResultDrinkName()
+        internal async Task<HomeResultVM[]> SearchResultDrinkName(string drinkName)
         {
-            string searchURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+            string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}";
 
             return await SearchResult(searchURL);
         }

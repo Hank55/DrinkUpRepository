@@ -24,13 +24,16 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
-        //[Route("")]
-        //[HttpPost]
-        //public async Task<IActionResult> Index()
-        //{
+        [Route("")]
+        [HttpPost]
+        public async Task<IActionResult> Index(string ingredient)
+        {
 
-        //    return View();
-        //}
+            var i = repository.SearchResultIngredient(ingredient);
+
+
+            return RedirectToAction(nameof(SearchResult));
+        }
 
         [Route("/RandomDrink")]
         public async Task<IActionResult> RandomDrink()
@@ -40,9 +43,9 @@ namespace DrinkUpProject.Controllers
 
 
         [Route("/Results")]
-        public async Task<IActionResult> SearchResult()
+        public async Task<IActionResult> SearchResult(string drinkName)
         {
-            return View(await repository.SearchResultDrinkName());
+            return View(await repository.SearchResultDrinkName(drinkName));
 
         }
 
