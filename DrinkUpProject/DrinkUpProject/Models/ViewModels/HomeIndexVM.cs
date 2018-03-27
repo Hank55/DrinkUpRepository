@@ -9,8 +9,7 @@ namespace DrinkUpProject.Models.ViewModels
     {
 
         public string SearchItem { get; set; }
-        public string ParamUrlIng { get; set; }
-        public string ParamUrlDri { get; set; }
+        public string ParamUrl { get; set; }
 
 
 

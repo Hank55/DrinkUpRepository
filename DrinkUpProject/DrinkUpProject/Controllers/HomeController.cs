@@ -26,10 +26,19 @@ namespace DrinkUpProject.Controllers
 
         [Route("")]
         [HttpPost]
-        public async Task<IActionResult> Index(string ingredient)
+        public async Task<IActionResult> Index(string searchResult)
         {
+            var valueOf = Request.Form["SearchParameter"];
 
-            var i = repository.SearchResultIngredient(ingredient);
+            if (valueOf == "Drink")
+            {
+                
+            var drink  = await repository.SearchResultDrinkName(searchResult);
+            }
+            else
+            { 
+                var ingredient = await repository.SearchResultIngredient(searchResult);
+            }
 
 
             return RedirectToAction(nameof(SearchResult));
