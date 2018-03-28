@@ -1,12 +1,22 @@
 ﻿@charset "UTF-8";
+﻿.drinkfact {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid #73AD21; }
+
 #searchBox {
   display: flex;
   flex-flow: row wrap;
-  align-content: space-around; }
+  align-content: space-around;
+  height: 150px;
+  width: 900px; }
 
 .searchItems {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); }
+  background-color: aqua;
+  display: flex;
+  flex-flow: row;
+  width: 300px; }
 
 .all {
   display: flex;
@@ -30,9 +40,3 @@
 
 .form {
   font-size: 20px; }
-
-﻿.drinkfact {
-  position: relative;
-  width: 400px;
-  height: 200px;
-  border: 3px solid #73AD21; }
