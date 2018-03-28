@@ -11,6 +11,7 @@ namespace DrinkUpProject.Models.Repositories
     public class TestRepository
     {
         public static List<User> users;
+           public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
         // ... Use HttpClient.
         static HttpClient client = new HttpClient();
 
@@ -70,8 +71,14 @@ namespace DrinkUpProject.Models.Repositories
                 listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb };
             }
 
+            SaveToSearchResultList(listResults);
+
             return listResults;
              
+        }
+
+        private void SaveToSearchResultList(HomeResultVM[] listResults)
+        {
         }
 
         internal async Task<HomeResultVM[]> SearchResultIngredient(string ingredient)
@@ -98,6 +105,7 @@ namespace DrinkUpProject.Models.Repositories
             List<Drink> drinkList = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             return drinkList.First();
         }
+
 
     }
 }
