@@ -1,45 +1,47 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeIndexVM
-<form asp-controller="home" asp-action="index">
-    <input asp-for="@Model.SearchItem" /><br />
-    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
-    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
+
+<div class="all">
+    <div id="LogIn">
+        <h1>Welcome & Log In</h1>
+
+        <form>
+            <label asp-for="LogInForm.UserName"></label><br />
+            <input asp-for="LogInForm.UserName" /><br />
+            <label asp-for="LogInForm.Password"></label><br />
+            <input asp-for="LogInForm.Password" /><br />
+            <input type="submit" asp-controller="Home" asp-action="Index" value="Log in" /><br />
+            <input type="submit" asp-controller="Home" asp-action="CreateUser" value="Create new user" />
+        </form>
+
+    </div>
 
 
-    <input type="submit" name="SubmitButton" value="Search" />
-</form>
 
-<<<<<<< HEAD
-<div id="LogIn">
-    <h1>Welcome & Log In</h1>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
 
-    <form>
-        <label asp-for="LogInForm.UserName"></label><br />
-        <input asp-for="LogInForm.UserName" /><br />
-        <label asp-for="LogInForm.Password"></label><br />
-        <input asp-for="LogInForm.Password" /><br />
-        <input type="submit" asp-controller="Home" asp-action="Index" value="Log in" /><br />
-        <input type="submit" asp-controller="Home" asp-action="CreateUser" value="Create new user" />
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img src="https://www.thecocktaildb.com/images/media/drink/hc9b1a1521853096.jpg" style="width:40%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://www.thecocktaildb.com/images/media/drink/x03td31521761009.jpg" style="width:40%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://www.thecocktaildb.com/images/media/drink/squyyq1439907312.jpg" style="width:40%">
+        </div>
+
+    </div>
+    <br>
+
+    <!--Search container-->
+    <form asp-controller="home" asp-action="index">
+        <input asp-for="@Model.SearchItem" /><br />
+        <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
+        <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
+
+
+        <input type="submit" name="SubmitButton" value="Search" />
     </form>
-
 </div>
-=======
->>>>>>> 6c6ee92247d3557607af4175ab4a94d2ba1c426f
-
-
-<!-- Slideshow container -->
-<div class="slideshow-container">
-
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-        <img src="https://www.thecocktaildb.com/images/media/drink/hc9b1a1521853096.jpg" style="width:40%">
-    </div>
-    <div class="mySlides fade">
-        <img src="https://www.thecocktaildb.com/images/media/drink/x03td31521761009.jpg" style="width:40%">
-    </div>
-    <div class="mySlides fade">
-        <img src="https://www.thecocktaildb.com/images/media/drink/squyyq1439907312.jpg" style="width:40%">
-    </div>
-
-</div>
-<br>
 
