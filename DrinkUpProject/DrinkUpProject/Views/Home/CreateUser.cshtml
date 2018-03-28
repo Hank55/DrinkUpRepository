@@ -1,72 +1,31 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeCreateUserVM
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+    <h1 id="MainTitle">Create User</h1>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create User</title>
-</head>
-<body>
-    <div id="CreateUserMainDiv">
-        <h1 id="MainTitle">Create User</h1>
-
-        <form asp-controller="Home" asp-action="CreateUser">
-
-            <div class="CreateUserEntityDivsLeft">
+    <form asp-controller="Home" asp-action="CreateUser">
+        <span>
                 <label asp-for="FirstName"></label>
                 <input asp-for="FirstName" />
                 <span asp-validation-for="FirstName"></span>
-            </div>
-
-            <div class="CreateUserEntityDivsRight">
                 <label asp-for="LastName"></label>
                 <input asp-for="LastName" />
                 <span asp-validation-for="LastName"></span>
-            </div>
-            <br />
-
-            <div id="CreateUserEmailDiv">
                 <label asp-for="Email"></label>
-                <input id="CreateUserEmailTextField" asp-for="Email" />
+                <input asp-for="Email" />
                 <span asp-validation-for="Email"></span>
-            </div>
-
-            <br />
-            <div class="CreateUserEntityDivsLeft">
                 <label asp-for="UserName"></label>
                 <input asp-for="UserName" />
                 <span asp-validation-for="UserName"></span>
-            </div>
-
-            <div class="CreateUserEntityDivsRight">
                 <label asp-for="FavoriteDrink"></label>
                 <input asp-for="FavoriteDrink" />
                 <span asp-validation-for="FavoriteDrink"></span>
-            </div>
-            <br />
-
-            <div class="CreateUserEntityDivsLeft">
                 <label asp-for="Password"></label>
                 <input asp-for="Password" />
                 <span asp-validation-for="Password"></span>
-            </div>
-
-
-            <div class="CreateUserEntityDivsRight">
                 <label asp-for="ReEnterPassword"></label>
                 <input asp-for="ReEnterPassword" />
                 <span asp-validation-for="ReEnterPassword"></span>
-            </div>
-
-            <div class="CreateUserEntityDivsLeft">
                 <input class="CreateUserButtonClass" type="submit" value="Create User" />
-            </div>
-
-            <div class="CreateUserEntityDivsRight">
                 <button class="CreateUserButtonClass" onclick="location.href='http://localhost:49760'">Cancel</button>
-            </div>
-
-        </form>
-    </div>
-
-</body>
-</html>
+        </span>
+    </form>
