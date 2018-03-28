@@ -1,6 +1,4 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeIndexVM
-
-
 <form asp-controller="home" asp-action="index">
     <input asp-for="@Model.SearchItem" /><br />
     <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
@@ -23,6 +21,8 @@
         <input type="submit" asp-controller="Home" asp-action="CreateUser" value="Create new user" />
     </form>
 
+
+
 </div>
 
 
@@ -30,15 +30,16 @@
 <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">       
+    <div class="mySlides fade">
         <img src="https://www.thecocktaildb.com/images/media/drink/hc9b1a1521853096.jpg" style="width:40%">
     </div>
-    <div class="mySlides fade">    
+    <div class="mySlides fade">
         <img src="https://www.thecocktaildb.com/images/media/drink/x03td31521761009.jpg" style="width:40%">
     </div>
-    <div class="mySlides fade">     
+    <div class="mySlides fade">
         <img src="https://www.thecocktaildb.com/images/media/drink/squyyq1439907312.jpg" style="width:40%">
     </div>
 
 </div>
 <br>
+

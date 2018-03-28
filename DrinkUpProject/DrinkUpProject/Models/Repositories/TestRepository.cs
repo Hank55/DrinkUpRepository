@@ -80,6 +80,13 @@ namespace DrinkUpProject.Models.Repositories
 
         private void SaveToSearchResultList(HomeResultVM[] listResults)
         {
+            searchResultListings.Add(listResults);
+        }
+
+        public HomeResultVM[] GetLastSearchResult()
+        {
+            var drinks = searchResultListings.LastOrDefault();
+            return drinks;
         }
 
         internal async Task<HomeResultVM[]> SearchResultIngredient(string ingredient)

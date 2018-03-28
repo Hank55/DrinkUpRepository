@@ -1,6 +1,29 @@
+<<<<<<< HEAD
+﻿body {
+
+=======
 ﻿.drinkfact {
     position: relative;
     width: 400px;
     height: 200px;
     border: 3px solid #73AD21;
+>>>>>>> c5feae6d03f89806a9539bce2ac69fe02e779d35
 }
+
+#searchBox {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+   
+  height: 100px;
+    width: 700px;
+}
+
+
+#searchImg {
+    /*height: 150px;*/
+    width: 150px;
+}
+
+
+

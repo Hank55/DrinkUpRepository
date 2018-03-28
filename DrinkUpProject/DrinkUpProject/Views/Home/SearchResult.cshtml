@@ -3,11 +3,37 @@
 
 <h1>DU är i Searchresult nu</h1>
 
+<<<<<<< HEAD
+<div id="searchBox">
+    @foreach (var item in @Model)
+    {
+        <table id="searchItems">
+            <tr>
+
+                <td>
+                    <img id="searchImg" src="@item.DrinkImg" />
+                </td>
+=======
 @foreach (var item in Model)
 {
     <p>
         name: @item.DrinkName
     </p>
     <img src="@item.DrinkImg" />
+>>>>>>> c5feae6d03f89806a9539bce2ac69fe02e779d35
 
-}
+                <td>
+                    name: @item.DrinkName
+                    <br />
+                    <p>En kort förklaring</p>
+                </td>
+                    
+                    
+               
+
+            </tr>
+        </table>
+
+
+    }
+</div>
