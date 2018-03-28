@@ -53,10 +53,11 @@ namespace DrinkUpProject.Controllers
 
 
         [Route("SearchResult")]
-        public async Task<IActionResult> SearchResult(HomeResultVM[] drinks)
+        public async Task<IActionResult> SearchResult()
         {
-            
-            
+            var drinks = repository.GetLastSearchResult();
+
+
             return View(drinks);
 
         }
