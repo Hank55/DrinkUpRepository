@@ -10,8 +10,41 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class TestRepository
     {
+        public static List<User> users;
         // ... Use HttpClient.
         static HttpClient client = new HttpClient();
+
+        public TestRepository()
+        {
+            users = new List<User>
+            {
+                new User
+                {
+                    FirstName= "Hanna",
+                    LastName = "Pawahi",
+                    Email = "hanna.pawahi@test.se",
+                    Password = "hannaebäst",
+                    FavouriteDrink="Vatten och saft",
+                    UserListDrinkId = new List<string>
+                    {
+                        "13427"
+                    }
+                },
+
+                new User
+                {
+                    FirstName= "Åsa",
+                    LastName = "Tysk",
+                    Email = "asa.tysk@test.se",
+                    Password = "åsaeoxåbra",
+                    FavouriteDrink="Tequila",
+                     UserListDrinkId = new List<string>
+                    {
+                        "13060"
+                    }
+                }
+            };
+        }
 
         public async Task<List<Drink>> GetDrinks(string searchURL)
         {
@@ -65,7 +98,6 @@ namespace DrinkUpProject.Models.Repositories
             List<Drink> drinkList = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             return drinkList.First();
         }
-
 
     }
 }

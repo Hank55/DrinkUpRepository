@@ -57,6 +57,5 @@ namespace DrinkUpProject.Controllers
             return View(await repository.SearchResultDrinkName(drinkName));
 
         }
-
     }
 }
