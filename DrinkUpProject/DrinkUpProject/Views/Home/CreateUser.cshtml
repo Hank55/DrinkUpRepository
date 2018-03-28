@@ -6,40 +6,67 @@
     <title>Create User</title>
 </head>
 <body>
-    <form asp-controller="Home" asp-action="CreateUser">
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" />
-        <span asp-validation-for="FirstName"></span>
+    <div id="CreateUserMainDiv">
+        <h1 id="MainTitle">Create User</h1>
 
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" />
-        <span asp-validation-for="LastName"></span>
-        <br />
-        <label asp-for="Email"></label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+        <form asp-controller="Home" asp-action="CreateUser">
 
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" />
-        <span asp-validation-for="UserName"></span>
+            <div class="CreateUserEntityDivsLeft">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
 
-        <label asp-for="FavoriteDrink"></label>
-        <input asp-for="FavoriteDrink" />
-        <span asp-validation-for="FavoriteDrink"></span>
-        <br />
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
+            <div class="CreateUserEntityDivsRight">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <br />
 
-        <label asp-for="ReEnterPassword"></label>
-        <input asp-for="ReEnterPassword" />
-        <span asp-validation-for="ReEnterPassword"></span>
-        <br />
-        <input type="submit" value="Create User" />
+            <div id="CreateUserEmailDiv">
+                <label asp-for="Email"></label>
+                <input id="CreateUserEmailTextField" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
 
-        <input type="submit" value="Cancel" />
+            <br />
+            <div class="CreateUserEntityDivsLeft">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" />
+                <span asp-validation-for="UserName"></span>
+            </div>
 
-    </form>
+            <div class="CreateUserEntityDivsRight">
+                <label asp-for="FavoriteDrink"></label>
+                <input asp-for="FavoriteDrink" />
+                <span asp-validation-for="FavoriteDrink"></span>
+            </div>
+            <br />
+
+            <div class="CreateUserEntityDivsLeft">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+
+            <div class="CreateUserEntityDivsRight">
+                <label asp-for="ReEnterPassword"></label>
+                <input asp-for="ReEnterPassword" />
+                <span asp-validation-for="ReEnterPassword"></span>
+            </div>
+
+            <div class="CreateUserEntityDivsLeft">
+                <input class="CreateUserButtonClass" type="submit" value="Create User" />
+            </div>
+
+            <div class="CreateUserEntityDivsRight">
+                <input class="CreateUserButtonClass" type="submit" value="Cancel" />
+            </div>
+
+        </form>
+    </div>
 
 </body>
 </html>
