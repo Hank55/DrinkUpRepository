@@ -1,8 +1,11 @@
 ﻿var slideIndex = 1;
 
-$(function () {
-    showSlides();
-});
+$('.carousel').carousel({ interval: 2000}
+
+)
+//$(function () {
+//    showSlides();
+//});
 
 // Next/previous controls
 function plusSlides(n) {

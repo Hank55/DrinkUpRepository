@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/CSS/StyleSheet.css",
     "inputFile": "wwwroot/CSS/StyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/CreateUser.css",
+    "inputFile": "wwwroot/CSS/CreateUser.scss"
   }
 ]
