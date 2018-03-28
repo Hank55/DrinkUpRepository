@@ -7,9 +7,24 @@
     <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
 
 
-
     <input type="submit" name="SubmitButton" value="Search" />
 </form>
+
+<div id="LogIn">
+    <h1>Welcome & Log In</h1>
+
+    <form>
+        <label asp-for="LogInForm.UserName"></label><br />
+        <input asp-for="LogInForm.UserName" /><br />
+
+        <label asp-for="LogInForm.Password"></label><br />
+        <input asp-for="LogInForm.Password" /><br />
+        <input type="submit" asp-controller="Home" asp-action="Index" value="Log in" /><br />
+        <input type="submit" asp-controller="Home" asp-action="CreateUser" value="Create new user" />
+    </form>
+
+</div>
+
 
 <!-- Slideshow container -->
 <div class="slideshow-container">

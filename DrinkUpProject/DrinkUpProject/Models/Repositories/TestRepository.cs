@@ -11,7 +11,7 @@ namespace DrinkUpProject.Models.Repositories
     public class TestRepository
     {
         public static List<User> users;
-           public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
+        public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
         // ... Use HttpClient.
         static HttpClient client = new HttpClient();
 
