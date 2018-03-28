@@ -61,5 +61,13 @@ namespace DrinkUpProject.Controllers
 
         }
 
+        [Route("CreateUser")]
+        [HttpGet]
+        public async Task<IActionResult> CreateUser()
+        {
+
+            return View();
+        }
+
     }
 }
