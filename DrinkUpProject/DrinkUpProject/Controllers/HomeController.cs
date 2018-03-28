@@ -26,35 +26,39 @@ namespace DrinkUpProject.Controllers
 
         [Route("")]
         [HttpPost]
-        public async Task<IActionResult> Index(string searchResult)
+        public async Task<IActionResult> Index(HomeIndexVM homeIndexVM)
         {
             var valueOf = Request.Form["SearchParameter"];
 
+            HomeResultVM[] drinks;
+
             if (valueOf == "Drink")
             {
-                
-            var drink  = await repository.SearchResultDrinkName(searchResult);
+                drinks = await repository.SearchResultDrinkName(homeIndexVM.SearchItem);
             }
             else
-            { 
-                var ingredient = await repository.SearchResultIngredient(searchResult);
-            }
+                drinks = await repository.SearchResultIngredient(homeIndexVM.SearchItem);
+            
+            
 
 
             return RedirectToAction(nameof(SearchResult));
         }
 
-        [Route("/RandomDrink")]
+        [Route("RandomDrink")]
         public async Task<IActionResult> RandomDrink()
         {
             return View(await repository.GetRandomDrink());
         }
 
 
-        [Route("/Results")]
-        public async Task<IActionResult> SearchResult(string drinkName)
+        [Route("SearchResult")]
+        public async Task<IActionResult> SearchResult()
         {
-            return View(await repository.SearchResultDrinkName(drinkName));
+            var drinks = repository.GetLastSearchResult();
+
+
+            return View(drinks);
 
         }
 
@@ -66,5 +70,12 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
+        [Route("Test")]
+        [HttpGet]
+        public async Task<IActionResult> Test()
+        {
+
+            return View();
+        }
     }
 }
