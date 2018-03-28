@@ -36,12 +36,14 @@
 
     <!--Search container-->
     <form asp-controller="home" asp-action="index">
-        <input asp-for="@Model.SearchItem" /><br />
+        <input class="form" asp-for="@Model.SearchItem" />
+        <input class="Button" type="submit" name="SubmitButton" value="Search" />
+        <br />
         <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
         <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
-
-
-        <input type="submit" name="SubmitButton" value="Search" />
+              
+        <br />
+        <input class="Button" type="submit" name="RandomButton" value="Random" />
     </form>
 </div>
 
