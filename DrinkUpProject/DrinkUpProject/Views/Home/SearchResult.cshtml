@@ -1,13 +1,19 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeResultVM[]
 
-
-<h1>DU är i Searchresult nu</h1>
-
-@foreach (var item in Model)
-{
-    <p>
-        name: @item.DrinkName
-    </p>
-    <img src="@item.DrinkImg" />
-
-}
+<div id="searchBox">
+    @foreach (var item in @Model)
+    {
+        <span class="searchItems">
+            
+                
+                    <img id="searchImg" src="@item.DrinkImg" />
+                
+               <p>
+                    name: @item.DrinkName
+                    <br />
+                    En kort förklaring
+                </p>
+           
+        </span>
+    }
+</div>

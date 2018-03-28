@@ -1,3 +1,28 @@
+﻿#searchBox {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+
+ }
+
+.searchItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    
+}
+
+.all {
+    display: flex;
+    flex-flow: row;
+    
+}
+
+
+#searchImg {
+    height: 150px;
+    width: 150px;
+}
 ﻿.drinkfact {
   position: relative;
   width: 400px;

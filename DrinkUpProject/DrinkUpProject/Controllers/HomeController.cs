@@ -69,5 +69,13 @@ namespace DrinkUpProject.Controllers
 
             return View();
         }
+
+        [Route("Test")]
+        [HttpGet]
+        public async Task<IActionResult> Test()
+        {
+
+            return View();
+        }
     }
 }

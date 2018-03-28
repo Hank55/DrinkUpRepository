@@ -1,0 +1,13 @@
+﻿@model DrinkUpProject.Models.ViewModels.HomeIndexLogInVM
+
+<h1>Welcome & Log In</h1>
+
+<form>
+    <label asp-for="UserName"></label><br />
+    <input asp-for="UserName" /><br />
+
+    <label asp-for="Password"></label><br />
+    <input asp-for="Password" /><br />
+    <input type="submit" asp-controller="Home" asp-action="Index" value="Log in" /><br />
+    <input type="submit" asp-controller="Home" asp-action="CreateUser" value="Create new user" />
+</form>

@@ -10,6 +10,7 @@ namespace DrinkUpProject.Models.ViewModels
 
         public string SearchItem { get; set; }
         public string ParamUrl { get; set; }
+        public HomeIndexLogInVM LogInForm{ get; set;}
 
 
 
