@@ -1,22 +1,17 @@
-<<<<<<< HEAD
-﻿body {
-
-=======
-﻿.drinkfact {
-    position: relative;
-    width: 400px;
-    height: 200px;
-    border: 3px solid #73AD21;
->>>>>>> c5feae6d03f89806a9539bce2ac69fe02e779d35
-}
-
 #searchBox {
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
-   
-  height: 100px;
-    width: 700px;
+}
+
+.searchItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.all {
+    display: flex;
+    flex-flow: row;
 }
 
 
@@ -24,6 +19,26 @@
     height: 150px;
     width: 150px;
 }
+.Button {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
+.form {
+    font-size: 20px;
+}
 
-
+﻿.drinkfact {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
