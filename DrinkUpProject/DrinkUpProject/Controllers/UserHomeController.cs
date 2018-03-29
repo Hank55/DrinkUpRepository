@@ -23,5 +23,11 @@ namespace DrinkUpProject.Controllers
 
             return View(randomDrink);
         }
+
+        [Route("MyPage")]
+        public IActionResult MyPage()
+        {
+            return View();
+        }
     }
 }

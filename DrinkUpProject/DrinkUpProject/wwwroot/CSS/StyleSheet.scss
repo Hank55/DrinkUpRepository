@@ -87,3 +87,22 @@ input[type=text]:focus {
 
 
 
+
+//FOOTER STARTS HERE
+
+.FooterDiv {
+    display: flex;
+    justify-content: space-between;
+
+    #FooterCopyRightInfo {
+        padding: 25px 25px 25px 25px;
+    }
+
+    #FooterAboutUsLink {
+        padding: 25px 25px 25px 25px;
+    }
+}
+
+//FOOTER ENDS HERE
+
+
