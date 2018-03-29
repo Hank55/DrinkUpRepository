@@ -56,8 +56,12 @@ namespace DrinkUpProject.Models.Repositories
             // ... Read the string.
             string result = await content.ReadAsStringAsync();
 
-
             DrinkDirectory d = JsonConvert.DeserializeObject<DrinkDirectory>(result);
+            if (d == null || d.drinks == null)
+            {
+                d = new DrinkDirectory();
+                d.drinks = new List<Drink>{new Drink{strDrink = "NoSearchResult" } };
+            }
 
             return d.drinks;
         }
@@ -67,18 +71,10 @@ namespace DrinkUpProject.Models.Repositories
         {
             List<Drink> drinkList = await GetDrinks(searchURL);
 
-            var testArray = new List<Drink>(); 
 
-            if (searchURL.Contains("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="))
-            {
-                for (int i = 0; i < drinkList.Count; i++)
-                {
-                    var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
-                    var testListDrink = await GetDrinks(findDrinkByIdURL);
-                testArray.Add(new Drink { strDrink = testListDrink[0].strDrink, strDrinkThumb = testListDrink[0].strDrinkThumb, strInstructions = testListDrink[0].strInstructions }); 
-                }
-                drinkList = testArray;
-            }
+            if (drinkList[0].strDrink != "NoSearchResult" && searchURL.Contains("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="))
+                drinkList = await GetDrinksById(drinkList);
+
             HomeResultVM[] listResults = new HomeResultVM[drinkList.Count];
 
             for (int i = 0; i < listResults.Length; i++)
@@ -90,6 +86,20 @@ namespace DrinkUpProject.Models.Repositories
 
             return listResults;
 
+        }
+
+        private async Task<List<Drink>> GetDrinksById(List<Drink> drinkList)
+        {
+            var tempArray = new List<Drink>();
+
+            for (int i = 0; i < drinkList.Count; i++)
+            {
+                var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
+                var testListDrink = await GetDrinks(findDrinkByIdURL);
+                tempArray.Add(new Drink { strDrink = testListDrink[0].strDrink, strDrinkThumb = testListDrink[0].strDrinkThumb, strInstructions = testListDrink[0].strInstructions });
+            }
+
+            return tempArray;
         }
 
         internal void AddUser(HomeCreateUserVM model)
@@ -117,20 +127,16 @@ namespace DrinkUpProject.Models.Repositories
                     {
                         shortInfo += splitInfo[i] + " ";
                     }
-
                 }
                 else
                     shortInfo = "Short description in bio";
-
-
             }
             else
                 shortInfo = "This recipe do not have a description";
 
-
             return shortInfo += "...";
-
         }
+
         private void SaveToSearchResultList(HomeResultVM[] listResults)
         {
             searchResultListings.Add(listResults);
