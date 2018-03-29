@@ -56,6 +56,7 @@ namespace DrinkUpProject.Models.Repositories
             // ... Read the string.
             string result = await content.ReadAsStringAsync();
 
+
             DrinkDirectory d = JsonConvert.DeserializeObject<DrinkDirectory>(result);
 
             return d.drinks;
@@ -66,6 +67,18 @@ namespace DrinkUpProject.Models.Repositories
         {
             List<Drink> drinkList = await GetDrinks(searchURL);
 
+            var testArray = new List<Drink>(); 
+
+            if (searchURL.Contains("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="))
+            {
+                for (int i = 0; i < drinkList.Count; i++)
+                {
+                    var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
+                    var testListDrink = await GetDrinks(findDrinkByIdURL);
+                testArray.Add(new Drink { strDrink = testListDrink[0].strDrink, strDrinkThumb = testListDrink[0].strDrinkThumb, strInstructions = testListDrink[0].strInstructions }); 
+                }
+                drinkList = testArray;
+            }
             HomeResultVM[] listResults = new HomeResultVM[drinkList.Count];
 
             for (int i = 0; i < listResults.Length; i++)
@@ -107,7 +120,7 @@ namespace DrinkUpProject.Models.Repositories
 
                 }
                 else
-                shortInfo = "Short description in bio";
+                    shortInfo = "Short description in bio";
 
 
             }

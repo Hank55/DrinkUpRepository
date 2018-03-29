@@ -32,7 +32,7 @@ namespace DrinkUpProject.Controllers
 
             HomeResultVM[] drinks;
             if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
-                return View();
+                return View(new HomeIndexVM());
 
             if (valueOf == "Drink")
             {
