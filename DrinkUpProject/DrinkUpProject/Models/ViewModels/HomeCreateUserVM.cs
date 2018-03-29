@@ -27,7 +27,7 @@ namespace DrinkUpProject.Models.ViewModels
 
         [StringLength(200, ErrorMessage = "Please enter your favorite drink.", MinimumLength = 3)]
         [Display(Name = "Favorite Drink")]
-        public string FavoriteDrink { get; set; }
+        public string FavouriteDrink { get; set; }
 
         [StringLength(200, ErrorMessage = "Please enter a password", MinimumLength = 5)]
         [DataType(DataType.Password)]

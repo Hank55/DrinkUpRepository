@@ -11,6 +11,7 @@ namespace DrinkUpProject.Models.Repositories
     public class TestRepository
     {
         public static List<User> users;
+
         public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
         // ... Use HttpClient.
         static HttpClient client = new HttpClient();
@@ -76,6 +77,19 @@ namespace DrinkUpProject.Models.Repositories
 
             return listResults;
              
+        }
+
+        internal void AddUser(HomeCreateUserVM model)
+        {
+            User user = new User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Password = model.Password,
+                FavouriteDrink = model.FavouriteDrink
+            };
+            users.Add(user);
         }
 
         private void SaveToSearchResultList(HomeResultVM[] listResults)
