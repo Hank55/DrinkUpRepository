@@ -7,12 +7,8 @@ namespace DrinkUpProject.Models.ViewModels
 {
     public class HomeIndexVM
     {
-
-        public string SearchItem { get; set; }
-        public string ParamUrl { get; set; }
+        public SearchVM SearchForm { get; set; }
         public HomeIndexLogInVM LogInForm{ get; set;}
-
-
 
     }
 }

@@ -8,5 +8,6 @@ namespace DrinkUpProject.Models.ViewModels
     public class UserHomeVM
     {
         public string DrinkFact { get; set; }
+        public SearchVM SearchForm { get; set; }
     }
 }

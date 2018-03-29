@@ -21,16 +21,18 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> Index()
         {
             
-            return View();
+            return View(new HomeIndexVM());
         }
 
         [Route("")]
         [HttpPost]
-        public async Task<IActionResult> Index(HomeIndexVM homeIndexVM)
+        public async Task<IActionResult> Index(SearchVM homeIndexVM)
         {
             var valueOf = Request.Form["SearchParameter"];
 
             HomeResultVM[] drinks;
+            if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
+                return View();
 
             if (valueOf == "Drink")
             {
