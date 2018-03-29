@@ -1,40 +1,54 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeCreateUserVM
 
-<div>
+<div class="container">
     <h1>Create User</h1>
     <form class="form-inline" asp-controller="Home" asp-action="CreateUser">
-            <label asp-for="FirstName"></label>
-            <input class="form-control" asp-for="FirstName" />
-            <span asp-validation-for="FirstName"></span>
 
+        <div class="form-control">
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input class="form-control" asp-for="FirstName" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input class="form-control" asp-for="LastName" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
 
-            <label asp-for="LastName"></label>
-            <input class="form-control" asp-for="LastName" />
-            <span asp-validation-for="LastName"></span> <br />
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input class="form-control" asp-for="UserName" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div>
+                <label asp-for="FavoriteDrink"></label>
+                <input class="form-control" asp-for="FavoriteDrink" />
+                <span asp-validation-for="FavoriteDrink"></span>
+            </div>
 
+            <div>
+                <label asp-for="Password"></label>
+                <input class="form-control" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <label asp-for="ReEnterPassword"></label>
+                <input class="form-control" asp-for="ReEnterPassword" />
+                <span asp-validation-for="ReEnterPassword"></span>
+            </div>
 
-            <label asp-for="Email"></label>
-            <input class="form-control" asp-for="Email" />
-            <span asp-validation-for="Email"></span>
-
-            <label asp-for="UserName"></label>
-            <input class="form-control" asp-for="UserName" />
-            <span asp-validation-for="UserName"></span>
-
-            <label asp-for="FavoriteDrink"></label>
-            <input class="form-control" asp-for="FavoriteDrink" />
-            <span asp-validation-for="FavoriteDrink"></span>
-
-            <label asp-for="Password"></label>
-            <input class="form-control" asp-for="Password" />
-            <span asp-validation-for="Password"></span>
-
-            <label asp-for="ReEnterPassword"></label>
-            <input class="form-control" asp-for="ReEnterPassword" />
-            <span asp-validation-for="ReEnterPassword"></span>
-
-            <input class="btn alert-success" type="submit" value="Create User" />
-            <button class="btn" onclick="">Cancel</button>
+            <div>
+                <input class="btn btn-default" type="submit" value="Create User" />
+                <button class="btn btn-default" onclick="">Cancel</button>
+            </div>
+            </div>
     </form>
 </div>
 
