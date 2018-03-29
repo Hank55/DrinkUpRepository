@@ -69,13 +69,26 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb };
+                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb,  DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions)};
             }
 
             SaveToSearchResultList(listResults);
 
             return listResults;
              
+        }
+
+        private string ToShortInfo(string strInstructions)
+        {
+            var splitInfo = strInstructions.Split(" ");
+            var shortInfo = "";
+            for (int i = 0; i < 7; i++)
+            {
+                shortInfo += splitInfo[i] + " ";
+            }
+
+            return shortInfo += "...";
+
         }
 
         private void SaveToSearchResultList(HomeResultVM[] listResults)

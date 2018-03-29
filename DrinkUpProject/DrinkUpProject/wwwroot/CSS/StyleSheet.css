@@ -24,6 +24,12 @@
   border-color: cornflowerblue;
   border-radius: 9px;
   padding: 3px; }
+  .searchItems h3 {
+    font-family: Verdana;
+    font-size: 17px; }
+  .searchItems h4 {
+    font-family: Arial;
+    font-size: 14px; }
 
 .all {
   display: flex;
