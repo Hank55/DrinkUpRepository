@@ -84,7 +84,7 @@ namespace DrinkUpProject.Controllers
 
             repository.AddUser(model);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(UserHomeController.Home));
 
 
         }

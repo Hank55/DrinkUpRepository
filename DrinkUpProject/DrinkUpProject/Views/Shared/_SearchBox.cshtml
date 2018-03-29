@@ -3,7 +3,7 @@
 
 <form asp-controller="home" asp-action="index">
     <input class="form" asp-for="@Model.SearchItem" />
-    <input class="Button" type="submit" name="SubmitButton" value="Search" />
+    <input class="btn btn-outline-primary" type="submit" name="SubmitButton" value="Search" />
     <br />
     <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
     <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
@@ -13,7 +13,7 @@
 </form>
     
 <form asp-controller="home" asp-action="RandomDrink">
-    <input class="Button" type="submit" name="RandomButton" value="Random" />
+    <input class="btn btn-outline-primary" type="submit" name="RandomButton" value="Random" />
 </form>
 
 
