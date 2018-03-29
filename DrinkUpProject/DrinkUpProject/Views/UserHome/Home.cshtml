@@ -15,6 +15,6 @@
     </div>
 
     <div id="searchBox">
-        @Model.DrinkFact
+        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
     </div>
 </div>
