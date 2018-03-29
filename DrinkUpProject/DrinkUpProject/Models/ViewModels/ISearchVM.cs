@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class HomeIndexVM: ITestVM
+   public interface ISearchVM
     {
-
-        public SearchVM SearchForm { get; set; }
-        public HomeIndexLogInVM LogInForm{ get; set;}
-
+        SearchVM SearchForm { get; set; }
     }
 }

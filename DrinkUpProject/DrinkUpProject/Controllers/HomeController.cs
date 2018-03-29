@@ -34,10 +34,10 @@ namespace DrinkUpProject.Controllers
 
             if (valueOf == "Drink")
             {
-                drinks = await repository.SearchResultDrinkName(homeIndexVM.SearchItem);
+                drinks = await repository.SearchResultDrinkName(homeIndexVM.SearchForm.SearchItem);
             }
             else
-                drinks = await repository.SearchResultIngredient(homeIndexVM.SearchItem);
+                drinks = await repository.SearchResultIngredient(homeIndexVM.SearchForm.SearchItem);
             
             
 

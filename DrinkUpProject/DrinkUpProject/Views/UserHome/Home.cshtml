@@ -3,3 +3,7 @@
 <div class="drinkfact">
     @Model.DrinkFact
 </div>
+
+<div>
+    @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model)
+</div>
