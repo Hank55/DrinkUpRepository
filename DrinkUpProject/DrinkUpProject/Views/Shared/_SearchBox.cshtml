@@ -1,12 +1,12 @@
-﻿@model DrinkUpProject.Models.ViewModels.ITestVM
+﻿@model DrinkUpProject.Models.ViewModels.SearchVM
 <!--Search container-->
 
 <form asp-controller="home" asp-action="index">
-    <input class="form" asp-for="@Model.SearchForm.SearchItem" />
+    <input class="form" asp-for="@Model.SearchItem" />
     <input class="Button" type="submit" name="SubmitButton" value="Search" />
     <br />
-    <input asp-for="@Model.SearchForm.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
-    <input asp-for="@Model.SearchForm.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
+    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
+    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
 
     <br />
     <input class="Button" type="submit" name="RandomButton" value="Random" />

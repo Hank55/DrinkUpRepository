@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace DrinkUpProject.Models.ViewModels
 {
 
-    [Bind(Prefix = "SearchForm")]
     public class SearchVM
     {
         public string SearchItem { get; set; }

@@ -21,12 +21,12 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> Index()
         {
             
-            return View();
+            return View(new HomeIndexVM());
         }
 
         [Route("")]
         [HttpPost]
-        public async Task<IActionResult> Index(HomeIndexVM homeIndexVM)
+        public async Task<IActionResult> Index(SearchVM homeIndexVM)
         {
             var valueOf = Request.Form["SearchParameter"];
 
@@ -34,10 +34,10 @@ namespace DrinkUpProject.Controllers
 
             if (valueOf == "Drink")
             {
-                drinks = await repository.SearchResultDrinkName(homeIndexVM.SearchForm.SearchItem);
+                drinks = await repository.SearchResultDrinkName(homeIndexVM.SearchItem);
             }
             else
-                drinks = await repository.SearchResultIngredient(homeIndexVM.SearchForm.SearchItem);
+                drinks = await repository.SearchResultIngredient(homeIndexVM.SearchItem);
             
             
 
