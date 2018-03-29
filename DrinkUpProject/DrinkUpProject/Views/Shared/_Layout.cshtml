@@ -48,35 +48,48 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Här kan man skriva text om man vill :) 
+                Här kan man skriva text om man vill :)
             </span>
         </div>
     </nav>
-        <div>
+    <div>
 
-            @RenderBody()
+        @RenderBody()
 
-        </div>
+    </div>
 
-    <main class="text-center my-5">
-
-
-        <div class="container">
-
-
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <p align="justify">&copy 2018 DrinkIT - Sweden</p>
-
+    @*<div class="container bg-primary">
+            <div class="panel panel-default">
+                <div class="panel-footer">
+                    <div class="flex-container">
+                        <span>&copy 2018 DrinkIT - Sweden</span>
+                        <span>About Us</span>
+                    </div>
                 </div>
-
             </div>
+        </div>*@
 
+    <!--Footer-->
+    <footer class="page-footer font-small bg-primary">
+
+        <!--Footer Links-->
+        <div class="container-fluid text-center text-md-left">
+            <div class="row FooterDiv">
+
+                <!--First column-->
+                <div>
+                    <p id="FooterCopyRightInfo">&copy 2018 DrinkIT - Sweden</p>
+                </div>
+                <!--/.First column-->
+                <!--Second column-->
+                <div>
+                    <p id="FooterAboutUsLink"><a href="">About Us</a></p>
+                </div>
+                <!--/.Second column-->
+            </div>
         </div>
-
-    </main>
+    </footer>
+    <!--/.Footer-->
 
 </body>
 
