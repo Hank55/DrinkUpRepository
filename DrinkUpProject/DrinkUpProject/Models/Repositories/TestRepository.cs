@@ -11,6 +11,7 @@ namespace DrinkUpProject.Models.Repositories
     public class TestRepository
     {
         public static List<User> users;
+
         public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
         // ... Use HttpClient.
         static HttpClient client = new HttpClient();
@@ -69,7 +70,7 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb };
+                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb,  DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions)};
             }
 
             SaveToSearchResultList(listResults);
@@ -78,6 +79,31 @@ namespace DrinkUpProject.Models.Repositories
              
         }
 
+        internal void AddUser(HomeCreateUserVM model)
+        {
+            User user = new User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Password = model.Password,
+                FavouriteDrink = model.FavouriteDrink
+            };
+            users.Add(user);
+        }
+
+        private string ToShortInfo(string strInstructions)
+        {
+            var splitInfo = strInstructions.Split(" ");
+            var shortInfo = "";
+            for (int i = 0; i < 7; i++)
+            {
+                shortInfo += splitInfo[i] + " ";
+            }
+
+            return shortInfo += "...";
+
+        }
         private void SaveToSearchResultList(HomeResultVM[] listResults)
         {
             searchResultListings.Add(listResults);

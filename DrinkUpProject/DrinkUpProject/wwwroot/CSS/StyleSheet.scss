@@ -1,7 +1,7 @@
 ﻿body {
 }
 
-﻿.drinkfact {
+﻿#DrinkFact {
     position: relative;
     width: 400px;
     height: 200px;
@@ -9,20 +9,34 @@
 }
 
 #searchBox {
+    padding:6px;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
    
-  height: 150px;
-    width: 900px;
+    height: auto;
+    width: 918px;
+    border: 1px solid;
+    border-color:black;
+    border-radius:8px;
 }
 
-.searchItems{
-    background-color:aqua;
+.searchItems {
     display: flex;
     flex-flow: row;
     width: 300px;
-
+    border: 1px solid;
+    border-color: cornflowerblue;
+    border-radius: 9px;
+    padding: 3px;
+    h3{
+        font-family:Verdana;
+        font-size:17px;
+    }
+    h4{
+        font-family:Arial;
+        font-size:14px;
+    }
 }
 .all {
     display: flex;
@@ -65,6 +79,7 @@ input[type=text] {
 input[type=text]:focus {
     border: 3px solid #555;
 }
+
 
 
 

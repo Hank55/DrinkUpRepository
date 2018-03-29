@@ -31,6 +31,8 @@ namespace DrinkUpProject.Controllers
             var valueOf = Request.Form["SearchParameter"];
 
             HomeResultVM[] drinks;
+            if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
+                return View();
 
             if (valueOf == "Drink")
             {
@@ -70,11 +72,27 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
+        [Route("CreateUser")]
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(HomeCreateUserVM model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            repository.AddUser(model);
+
+            return RedirectToAction(nameof(Index));
+
+
+        }
+
         [Route("Test")]
         [HttpGet]
         public async Task<IActionResult> Test()
         {
-
             return View();
         }
     }

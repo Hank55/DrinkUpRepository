@@ -1,9 +1,20 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserHomeVM
 
-<div class="drinkfact">
-    @Model.DrinkFact
-</div>
+@*Inte klar vy, inväntar att alla delar blir klara innan rätt delar läggs in.*@
 
-<div>
-    @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+<div class="all">
+
+    <div id="SavedDrinks">
+        @Model.DrinkFact
+
+    </div>
+
+
+    <div id="DrinkFact">
+        @Model.DrinkFact
+    </div>
+
+    <div id="searchBox">
+        @Model.DrinkFact
+    </div>
 </div>
