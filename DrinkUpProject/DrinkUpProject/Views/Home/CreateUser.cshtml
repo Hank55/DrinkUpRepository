@@ -1,72 +1,54 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeCreateUserVM
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create User</title>
-</head>
-<body>
-    <div id="CreateUserMainDiv">
-        <h1 id="MainTitle">Create User</h1>
+<div class="container">
+    <h1>Create User</h1>
+    <form class="form-inline" asp-controller="Home" asp-action="CreateUser">
 
-        <form asp-controller="Home" asp-action="CreateUser">
-
-            <div class="CreateUserEntityDivsLeft">
+        <div class="form-control">
+            <div class="form-group">
                 <label asp-for="FirstName"></label>
-                <input asp-for="FirstName" />
+                <input class="form-control" asp-for="FirstName" />
                 <span asp-validation-for="FirstName"></span>
             </div>
-
-            <div class="CreateUserEntityDivsRight">
+            <div class="form-group">
                 <label asp-for="LastName"></label>
-                <input asp-for="LastName" />
+                <input class="form-control" asp-for="LastName" />
                 <span asp-validation-for="LastName"></span>
             </div>
             <br />
-
-            <div id="CreateUserEmailDiv">
+            <div class="form-group">
                 <label asp-for="Email"></label>
-                <input id="CreateUserEmailTextField" asp-for="Email" />
+                <input class="form-control" asp-for="Email" />
                 <span asp-validation-for="Email"></span>
             </div>
 
-            <br />
-            <div class="CreateUserEntityDivsLeft">
+            <div class="form-group">
                 <label asp-for="UserName"></label>
-                <input asp-for="UserName" />
+                <input class="form-control" asp-for="UserName" />
                 <span asp-validation-for="UserName"></span>
             </div>
-
-            <div class="CreateUserEntityDivsRight">
-                <label asp-for="FavouriteDrink"></label>
-                <input asp-for="FavouriteDrink" />
-                <span asp-validation-for="FavouriteDrink"></span>
+            <div>
+                <label asp-for="FavoriteDrink"></label>
+                <input class="form-control" asp-for="FavoriteDrink" />
+                <span asp-validation-for="FavoriteDrink"></span>
             </div>
-            <br />
 
-            <div class="CreateUserEntityDivsLeft">
+            <div>
                 <label asp-for="Password"></label>
-                <input asp-for="Password" />
+                <input class="form-control" asp-for="Password" />
                 <span asp-validation-for="Password"></span>
             </div>
-
-
-            <div class="CreateUserEntityDivsRight">
+            <div>
                 <label asp-for="ReEnterPassword"></label>
-                <input asp-for="ReEnterPassword" />
+                <input class="form-control" asp-for="ReEnterPassword" />
                 <span asp-validation-for="ReEnterPassword"></span>
             </div>
 
-            <div class="CreateUserEntityDivsLeft">
-                <input class="CreateUserButtonClass" type="submit" value="Create User" />
+            <div>
+                <input class="btn btn-default" type="submit" value="Create User" />
+                <button class="btn btn-default" onclick="">Cancel</button>
             </div>
-
-            <div class="CreateUserEntityDivsRight">
-                <input type="button" class="CreateUserButtonClass" value="Cancel" onclick="window.location.href='http://localhost:49760/'" />
             </div>
+    </form>
+</div>
 
-        </form>
-    </div>
-
-</body>
-</html>

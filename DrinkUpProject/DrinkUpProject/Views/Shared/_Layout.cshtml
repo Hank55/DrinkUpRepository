@@ -1,22 +1,91 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="~/CSS/StyleSheet.min.css" />
-    <meta name="viewport" content="width=device-width" />
-<<<<<<< HEAD
 
-    <title>Hello World!</title>
-=======
-    <title>Hello WOrld!</title>
+<html lang="en" class="full-height">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="~/Scripts/IndexImageFlow.js"></script>
-    <link href="~/CSS/ImageFlow.css" rel="stylesheet" />
-    <link href="~/CSS/CreateUser.css" rel="stylesheet" />
->>>>>>> c5feae6d03f89806a9539bce2ac69fe02e779d35
+
+    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
+
+    <title>Material Design Bootstrap</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="Nav-Bar/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="Nav-Bar/css/mdb.min.css" rel="stylesheet">
+
+    <link href="Nav-Bar/css/style.css" rel="stylesheet">
+   
 </head>
+
 <body>
-    <div>
-        @RenderBody()
-    </div>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">DrinkIT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Här kan man skriva text om man vill :) 
+            </span>
+        </div>
+    </nav>
+        <div>
+
+            @RenderBody()
+
+        </div>
+
+    <main class="text-center my-5">
+
+
+        <div class="container">
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <p align="justify">&copy 2018 DrinkIT - Sweden</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
 </body>
+
 </html>
+
+<script type="text/javascript" src="~/Nav-Bar/JS/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="Nav-Bar/js/popper.min.js"></script>
+
+<script type="text/javascript" src="Nav-Bar/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="Nav-Bar/js/mdb.min.js"></script>

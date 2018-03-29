@@ -1,28 +1,75 @@
-<<<<<<< HEAD
 ﻿body {
+}
 
-=======
 ﻿.drinkfact {
     position: relative;
     width: 400px;
     height: 200px;
     border: 3px solid #73AD21;
->>>>>>> c5feae6d03f89806a9539bce2ac69fe02e779d35
 }
 
 #searchBox {
+    padding:6px;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
    
-  height: 100px;
-    width: 700px;
+    height: auto;
+    width: 918px;
+    border: 1px solid;
+    border-color:black;
+    border-radius:8px;
+}
+
+.searchItems {
+    display: flex;
+    flex-flow: row;
+    width: 300px;
+    border: 1px solid;
+    border-color: cornflowerblue;
+    border-radius: 9px;
+    padding: 3px;
+}
+.all {
+    display: flex;
+    flex-flow: row;
 }
 
 
 #searchImg {
     height: 150px;
     width: 150px;
+}
+.Button {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.form {
+    font-size: 20px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+    width:200px;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
 }
 
 

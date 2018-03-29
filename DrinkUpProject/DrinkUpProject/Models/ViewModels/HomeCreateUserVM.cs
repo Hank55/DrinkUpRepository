@@ -35,6 +35,7 @@ namespace DrinkUpProject.Models.ViewModels
 
         [Required(ErrorMessage = "Please re-enter your password")]
         [Display(Name = "Re-Enter Password")]
+        [DataType(DataType.Password)]
         [Compare("Password")]
         public string ReEnterPassword { get; set; }
     }
