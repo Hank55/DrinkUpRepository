@@ -69,3 +69,11 @@ input[type=text]:focus {
 
 .validationColor {
   color: red; }
+
+.FooterDiv {
+  display: flex;
+  justify-content: space-between; }
+  .FooterDiv #FooterCopyRightInfo {
+    padding: 25px 25px 25px 25px; }
+  .FooterDiv #FooterAboutUsLink {
+    padding: 25px 25px 25px 25px; }
