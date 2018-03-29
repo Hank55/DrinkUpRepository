@@ -31,6 +31,8 @@ namespace DrinkUpProject.Controllers
             var valueOf = Request.Form["SearchParameter"];
 
             HomeResultVM[] drinks;
+            if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
+                return View();
 
             if (valueOf == "Drink")
             {
