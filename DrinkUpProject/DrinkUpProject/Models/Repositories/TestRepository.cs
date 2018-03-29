@@ -51,9 +51,9 @@ namespace DrinkUpProject.Models.Repositories
         public async Task<List<Drink>> GetDrinks(string searchURL)
         {
             HttpResponseMessage response = await client.GetAsync(searchURL);
-            HttpContent content = response.Content; 
-            
-                // ... Read the string.
+            HttpContent content = response.Content;
+
+            // ... Read the string.
             string result = await content.ReadAsStringAsync();
 
             DrinkDirectory d = JsonConvert.DeserializeObject<DrinkDirectory>(result);
@@ -70,13 +70,13 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb,  DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions)};
+                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions) };
             }
 
             SaveToSearchResultList(listResults);
 
             return listResults;
-             
+
         }
 
         internal void AddUser(HomeCreateUserVM model)
@@ -94,17 +94,30 @@ namespace DrinkUpProject.Models.Repositories
 
         private string ToShortInfo(string strInstructions)
         {
-            var splitInfo = strInstructions.Split(" ");
             var shortInfo = "";
-            for (int i = 0; i < 7; i++)
+            if (!String.IsNullOrWhiteSpace(strInstructions))
             {
-                shortInfo += splitInfo[i] + " ";
+                var splitInfo = strInstructions.Split(" ");
+                if (splitInfo.Length > 6)
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        shortInfo += splitInfo[i] + " ";
+                    }
+
+                }
+                else
+                shortInfo = "Short description in bio";
+
+
             }
+            else
+                shortInfo = "This recipe do not have a description";
+
 
             return shortInfo += "...";
 
         }
-
         private void SaveToSearchResultList(HomeResultVM[] listResults)
         {
             searchResultListings.Add(listResults);
@@ -122,7 +135,7 @@ namespace DrinkUpProject.Models.Repositories
 
             string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={ingredient}";
 
-            
+
 
             return await SearchResult(searchURL);
 

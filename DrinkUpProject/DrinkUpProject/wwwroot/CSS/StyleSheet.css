@@ -1,5 +1,5 @@
 ﻿@charset "UTF-8";
-﻿.drinkfact {
+﻿#DrinkFact {
   position: relative;
   width: 400px;
   height: 200px;
@@ -67,10 +67,5 @@ input[type=text] {
 input[type=text]:focus {
   border: 3px solid #555; }
 
-.FooterDiv {
-  display: flex;
-  justify-content: space-between; }
-  .FooterDiv #FooterCopyRightInfo {
-    padding: 25px 25px 25px 25px; }
-  .FooterDiv #FooterAboutUsLink {
-    padding: 25px 25px 25px 25px; }
+.validationColor {
+  color: red; }
