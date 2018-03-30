@@ -67,31 +67,6 @@ namespace DrinkUpProject.Controllers
 
         }
 
-        [Route("CreateUser")]
-        [HttpGet]
-        public async Task<IActionResult> CreateUser()
-        {
-
-            return View();
-        }
-
-        [Route("CreateUser")]
-        [HttpPost]
-        public async Task<IActionResult> CreateUser(HomeCreateUserVM model)
-        {
-
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
-            repository.AddUser(model);
-
-            return RedirectToAction(nameof(UserHomeController.Home));
-
-
-        }
-
         [Route("Test")]
         [HttpGet]
         public async Task<IActionResult> Test()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DrinkUpProject.Models;
+using DrinkUpProject.Models.Repositories;
 using DrinkUpProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +48,31 @@ namespace DrinkUpProject.Controllers
                 return RedirectToAction(nameof(UserHomeController.Home));
             else
                 return Redirect(viewModel.ReturnUrl);
+        }
+
+        [Route("CreateUser")]
+        [HttpGet]
+        public async Task<IActionResult> CreateUser()
+        {
+
+            return View();
+        }
+
+        [Route("CreateUser")]
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(HomeCreateUserVM model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            await repository.AddUserAsync(model);
+
+            return RedirectToAction(nameof(UserHomeController.Home));
+
+
         }
     }
 }

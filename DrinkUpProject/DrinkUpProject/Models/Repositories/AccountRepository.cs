@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DrinkUpProject.Models
+namespace DrinkUpProject.Models.Repositories
 {
     public class AccountRepository
     {
@@ -35,6 +35,11 @@ namespace DrinkUpProject.Models
 
             var loginResult = await signInManager.PasswordSignInAsync(viewModel.Username, viewModel.Password, false, false);
             return loginResult.Succeeded;
+        }
+
+        internal async Task AddUserAsync(HomeCreateUserVM model)
+        {
+            var result = await userManager.CreateAsync(new IdentityUser(model.UserName), model.Password);
         }
     }
 }
