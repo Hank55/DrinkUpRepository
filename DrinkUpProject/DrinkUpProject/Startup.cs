@@ -31,7 +31,11 @@ namespace DrinkUpProject
             var connString = configuration.GetConnectionString("TheConnectionString");
             services.AddDbContext<IdentityDbContext>(o => o.UseSqlServer(connString));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>(o =>
+            {
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 3;
+            })
                 .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
 

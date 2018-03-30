@@ -34,7 +34,7 @@ namespace DrinkUpProject.Models.ViewModels
         public string FavouriteDrink { get; set; }
 
         [Required(ErrorMessage = "Please enter a password")]
-        [StringLength(200, ErrorMessage = "Please enter a password", MinimumLength = 5)]
+        //[StringLength(200, ErrorMessage = "Please enter a password", MinimumLength = 5)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

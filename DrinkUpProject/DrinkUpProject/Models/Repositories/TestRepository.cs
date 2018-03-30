@@ -105,7 +105,6 @@ namespace DrinkUpProject.Models.Repositories
         internal void AddUser(HomeCreateUserVM model)
         {
             //User user = new User
-            
             //{
             //    //FirstName = model.FirstName,
             //    //LastName = model.LastName,
