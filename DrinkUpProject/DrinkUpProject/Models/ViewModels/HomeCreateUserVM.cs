@@ -8,6 +8,9 @@ namespace DrinkUpProject.Models.ViewModels
 {
     public class HomeCreateUserVM
     {
+        
+
+
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "Please enter your first name.")]
         public string FirstName { get; set; }
