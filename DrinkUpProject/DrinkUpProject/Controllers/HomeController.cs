@@ -58,7 +58,10 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> SearchResult()
         {
             var drinks = repository.GetLastSearchResult();
-
+            if (drinks[0].DrinkName == "NoSearchResult")
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
             return View(drinks);
 
