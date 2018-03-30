@@ -31,12 +31,12 @@ namespace DrinkUpProject
             var connString = configuration.GetConnectionString("TheConnectionString");
             services.AddDbContext<IdentityDbContext>(o => o.UseSqlServer(connString));
 
-            services.AddTransient<AccountRepository>();
-            services.AddTransient<TestRepository>();
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<AccountRepository>();
+            services.AddTransient<TestRepository>();
 
             services.AddMvc();
         }

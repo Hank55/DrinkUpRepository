@@ -70,7 +70,7 @@ namespace DrinkUpProject.Controllers
 
             await repository.AddUserAsync(model);
 
-            return RedirectToAction(nameof(UserHomeController.Home));
+            return RedirectToAction(nameof(UserHomeController.Home),"UserHome");
 
 
         }
