@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DrinkUpProject.Models;
+using DrinkUpProject.Models.Entities;
 using DrinkUpProject.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +30,9 @@ namespace DrinkUpProject
         public void ConfigureServices(IServiceCollection services)
         {
             var connString = configuration.GetConnectionString("TheConnectionString");
+            services.AddDbContext<WinterIsComingContext>(o => o.UseSqlServer(connString));
             services.AddDbContext<IdentityDbContext>(o => o.UseSqlServer(connString));
+            
 
             services.AddIdentity<IdentityUser, IdentityRole>(o =>
             {
