@@ -45,8 +45,11 @@
 
 
 #searchImg {
-    height: 150px;
-    width: 150px;
+    
+        img {
+            height: 150px;
+            width: 150px;
+    }
 }
 .Button {
     background-color: grey;
@@ -80,6 +83,29 @@ input[type=text]:focus {
     border: 3px solid #555;
 }
 
+.validationColor {
+    color: red;
+}
 
+
+
+
+
+//FOOTER STARTS HERE
+
+.FooterDiv {
+    display: flex;
+    justify-content: space-between;
+
+    #FooterCopyRightInfo {
+        padding: 25px 25px 25px 25px;
+    }
+
+    #FooterAboutUsLink {
+        padding: 25px 25px 25px 25px;
+    }
+}
+
+//FOOTER ENDS HERE
 
 

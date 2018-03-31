@@ -32,7 +32,7 @@ namespace DrinkUpProject.Controllers
 
             HomeResultVM[] drinks;
             if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
-                return View();
+                return View(new HomeIndexVM());
 
             if (valueOf == "Drink")
             {
@@ -58,34 +58,12 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> SearchResult()
         {
             var drinks = repository.GetLastSearchResult();
-
-
-            return View(drinks);
-
-        }
-
-        [Route("CreateUser")]
-        [HttpGet]
-        public async Task<IActionResult> CreateUser()
-        {
-
-            return View();
-        }
-
-        [Route("CreateUser")]
-        [HttpPost]
-        public async Task<IActionResult> CreateUser(HomeCreateUserVM model)
-        {
-
-            if (!ModelState.IsValid)
+            if (drinks[0].DrinkName == "NoSearchResult")
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
 
-            repository.AddUser(model);
-
-            return RedirectToAction(nameof(Index));
-
+            return View(drinks);
 
         }
 

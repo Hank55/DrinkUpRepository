@@ -1,0 +1,61 @@
+﻿@model DrinkUpProject.Models.ViewModels.HomeCreateUserVM
+
+<div class="container">
+    <h1>Create User</h1>
+    <div class="form-control">
+        <form asp-controller="Home" asp-action="CreateUser">
+            <div class="form-row">
+                <div class="col-md-4 mb-3 ">
+                    <label asp-for="FirstName"></label>
+                    <input class="form-control" asp-for="FirstName" />
+                    <span class="validationColor" asp-validation-for="FirstName"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="LastName"></label>
+                    <input class="form-control" asp-for="LastName" />
+                    <span class="validationColor" asp-validation-for="LastName"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email"></label>
+                    <input class="form-control" asp-for="Email" />
+                    <span class="validationColor" asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3 ">
+                    <label asp-for="UserName"></label>
+                    <input class="form-control" asp-for="UserName" />
+                    <span class="validationColor" asp-validation-for="UserName"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="FavouriteDrink"></label>
+                    <input class="form-control" asp-for="FavouriteDrink" />
+                    <span class="validationColor" asp-validation-for="FavouriteDrink"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3 ">
+                    <label asp-for="Password"></label>
+                    <input class="form-control" asp-for="Password" />
+                    <span class="validationColor" asp-validation-for="Password"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="ReEnterPassword"></label>
+                    <input class="form-control" asp-for="ReEnterPassword" />
+                    <span class="validationColor" asp-validation-for="ReEnterPassword"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-outline-success" type="submit">Create User</button>
+                </div>
+        </form>
+        <div class="col-md-4 mb-3">
+            <form asp-controller="home" asp-action="index" method="get">
+                <button class="btn btn-outline-danger" type="submit">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

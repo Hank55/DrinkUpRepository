@@ -35,7 +35,7 @@
   display: flex;
   flex-flow: row; }
 
-#searchImg {
+#searchImg img {
   height: 150px;
   width: 150px; }
 
@@ -66,3 +66,14 @@ input[type=text] {
 
 input[type=text]:focus {
   border: 3px solid #555; }
+
+.validationColor {
+  color: red; }
+
+.FooterDiv {
+  display: flex;
+  justify-content: space-between; }
+  .FooterDiv #FooterCopyRightInfo {
+    padding: 25px 25px 25px 25px; }
+  .FooterDiv #FooterAboutUsLink {
+    padding: 25px 25px 25px 25px; }
