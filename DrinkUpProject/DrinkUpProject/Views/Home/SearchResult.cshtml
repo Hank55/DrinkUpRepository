@@ -1,19 +1,24 @@
 ﻿@model DrinkUpProject.Models.ViewModels.HomeResultVM[]
 
+
+
+@await Html.PartialAsync("~/Views/Shared/_LoggedInAs.cshtml", Model.LoggedInAs)
+
+
 <div id="searchBox">
     @foreach (var item in Model)
     {
         <div class="searchItems">
-            
-                
-                    <img id="searchImg" src="@item.DrinkImg" />
-                
-                    <span>
-                        <h3>@item.DrinkName</h3>
-                        <br />
-                        <h4>@item.DrinkInfoShort</h4>
-                    </span>
-           
+
+
+            <img id="searchImg" src="@item.DrinkImg" />
+
+            <span>
+                <h3>@item.DrinkName</h3>
+                <br />
+                <h4>@item.DrinkInfoShort</h4>
+            </span>
+
         </div>
     }
 </div>
