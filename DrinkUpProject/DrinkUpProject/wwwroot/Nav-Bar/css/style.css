@@ -1,1 +1,17 @@
-/* Your custom styles */
+.bg-primary {
+    background-color: #E0EF96 !important;
+}
+.btn-outline-primary {
+    color: black !important;
+    background-color: transparent;
+    background-image: none;
+    border-color: #E0EF96 !important;
+}
+
+input[type=text] {
+  
+    border: 3px solid #E0EF96 !important;
+    
+}
+
+
