@@ -16,10 +16,10 @@ namespace DrinkUpProject.Controllers
         TestRepository repository = new TestRepository();
 
         [Route("Home")]
-        public IActionResult Home()
+        public async Task<IActionResult> Home()
         {
 
-            var randomDrink = repository.GetRandomFactAboutDrink();
+            var randomDrink = await repository.GetRandomFactAboutDrink();
 
             return View(randomDrink);
         }
