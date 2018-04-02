@@ -52,7 +52,7 @@
 .SearchForm {
   flex-grow: 2;
   width: 100%;
-  margin-bottom: 10% !important; }
+  margin-bottom: 5% !important; }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
