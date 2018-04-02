@@ -20,7 +20,6 @@ namespace DrinkUpProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            
             return View(new GuestIndexVM());
         }
 

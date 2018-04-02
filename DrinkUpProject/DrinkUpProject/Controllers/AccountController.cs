@@ -29,17 +29,22 @@ namespace DrinkUpProject.Controllers
 
         [HttpPost]
         [Route("LogIn")]
-        public async Task<IActionResult> LogIn(AccountLoginVM viewModel)
+        public async Task<IActionResult> LogIn(GuestIndexLogInVM viewModel)
         {
             if (!ModelState.IsValid)
-                return View(viewModel);
+                return View("/Views/Guest/Index.cshtml", new GuestIndexVM { LogInForm = viewModel});
+
+
+                //return RedirectToAction(nameof(GuestController.Index), "Guest", viewModel);
+
+                    //RedirectToAction(nameof(GuestController.Index), "Guest");
 
             // Check if credentials is valid (and set auth cookie)
             if (!await repository.TryLoginAsync(viewModel))
             {
                 // Show login error
                 ModelState.AddModelError(nameof(AccountLoginVM.Username), "Invalid credentials");
-                return View(viewModel);
+                return RedirectToAction(nameof(GuestController.Index),"Guest");
             }
             else
                 return RedirectToAction(nameof(UserController.Home), "User");
@@ -65,12 +70,9 @@ namespace DrinkUpProject.Controllers
 
             await repository.AddUserAsync(model);
 
-            await repository.TryLoginAsync(new AccountLoginVM {Username = model.UserName, Password = model.Password });
+            await repository.TryLoginAsync(new GuestIndexLogInVM { UserName = model.UserName, Password = model.Password });
 
             return RedirectToAction(nameof(UserController.Home), "User");
-             
-
-
         }
     }
 }

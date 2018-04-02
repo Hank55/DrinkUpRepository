@@ -3,13 +3,18 @@
     <div class="LogIn">
         <h1>Welcome & Log In</h1>
 
-        <form>
+        <form asp-controller="Account" asp-action="LogIn" method="post">
             <label asp-for="LogInForm.UserName"></label><br />
             <input asp-for="LogInForm.UserName" /><br />
+            <span asp-validation-for="LogInForm.UserName"></span>
             <label asp-for="LogInForm.Password"></label><br />
             <input asp-for="LogInForm.Password" /><br />
-            <input type="submit" class="btn btn-outline-primary" asp-controller="Account" asp-action="LogIn" method="post" value="Log in" /><br />
-            <input type="submit" class="btn btn-outline-primary" asp-controller="Account" asp-action="CreateUser" value="Create new user" />
+            <span asp-validation-for="LogInForm.Password"></span>
+            <input type="submit" class="btn btn-outline-primary" value="Log in" /><br />
+
+        </form>
+        <form asp-controller="Account" asp-action="CreateUser" method="get">
+            <input type="submit" class="btn btn-outline-primary" value="Create new user" />
         </form>
     </div>
 
