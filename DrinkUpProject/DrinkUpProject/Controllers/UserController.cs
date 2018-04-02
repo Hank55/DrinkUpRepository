@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrinkUpProject.Controllers
 {
-    public class UserHomeController : Controller
+    public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
 

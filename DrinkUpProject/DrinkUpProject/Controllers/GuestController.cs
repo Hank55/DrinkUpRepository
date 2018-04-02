@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DrinkUpProject.Controllers
 {
     [Route("")]
-    public class HomeController : Controller
+    public class GuestController : Controller
     {
         TestRepository repository = new TestRepository();
 
@@ -21,7 +21,7 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> Index()
         {
             
-            return View(new HomeIndexVM());
+            return View(new GuestIndexVM());
         }
 
         [Route("")]
@@ -30,9 +30,9 @@ namespace DrinkUpProject.Controllers
         {
             var valueOf = Request.Form["SearchParameter"];
 
-            HomeResultVM[] drinks;
+            GuestResultVM[] drinks;
             if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
-                return View(new HomeIndexVM());
+                return View(new GuestIndexVM());
 
             if (valueOf == "Drink")
             {

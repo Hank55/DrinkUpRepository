@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class HomeIndexVM
+    public class GuestIndexVM
     {
         public SearchVM SearchForm { get; set; }
-        public HomeIndexLogInVM LogInForm{ get; set;}
+        public GuestIndexLogInVM LogInForm{ get; set;}
 
     }
 }

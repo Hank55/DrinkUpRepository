@@ -10,11 +10,11 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class TestRepository
     {
-        public static List<User> users;
+        public static List<User> users; //LÅT LIGGA KVAR ÅT SIMON FÖR NÄRVARANDE.
 
-        public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
+        public static List<GuestResultVM[]> searchResultListings = new List<GuestResultVM[]>();
         // ... Use HttpClient.
-        static HttpClient client = new HttpClient();
+        public static HttpClient client = new HttpClient();
 
         public TestRepository()
         {
@@ -29,7 +29,13 @@ namespace DrinkUpProject.Models.Repositories
                     FavouriteDrink="Vatten och saft",
                     UserListDrinkId = new List<string>
                     {
-                        "13427"
+                        "13427",
+                        "13060",
+                        "16158",
+                        "12162",
+                        "13839",
+                        "12528",
+                        "11102"
                     }
                 },
 
@@ -67,7 +73,7 @@ namespace DrinkUpProject.Models.Repositories
         }
 
 
-        internal async Task<HomeResultVM[]> SearchResult(string searchURL)
+        internal async Task<GuestResultVM[]> SearchResult(string searchURL)
         {
             List<Drink> drinkList = await GetDrinks(searchURL);
 
@@ -75,11 +81,11 @@ namespace DrinkUpProject.Models.Repositories
             if (drinkList[0].strDrink != "NoSearchResult" && searchURL.Contains("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="))
                 drinkList = await GetDrinksById(drinkList);
 
-            HomeResultVM[] listResults = new HomeResultVM[drinkList.Count];
+            GuestResultVM[] listResults = new GuestResultVM[drinkList.Count];
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions) };
+                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions) };
             }
 
             SaveToSearchResultList(listResults);
@@ -102,7 +108,7 @@ namespace DrinkUpProject.Models.Repositories
             return tempArray;
         }
 
-        internal void AddUser(HomeCreateUserVM model)
+        internal void AddUser(GuestCreateUserVM model)
         {
             //User user = new User
             //{
@@ -137,18 +143,18 @@ namespace DrinkUpProject.Models.Repositories
             return shortInfo += "...";
         }
 
-        private void SaveToSearchResultList(HomeResultVM[] listResults)
+        private void SaveToSearchResultList(GuestResultVM[] listResults)
         {
             searchResultListings.Add(listResults);
         }
 
-        public HomeResultVM[] GetLastSearchResult()
+        public GuestResultVM[] GetLastSearchResult()
         {
             var drinks = searchResultListings.LastOrDefault();
             return drinks;
         }
 
-        internal async Task<HomeResultVM[]> SearchResultIngredient(string ingredient)
+        internal async Task<GuestResultVM[]> SearchResultIngredient(string ingredient)
         {
 
 
@@ -160,7 +166,7 @@ namespace DrinkUpProject.Models.Repositories
 
         }
 
-        internal async Task<HomeResultVM[]> SearchResultDrinkName(string drinkName)
+        internal async Task<GuestResultVM[]> SearchResultDrinkName(string drinkName)
         {
             string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}";
 
