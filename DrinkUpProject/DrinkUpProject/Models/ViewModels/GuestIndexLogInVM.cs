@@ -11,10 +11,12 @@ namespace DrinkUpProject.Models.ViewModels
     public class GuestIndexLogInVM
     {
         [Display(Name ="Username")]
+        [Required]
         public string UserName { get; set; }
 
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
+        [Required]
         public string Password { get; set; }
     }
 }
