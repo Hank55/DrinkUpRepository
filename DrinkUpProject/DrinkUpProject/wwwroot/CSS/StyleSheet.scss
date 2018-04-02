@@ -23,6 +23,8 @@
     border: 1px solid;
     border-color:black;
     border-radius:8px;
+
+    margin-top: 5%;
 }
 
 .searchItems {
@@ -59,34 +61,23 @@
 
 .LogIn {
     flex-grow: 2;
-    width: 700px;
-    margin-bottom: 320px !important;
-   
+    width: 100%;
+    margin-top: 10% !important;
 }
 
 .SearchForm {
     flex-grow: 2;
-    width: 500px;
-  
+    width: 100%;
+    margin-bottom: 10% !important;
 }
 
 
-element.style {
-}
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
     display: block;
-    margin-bottom: 250px !important;
+    margin-bottom: 5% !important;
+    width: 400px;
 }
-
-
-
-.SearchForm {
-  
-    margin-bottom: 230px !important;
-}
-
-
 
 #searchImg {
 
@@ -145,15 +136,19 @@ div.col-md-12 {
     align-items: flex-start;
     background-color: #E0EF96;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    padding: 25px;
+    position: fixed;
+   bottom: 0;
+    left: 0;
+    right: 0;
 }
+
 
 //FOOTER ENDS HERE
 
+
 //Home
-
-#RecentlySavedDrinks{
-
+#RecentlySavedDrinks {
     display: flex;
-
 }
 

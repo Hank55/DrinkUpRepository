@@ -179,7 +179,7 @@ namespace DrinkUpProject.Models.Repositories
             return drinkList.First();
         }
 
-        public UserHomeVM GetRandomFactAboutDrink()
+        public async Task<UserHomeVM> GetRandomFactAboutDrink()
         {
             var listOfFact = new List<DrinkFacts>()
             {
@@ -207,8 +207,33 @@ namespace DrinkUpProject.Models.Repositories
 
             Random rnd = new Random();
 
-            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact};
+            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact, RecentlySaved = await MethodRecentlySavedAsync()};
         }
 
+        private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+        {
+            var firstUser = users.First();
+
+            var userDrinks = firstUser
+                .UserListDrinkId
+                .First();
+
+            List<Drink> test = new List<Drink>()
+            {
+               new Drink{ idDrink = userDrinks}
+            };
+
+
+            var drinkById = await GetDrinksById(test);
+
+            RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
+
+            for (int i = 0; i < 1; i++)
+            {
+                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
+            }
+
+                return recent;
+        }
     }
 }
