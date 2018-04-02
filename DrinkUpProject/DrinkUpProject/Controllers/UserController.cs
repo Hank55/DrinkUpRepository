@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrinkUpProject.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
@@ -20,7 +21,6 @@ namespace DrinkUpProject.Controllers
         {
 
             var randomDrink = repository.GetRandomFactAboutDrink();
-
 
             return View(randomDrink);
         }
