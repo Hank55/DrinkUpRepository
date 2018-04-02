@@ -1,15 +1,17 @@
-﻿@model DrinkUpProject.Models.ViewModels.RecentlySavedVM[]
-
+﻿@model DrinkUpProject.Models.ViewModels.UserHomeVM
 <div id="searchBox">
-    @foreach (var item in Model)
+    @if (Model.RecentlySaved != null)
     {
-        <div class="searchItems">
+        @foreach (var item in Model.RecentlySaved)
+        {
+            <div class="searchItems">
 
-            <div id="searchImg">
-                <h3>@item.DrinkName</h3>
-                <img src="@item.ImgUrl" />
+                <div id="searchImg">
+                    <h3>@item.DrinkName</h3>
+                    <img src="@item.ImgUrl" />
+                </div>
+
             </div>
-
-        </div>
+        }
     }
 </div>

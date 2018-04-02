@@ -1,6 +1,10 @@
 .bg-primary {
     background-color: #E0EF96 !important;
-    max-height:105px;
+    max-height: 105px;
+    position: fixed !important;
+    top: 0px;
+    left: 0;
+    right: 0;
 }
 .btn-outline-primary {
     color: black !important;
