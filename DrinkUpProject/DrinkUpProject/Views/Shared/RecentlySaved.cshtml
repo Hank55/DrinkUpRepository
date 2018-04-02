@@ -1,0 +1,15 @@
+﻿@model DrinkUpProject.Models.ViewModels.RecentlySavedVM[]
+
+<div id="searchBox">
+    @foreach (var item in Model)
+    {
+        <div class="searchItems">
+
+            <div id="searchImg">
+                <h3>@item.DrinkName</h3>
+                <img src="@item.ImgUrl" />
+            </div>
+
+        </div>
+    }
+</div>

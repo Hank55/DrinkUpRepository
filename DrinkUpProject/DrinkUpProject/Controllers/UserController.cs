@@ -22,7 +22,6 @@ namespace DrinkUpProject.Controllers
 
             var randomDrink = repository.GetRandomFactAboutDrink();
 
-
             return View(randomDrink);
         }
 
