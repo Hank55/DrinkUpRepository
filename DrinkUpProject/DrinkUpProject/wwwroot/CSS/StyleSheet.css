@@ -109,3 +109,32 @@ div.col-md-12 {
 
 #RecentlySavedDrinks {
   display: flex; }
+
+.recentlySavedPosts {
+  display: flex;
+  flex-flow: row;
+  width: 300px;
+  border: 1px solid;
+  border-color: cornflowerblue;
+  border-radius: 9px;
+  padding: 3px; }
+  .recentlySavedPosts div {
+    border: 1px solid;
+    border-radius: 5px; }
+    .recentlySavedPosts div h3 {
+      font-family: Verdana; }
+    .recentlySavedPosts div img {
+      width: 100px;
+      height: 100px; }
+
+#recentlySavedBox {
+  padding: 6px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  height: auto;
+  width: 918px;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 8px;
+  margin-top: 5%; }
