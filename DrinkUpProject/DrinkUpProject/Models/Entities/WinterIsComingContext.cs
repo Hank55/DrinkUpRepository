@@ -6,6 +6,7 @@ namespace DrinkUpProject.Models.Entities
 {
     public partial class WinterIsComingContext : DbContext
     {
+
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserDrinkList> UserDrinkList { get; set; }
 
@@ -13,8 +14,6 @@ namespace DrinkUpProject.Models.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Data Source=springiscoming.database.windows.net;Initial Catalog=WinterIsComing;Integrated Security=False;User ID=Hank;Password=Viliggerbratill!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
 
