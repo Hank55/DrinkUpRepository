@@ -34,9 +34,9 @@
     font-family: Arial;
     font-size: 14px; }
 
-.RenderBody {
-  margin: 15px; }
-
+/*.RenderBody {
+    margin: 15px;
+}*/
 .all {
   display: flex;
   flex-flow: row;
@@ -52,7 +52,7 @@
 .SearchForm {
   flex-grow: 2;
   width: 100%;
-  margin-bottom: 10% !important; }
+  margin-bottom: 5% !important; }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
@@ -78,12 +78,12 @@
 .form {
   font-size: 20px; }
 
-input[type=text] {
+input[type=text], input[type='password'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 3px solid #ccc;
+  border: 3px solid #E0EF96;
   transition: 0.5s;
   outline: none;
   width: 200px; }

@@ -5,7 +5,7 @@
 
 ﻿#DrinkFact {
     position: relative;
-    display:flex;
+    display: flex;
     flex-flow: row wrap;
     width: 400px;
     height: 200px;
@@ -13,17 +13,15 @@
 }
 
 #searchBox {
-    padding:6px;
+    padding: 6px;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
-   
     height: auto;
     width: 918px;
     border: 1px solid;
-    border-color:black;
-    border-radius:8px;
-
+    border-color: black;
+    border-radius: 8px;
     margin-top: 5%;
 }
 
@@ -35,27 +33,28 @@
     border-color: cornflowerblue;
     border-radius: 9px;
     padding: 3px;
-    h3{
-        font-family:Verdana;
-        font-size:17px;
+
+    h3 {
+        font-family: Verdana;
+        font-size: 17px;
     }
-    h4{
-        font-family:Arial;
-        font-size:14px;
+
+    h4 {
+        font-family: Arial;
+        font-size: 14px;
     }
 }
 
-.RenderBody {
+/*.RenderBody {
     margin: 15px;
-}
+}*/
 
 .all {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    align-items: flex-start;
-    height:auto !important;
-    
+    align-items: flex-end;
+    height: auto !important;
 }
 
 .LogIn {
@@ -63,6 +62,7 @@
     width: 100%;
     margin-top: 10% !important;
 }
+
 
 .SearchForm {
     flex-grow: 2;
@@ -85,6 +85,8 @@
         width: 150px;
     }
 }
+
+
 .Button {
     background-color: grey;
     border: none;
@@ -98,21 +100,24 @@
     cursor: pointer;
 }
 
+
 .form {
     font-size: 20px;
 }
 
-
-input[type=text] {
+//Input-boxes, text and password starts here
+input[type=text], input[type='password'] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 3px solid #ccc;
+    border: 3px solid #E0EF96;
     transition: 0.5s;
     outline: none;
     width: 200px;
 }
+
+
 
 input[type=text]:focus {
     border: 3px solid #555;
@@ -121,13 +126,7 @@ input[type=text]:focus {
 .validationColor {
     color: red;
 }
-
-
-
-
-
 //FOOTER STARTS HERE
-
 div.col-md-12 {
     display: flex;
     flex-direction: row;
@@ -137,12 +136,10 @@ div.col-md-12 {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
     padding: 25px;
     position: fixed;
-   bottom: 0;
+    bottom: 0;
     left: 0;
     right: 0;
 }
-
-
 //FOOTER ENDS HERE
 
 
