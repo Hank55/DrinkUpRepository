@@ -45,7 +45,7 @@ namespace DrinkUpProject.Controllers
 
             // Redirect user
             if (string.IsNullOrWhiteSpace(viewModel.ReturnUrl))
-                return RedirectToAction(nameof(UserHomeController.Home));
+                return RedirectToAction(nameof(UserController.Home));
             else
                 return Redirect(viewModel.ReturnUrl);
         }
@@ -70,7 +70,8 @@ namespace DrinkUpProject.Controllers
 
             await repository.AddUserAsync(model);
 
-            return RedirectToAction(nameof(UserHomeController.Home),"UserHome");
+            return RedirectToAction(nameof(UserController.Home), "User");
+             
 
 
         }
