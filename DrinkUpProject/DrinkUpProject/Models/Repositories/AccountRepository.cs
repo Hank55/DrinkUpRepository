@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.Repositories
@@ -54,5 +55,35 @@ namespace DrinkUpProject.Models.Repositories
 
             winterIsComingContext.SaveChanges();
         }
+
+
+
+        //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+        //{
+        //    var currentUser = await userManager.GetUserId(HttpContent.User);
+
+        //    var userDrinks = currentUser
+        //        .UserListDrinkId
+        //        .First();
+
+        //    List<Drink> test = new List<Drink>()
+        //    {
+        //       new Drink{ idDrink = userDrinks}
+        //    };
+
+
+        //    var user = Ge.User;
+
+        //    var drinkById = await GetDrinksById(user);
+
+        //    RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
+
+        //    for (int i = 0; i < 1; i++)
+        //    {
+        //        recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
+        //    }
+
+        //    return recent;
+        //}
     }
 }

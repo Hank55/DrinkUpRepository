@@ -41,7 +41,7 @@
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
   height: auto !important; }
 
 .LogIn {
@@ -113,7 +113,7 @@ div.col-md-12 {
 .recentlySavedPosts {
   display: flex;
   flex-flow: row;
-  width: 300px;
+  width: 110px;
   border: 1px solid;
   border-color: cornflowerblue;
   border-radius: 9px;
@@ -121,11 +121,13 @@ div.col-md-12 {
   .recentlySavedPosts div {
     border: 1px solid;
     border-radius: 5px; }
-    .recentlySavedPosts div h3 {
-      font-family: Verdana; }
+    .recentlySavedPosts div span {
+      font-family: Verdana;
+      font-size: medium; }
     .recentlySavedPosts div img {
       width: 100px;
-      height: 100px; }
+      height: 100px;
+      padding: 2px; }
 
 #recentlySavedBox {
   padding: 6px;
@@ -133,7 +135,7 @@ div.col-md-12 {
   flex-flow: row wrap;
   align-content: space-around;
   height: auto;
-  width: 918px;
+  width: 320px;
   border: 1px solid;
   border-color: black;
   border-radius: 8px;
