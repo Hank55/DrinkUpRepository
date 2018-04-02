@@ -21,16 +21,15 @@ namespace DrinkUpProject.Controllers
         }
 
         [HttpGet]
-        [Route("login")]
-        public IActionResult Login(string returnUrl)
+        [Route("LogIn")]
+        public IActionResult LogIn()
         {
-            var model = new AccountLoginVM { ReturnUrl = returnUrl };
-            return View(model);
+            return View();
         }
 
         [HttpPost]
-        [Route("logIn")]
-        public async Task<IActionResult> Login(AccountLoginVM viewModel)
+        [Route("LogIn")]
+        public async Task<IActionResult> LogIn(AccountLoginVM viewModel)
         {
             if (!ModelState.IsValid)
                 return View(viewModel);
@@ -42,12 +41,8 @@ namespace DrinkUpProject.Controllers
                 ModelState.AddModelError(nameof(AccountLoginVM.Username), "Invalid credentials");
                 return View(viewModel);
             }
-
-            // Redirect user
-            if (string.IsNullOrWhiteSpace(viewModel.ReturnUrl))
-                return RedirectToAction(nameof(UserController.Home));
             else
-                return Redirect(viewModel.ReturnUrl);
+                return RedirectToAction(nameof(UserController.Home), "User");
         }
 
         [Route("CreateUser")]
@@ -69,6 +64,8 @@ namespace DrinkUpProject.Controllers
             }
 
             await repository.AddUserAsync(model);
+
+            await repository.TryLoginAsync(new AccountLoginVM {Username = model.UserName, Password = model.Password });
 
             return RedirectToAction(nameof(UserController.Home), "User");
              
