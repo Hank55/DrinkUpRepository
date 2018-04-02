@@ -95,8 +95,8 @@ namespace DrinkUpProject.Models.Repositories
             for (int i = 0; i < drinkList.Count; i++)
             {
                 var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
-                var testListDrink = await GetDrinks(findDrinkByIdURL);
-                tempArray.Add(new Drink { strDrink = testListDrink[0].strDrink, strDrinkThumb = testListDrink[0].strDrinkThumb, strInstructions = testListDrink[0].strInstructions });
+                var tempListDrink = await GetDrinks(findDrinkByIdURL);
+                tempArray.Add(new Drink { strDrink = tempListDrink[0].strDrink, strDrinkThumb = tempListDrink[0].strDrinkThumb, strInstructions = tempListDrink[0].strInstructions });
             }
 
             return tempArray;
@@ -201,7 +201,7 @@ namespace DrinkUpProject.Models.Repositories
 
             Random rnd = new Random();
 
-            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact };
+            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact};
         }
 
     }
