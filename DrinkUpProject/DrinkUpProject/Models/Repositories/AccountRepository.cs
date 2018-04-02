@@ -55,10 +55,28 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
-        public void addDrinkToList()
+        public void addDrinkToList(Models.Entities.User user, string drinkId)
         {
-            string drinkId = "16158";
-            //winterIsComingContext.UserDrinkList.Add()
+            winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
+            winterIsComingContext.SaveChanges();
+        }
+
+        public void removeDrinkFromList(Models.Entities.User user, string drinkId)
+        {
+            var d = winterIsComingContext.UserDrinkList
+                .Where(o => o.KiwiUserId == user.Id && o.Apiid == drinkId)
+                .First();
+            winterIsComingContext.UserDrinkList.Remove(d);
+            winterIsComingContext.SaveChanges();
+        }
+
+        public void removeDrinkFromList(int userId, string drinkId)
+        {
+            UserDrinkList d = winterIsComingContext.UserDrinkList
+                .Where(o => o.KiwiUserId == userId && o.Apiid == drinkId)
+                .First();
+            winterIsComingContext.UserDrinkList.Remove(d);
+            winterIsComingContext.SaveChanges();
         }
     }
 }
