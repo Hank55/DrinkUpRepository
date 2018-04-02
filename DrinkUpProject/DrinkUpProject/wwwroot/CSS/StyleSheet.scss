@@ -1,6 +1,8 @@
 ﻿body {
 }
 
+
+
 ﻿#DrinkFact {
     position: relative;
     display:flex;
@@ -21,6 +23,8 @@
     border: 1px solid;
     border-color:black;
     border-radius:8px;
+
+    margin-top: 5%;
 }
 
 .searchItems {
@@ -51,20 +55,35 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: flex-end;
+    height:auto !important;
     
 }
 
 .LogIn {
     flex-grow: 2;
-    max-width: 700px;
+    width: 100%;
+    margin-top: 10% !important;
+}
+
+.SearchForm {
+    flex-grow: 2;
+    width: 100%;
+    margin-bottom: 10% !important;
 }
 
 
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: block;
+    margin-bottom: 5% !important;
+    width: 400px;
+}
+
 #searchImg {
-    
-        img {
-            height: 150px;
-            width: 150px;
+
+    img {
+        height: 150px;
+        width: 150px;
     }
 }
 .Button {
@@ -84,6 +103,7 @@
     font-size: 20px;
 }
 
+
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
@@ -92,7 +112,7 @@ input[type=text] {
     border: 3px solid #ccc;
     transition: 0.5s;
     outline: none;
-    width:200px;
+    width: 200px;
 }
 
 input[type=text]:focus {
@@ -109,26 +129,26 @@ input[type=text]:focus {
 
 //FOOTER STARTS HERE
 
-.FooterDiv {
+div.col-md-12 {
     display: flex;
-    justify-content: space-between;
-
-    #FooterCopyRightInfo {
-        padding: 25px 25px 25px 25px;
-    }
-
-    #FooterAboutUsLink {
-        padding: 25px 25px 25px 25px;
-    }
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #E0EF96;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    padding: 25px;
+    position: fixed;
+   bottom: 0;
+    left: 0;
+    right: 0;
 }
+
 
 //FOOTER ENDS HERE
 
+
 //Home
-
-#RecentlySavedDrinks{
-
+#RecentlySavedDrinks {
     display: flex;
-
 }
 

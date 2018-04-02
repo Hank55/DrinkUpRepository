@@ -14,6 +14,7 @@ namespace DrinkUpProject.Models.ViewModels
         public string UserName { get; set; }
 
         [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
