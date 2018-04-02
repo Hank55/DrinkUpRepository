@@ -4,8 +4,8 @@
 
 <div class="all">
 
-    <div id="SavedDrinks">
-        @Model.DrinkFact
+    <div id="RecentlySavedDrinks">
+        @await Html.PartialAsync("~/Views/Shared/RecentlySaved.cshtml", Model.RecentlySaved)
 
     </div>
 

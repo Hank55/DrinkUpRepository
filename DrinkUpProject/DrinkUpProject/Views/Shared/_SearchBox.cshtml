@@ -1,7 +1,7 @@
 ﻿@model DrinkUpProject.Models.ViewModels.SearchVM
 <!--Search container-->
 <div class="SearchForm">
-    <form asp-controller="home" asp-action="index">
+    <form asp-controller="Guest" asp-action="index">
         <input class="form" asp-for="@Model.SearchItem" />
         <input class="btn btn-outline-primary" type="submit" name="SubmitButton" value="Search" />
         <br />
@@ -11,7 +11,6 @@
         <br />
 
     </form>
-
 
     <form asp-controller="home" asp-action="RandomDrink">
         <input class="btn btn-outline-primary" type="submit" name="RandomButton" value="Random" />

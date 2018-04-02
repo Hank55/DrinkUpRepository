@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class HomeResultVM
+    public class GuestResultVM
     {
-        public HomeIndexLogInVM LoggedInAs { get; set; }
+        public GuestIndexLogInVM LoggedInAs { get; set; }
         public string DrinkName { get; set; }
         public string DrinkImg { get; set; }
         public string DrinkInfoShort { get; set; }

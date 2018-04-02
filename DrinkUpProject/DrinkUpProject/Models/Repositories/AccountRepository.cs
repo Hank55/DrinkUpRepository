@@ -1,7 +1,7 @@
-﻿using DrinkUpProject.Models.ViewModels;
+﻿using DrinkUpProject.Models.Entities;
+using DrinkUpProject.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +10,8 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class AccountRepository
     {
+
+        WinterIsComingContext winterIsComingContext;
         IdentityDbContext identityContext;
         UserManager<IdentityUser> userManager;
         SignInManager<IdentityUser> signInManager;
@@ -17,12 +19,15 @@ namespace DrinkUpProject.Models.Repositories
         public AccountRepository(
             IdentityDbContext identityContext,
             UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager
+            SignInManager<IdentityUser> signInManager,
+            WinterIsComingContext winterIsComingContext
+
             )
         {
             this.identityContext = identityContext;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.winterIsComingContext = winterIsComingContext;
         }
 
         public async Task<bool> TryLoginAsync(AccountLoginVM viewModel)
@@ -37,9 +42,17 @@ namespace DrinkUpProject.Models.Repositories
             return loginResult.Succeeded;
         }
 
-        internal async Task AddUserAsync(HomeCreateUserVM model)
+
+        internal async Task AddUserAsync(GuestCreateUserVM model)
         {
             var result = await userManager.CreateAsync(new IdentityUser(model.UserName), model.Password);
+
+            var userId = identityContext.Users.Single(u => u.UserName == model.UserName).Id;
+
+
+            winterIsComingContext.User.Add(new Models.Entities.User { FirstName = model.FirstName, LastName = model.LastName, FavDrink = model.FavouriteDrink, IdentityUsersId = userId });
+
+            winterIsComingContext.SaveChanges();
         }
     }
 }

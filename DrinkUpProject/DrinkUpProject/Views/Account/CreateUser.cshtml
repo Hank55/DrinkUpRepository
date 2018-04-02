@@ -1,9 +1,9 @@
-﻿@model DrinkUpProject.Models.ViewModels.HomeCreateUserVM
+﻿@model DrinkUpProject.Models.ViewModels.GuestCreateUserVM
 
 <div class="container">
     <h1>Create User</h1>
     <div class="form-control">
-        <form asp-controller="Home" asp-action="CreateUser">
+        <form asp-controller="Guest" asp-action="CreateUser">
             <div class="form-row">
                 <div class="col-md-4 mb-3 ">
                     <label asp-for="FirstName"></label>
@@ -53,7 +53,7 @@
                 </div>
         </form>
         <div class="col-md-4 mb-3">
-            <form asp-controller="home" asp-action="index" method="get">
+            <form asp-controller="Guest" asp-action="index" method="get">
                 <button class="btn btn-outline-danger" type="submit">Cancel</button>
             </form>
         </div>

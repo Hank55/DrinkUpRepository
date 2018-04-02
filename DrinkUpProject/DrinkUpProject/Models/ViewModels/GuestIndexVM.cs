@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class MembersIndexVM
+    public class GuestIndexVM
     {
-        public string Username { get; set; }
+        public SearchVM SearchForm { get; set; }
+        public GuestIndexLogInVM LogInForm{ get; set;}
+
     }
 }

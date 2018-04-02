@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class HomeCreateUserVM
+    public class GuestCreateUserVM
     {
-        
-
 
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "Please enter your first name.")]
