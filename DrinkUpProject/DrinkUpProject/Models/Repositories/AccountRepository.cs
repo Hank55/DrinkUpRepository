@@ -30,7 +30,7 @@ namespace DrinkUpProject.Models.Repositories
             this.winterIsComingContext = winterIsComingContext;
         }
 
-        public async Task<bool> TryLoginAsync(AccountLoginVM viewModel)
+        public async Task<bool> TryLoginAsync(GuestIndexLogInVM viewModel)
         {
             // Create DB schema (first time)
             //var createSchemaResult = await identityContext.Database.EnsureCreatedAsync();
@@ -38,7 +38,7 @@ namespace DrinkUpProject.Models.Repositories
             // Create a hard coded user (first time)
             //var createResult = await userManager.CreateAsync(new IdentityUser("user"), "Password_123"));
 
-            var loginResult = await signInManager.PasswordSignInAsync(viewModel.Username, viewModel.Password, false, false);
+            var loginResult = await signInManager.PasswordSignInAsync(viewModel.UserName, viewModel.Password, false, false);
             return loginResult.Succeeded;
         }
 

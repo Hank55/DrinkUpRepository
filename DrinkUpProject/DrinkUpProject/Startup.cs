@@ -19,6 +19,7 @@ namespace DrinkUpProject
     public class Startup
     {
         private readonly IConfiguration configuration;
+        internal static string connString;
 
         public Startup(IConfiguration configuration)
         {
