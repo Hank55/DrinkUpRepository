@@ -31,9 +31,18 @@
     font-family: Arial;
     font-size: 14px; }
 
+.RenderBody {
+  margin: 15px; }
+
 .all {
   display: flex;
-  flex-flow: row; }
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: flex-end; }
+
+.LogIn {
+  flex-grow: 2;
+  max-width: 700px; }
 
 #searchImg img {
   height: 150px;
