@@ -60,7 +60,7 @@ namespace DrinkUpProject.Controllers
 
         [Route("CreateUser")]
         [HttpPost]
-        public async Task<IActionResult> CreateUser(HomeCreateUserVM model)
+        public async Task<IActionResult> CreateUser(GuestCreateUserVM model)
         {
 
             if (!ModelState.IsValid)

@@ -37,7 +37,7 @@ namespace DrinkUpProject.Models.Repositories
         }
 
 
-        internal async Task AddUserAsync(HomeCreateUserVM model)
+        internal async Task AddUserAsync(GuestCreateUserVM model)
         {
             var result = await userManager.CreateAsync(new IdentityUser(model.UserName), model.Password);
         }

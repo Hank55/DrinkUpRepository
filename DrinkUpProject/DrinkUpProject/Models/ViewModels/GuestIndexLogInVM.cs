@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    [Bind(Prefix = nameof(HomeIndexVM.LogInForm))]
-    public class HomeIndexLogInVM
+    [Bind(Prefix = nameof(GuestIndexVM.LogInForm))]
+    public class GuestIndexLogInVM
     {
         [Display(Name ="Username")]
         public string UserName { get; set; }

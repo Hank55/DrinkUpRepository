@@ -10,7 +10,7 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class SearchRepository
     {
-        public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
+        public static List<GuestResultVM[]> searchResultListings = new List<GuestResultVM[]>();
         // ... Use HttpClient.
         //static HttpClient client = new HttpClient(); Avkommentera när testrepository töms
 
@@ -33,7 +33,7 @@ namespace DrinkUpProject.Models.Repositories
             return d.drinks;
         }
 
-        internal async Task<HomeResultVM[]> SearchResult(string searchURL)
+        internal async Task<GuestResultVM[]> SearchResult(string searchURL)
         {
             List<Drink> drinkList = await GetDrinks(searchURL);
 
@@ -41,11 +41,11 @@ namespace DrinkUpProject.Models.Repositories
             if (drinkList[0].strDrink != "NoSearchResult" && searchURL.Contains("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="))
                 drinkList = await GetDrinksById(drinkList);
 
-            HomeResultVM[] listResults = new HomeResultVM[drinkList.Count];
+            GuestResultVM[] listResults = new GuestResultVM[drinkList.Count];
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new HomeResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions) };
+                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions) };
             }
 
             SaveToSearchResultList(listResults);
@@ -90,18 +90,18 @@ namespace DrinkUpProject.Models.Repositories
             return shortInfo += "...";
         }
 
-        private void SaveToSearchResultList(HomeResultVM[] listResults)
+        private void SaveToSearchResultList(GuestResultVM[] listResults)
         {
             searchResultListings.Add(listResults);
         }
 
-        public HomeResultVM[] GetLastSearchResult()
+        public GuestResultVM[] GetLastSearchResult()
         {
             var drinks = searchResultListings.LastOrDefault();
             return drinks;
         }
 
-        internal async Task<HomeResultVM[]> SearchResultIngredient(string ingredient)
+        internal async Task<GuestResultVM[]> SearchResultIngredient(string ingredient)
         {
 
 
@@ -113,7 +113,7 @@ namespace DrinkUpProject.Models.Repositories
 
         }
 
-        internal async Task<HomeResultVM[]> SearchResultDrinkName(string drinkName)
+        internal async Task<GuestResultVM[]> SearchResultDrinkName(string drinkName)
         {
             string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}";
 
