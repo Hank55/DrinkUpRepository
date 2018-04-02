@@ -14,6 +14,7 @@ namespace DrinkUpProject.Models.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
+                optionsBuilder.UseSqlServer(Startup.connString);
             }
         }
 

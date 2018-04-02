@@ -17,10 +17,10 @@ namespace DrinkUpProject.Controllers
         TestRepository repository = new TestRepository();
 
         [Route("Home")]
-        public IActionResult Home()
+        public async Task<IActionResult> Home()
         {
 
-            var randomDrink = repository.GetRandomFactAboutDrink();
+            var randomDrink = await repository.GetRandomFactAboutDrink();
 
             return View(randomDrink);
         }
@@ -29,6 +29,12 @@ namespace DrinkUpProject.Controllers
         public IActionResult MyPage()
         {
             return View();
+        }
+
+        [Route("Recipe")]
+        public async Task<IActionResult> Recipe()
+        {
+            return View(await repository.GetRecipe());
         }
     }
 }

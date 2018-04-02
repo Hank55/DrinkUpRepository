@@ -15,12 +15,17 @@ namespace DrinkUpProject.Controllers
     public class GuestController : Controller
     {
         TestRepository repository = new TestRepository();
+        AccountRepository accountRepository;
+
+        public GuestController(AccountRepository accountRepository)
+        {
+            this.accountRepository = accountRepository;
+        }
 
         [Route("")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            
             return View(new GuestIndexVM());
         }
 
@@ -40,9 +45,6 @@ namespace DrinkUpProject.Controllers
             }
             else
                 drinks = await repository.SearchResultIngredient(homeIndexVM.SearchItem);
-            
-            
-
 
             return RedirectToAction(nameof(SearchResult));
         }
@@ -52,7 +54,6 @@ namespace DrinkUpProject.Controllers
         {
             return View(await repository.GetRandomDrink());
         }
-
 
         [Route("SearchResult")]
         public async Task<IActionResult> SearchResult()
@@ -71,6 +72,7 @@ namespace DrinkUpProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Test()
         {
+            accountRepository.removeDrinkFromList(9, "16158");
             return View();
         }
     }

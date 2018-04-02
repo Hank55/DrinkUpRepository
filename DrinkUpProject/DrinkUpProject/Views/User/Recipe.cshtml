@@ -1,0 +1,78 @@
+﻿@model DrinkUpProject.Models.ViewModels.UserRecipeVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe</title>
+
+
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h3>@Model.DrinkName</h3>
+    <div id="searchImg">
+        <img src="@Model.DrinkImg" />
+    </div>
+    <br />
+    <div id="drinkQuickFacts">
+        <br />
+        Drink Category: @Model.Category
+        <br />
+        IBA Category: @Model.IBA
+        <br />
+        Drink Type: @Model.Alcoholic
+        <br />
+        Glass Type: @Model.Glass
+    </div>
+    <br />
+    <div id="drinkIngredientsAndMeasures">
+        <table>
+            <tr>
+                <td>@Model.Measure1 @Model.Ingredient1</td>
+                <td>@Model.Measure6 @Model.Ingredient6</td>
+                <td>@Model.Measure11 @Model.Ingredient11</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Measure2 @Model.Ingredient2</td>
+                <td>@Model.Measure7 @Model.Ingredient7</td>
+                <td>@Model.Measure12 @Model.Ingredient12</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Measure3 @Model.Ingredient3</td>
+                <td>@Model.Measure8 @Model.Ingredient8</td>
+                <td>@Model.Measure13 @Model.Ingredient13</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Measure4 @Model.Ingredient4</td>
+                <td>@Model.Measure9 @Model.Ingredient9</td>
+                <td>@Model.Measure14 @Model.Ingredient14</td>
+            </tr>
+
+            <tr>
+                <td>@Model.Measure5 @Model.Ingredient5</td>
+                <td>@Model.Measure10 @Model.Ingredient10</td>
+                <td>@Model.Measure15 @Model.Ingredient15</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <div id="drinkInstructions">
+        @Model.Instructions
+    </div>
+    <br />
+
+
+
+
+    <div class="SearchForm">
+        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+    </div>
+
+</body>
+</html>
