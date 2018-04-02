@@ -43,6 +43,8 @@ namespace DrinkUpProject
                 .AddDefaultTokenProviders();
 
             services.AddTransient<AccountRepository>();
+            services.AddTransient<FactRepository>();
+            services.AddTransient<SearchRepository>();
             services.AddTransient<TestRepository>();
 
             services.AddMvc();

@@ -1,15 +1,14 @@
 ﻿using DrinkUpProject.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.Repositories
 {
     public class AccountRepository
     {
+
         IdentityDbContext identityContext;
         UserManager<IdentityUser> userManager;
         SignInManager<IdentityUser> signInManager;
@@ -37,9 +36,12 @@ namespace DrinkUpProject.Models.Repositories
             return loginResult.Succeeded;
         }
 
+
         internal async Task AddUserAsync(HomeCreateUserVM model)
         {
             var result = await userManager.CreateAsync(new IdentityUser(model.UserName), model.Password);
         }
+
+
     }
 }

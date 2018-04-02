@@ -10,11 +10,11 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class TestRepository
     {
-        public static List<User> users;
+        public static List<User> users; //LÅT LIGGA KVAR ÅT SIMON FÖR NÄRVARANDE.
 
         public static List<HomeResultVM[]> searchResultListings = new List<HomeResultVM[]>();
         // ... Use HttpClient.
-        static HttpClient client = new HttpClient();
+        public static HttpClient client = new HttpClient();
 
         public TestRepository()
         {
