@@ -54,5 +54,11 @@ namespace DrinkUpProject.Models.Repositories
 
             winterIsComingContext.SaveChanges();
         }
+
+        public void addDrinkToList()
+        {
+            string drinkId = "16158";
+            //winterIsComingContext.UserDrinkList.Add()
+        }
     }
 }
