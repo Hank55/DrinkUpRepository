@@ -29,7 +29,13 @@ namespace DrinkUpProject.Models.Repositories
                     FavouriteDrink="Vatten och saft",
                     UserListDrinkId = new List<string>
                     {
-                        "13427"
+                        "13427",
+                        "13060",
+                        "16158",
+                        "12162",
+                        "13839",
+                        "12528",
+                        "11102"
                     }
                 },
 
