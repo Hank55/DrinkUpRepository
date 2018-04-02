@@ -125,5 +125,11 @@ namespace DrinkUpProject.Models.Repositories
             List<Drink> drinkList = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             return drinkList.First();
         }
+
+        public async Task<Drink> GetRecipe ()
+        {
+            List<Drink> drinkList = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+            return drinkList.Single();
+        }
     }
 }

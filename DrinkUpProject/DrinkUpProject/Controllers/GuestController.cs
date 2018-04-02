@@ -53,7 +53,6 @@ namespace DrinkUpProject.Controllers
             return View(await repository.GetRandomDrink());
         }
 
-
         [Route("SearchResult")]
         public async Task<IActionResult> SearchResult()
         {
