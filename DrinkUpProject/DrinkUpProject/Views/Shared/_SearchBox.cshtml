@@ -1,19 +1,20 @@
 ﻿@model DrinkUpProject.Models.ViewModels.SearchVM
 <!--Search container-->
+<div class="SearchForm">
+    <form asp-controller="home" asp-action="index">
+        <input class="form" asp-for="@Model.SearchItem" />
+        <input class="btn btn-outline-primary" type="submit" name="SubmitButton" value="Search" />
+        <br />
+        <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
+        <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
 
-<form asp-controller="home" asp-action="index">
-    <input class="form" asp-for="@Model.SearchItem" />
-    <input class="btn btn-outline-primary" type="submit" name="SubmitButton" value="Search" />
-    <br />
-    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Drink" checked> Drink
-    <input asp-for="@Model.ParamUrl" type="radio" name="SearchParameter" value="Ingredient">Ingredient<br>
+        <br />
 
-    <br />
-    
-</form>
-    
-<form asp-controller="home" asp-action="RandomDrink">
-    <input class="btn btn-outline-primary" type="submit" name="RandomButton" value="Random" />
-</form>
+    </form>
 
+
+    <form asp-controller="home" asp-action="RandomDrink">
+        <input class="btn btn-outline-primary" type="submit" name="RandomButton" value="Random" />
+    </form>
+</div>
 

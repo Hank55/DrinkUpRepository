@@ -1,6 +1,8 @@
 ﻿body {
 }
 
+
+
 ﻿#DrinkFact {
     position: relative;
     width: 400px;
@@ -49,20 +51,46 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: flex-end;
+    height:auto !important;
     
 }
 
 .LogIn {
     flex-grow: 2;
-    max-width: 700px;
+    width: 700px;
+    margin-bottom: 320px !important;
+   
+}
+
+.SearchForm {
+    flex-grow: 2;
+    width: 500px;
+  
 }
 
 
+element.style {
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: block;
+    margin-bottom: 250px !important;
+}
+
+
+
+.SearchForm {
+  
+    margin-bottom: 230px !important;
+}
+
+
+
 #searchImg {
-    
-        img {
-            height: 150px;
-            width: 150px;
+
+    img {
+        height: 150px;
+        width: 150px;
     }
 }
 .Button {
@@ -82,6 +110,7 @@
     font-size: 20px;
 }
 
+
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
@@ -90,7 +119,7 @@ input[type=text] {
     border: 3px solid #ccc;
     transition: 0.5s;
     outline: none;
-    width:200px;
+    width: 200px;
 }
 
 input[type=text]:focus {
@@ -107,17 +136,13 @@ input[type=text]:focus {
 
 //FOOTER STARTS HERE
 
-.FooterDiv {
+div.col-md-12 {
     display: flex;
-    justify-content: space-between;
-
-    #FooterCopyRightInfo {
-        padding: 25px 25px 25px 25px;
-    }
-
-    #FooterAboutUsLink {
-        padding: 25px 25px 25px 25px;
-    }
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #E0EF96;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 }
 
 //FOOTER ENDS HERE
