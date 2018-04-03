@@ -178,9 +178,6 @@ namespace DrinkUpProject.Models.Repositories
 
         private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         {
-            var firstUser = users.First();
-            //User.Identity
-
             string userDrinks = "13020";
 
             List<Drink> test = new List<Drink>()
