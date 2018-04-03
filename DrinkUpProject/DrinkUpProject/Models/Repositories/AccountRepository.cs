@@ -62,21 +62,23 @@ namespace DrinkUpProject.Models.Repositories
 
         public void addDrinkToList(string userName, string drinkId)
         {
+            User user = FindUserByUserName(userName);
+
+            winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
+            winterIsComingContext.SaveChanges();
+        }
+
+        public User FindUserByUserName(string userName)
+        {
             var identityUser = identityContext.Users
-                .Where(o => o.UserName==userName)
+                .Where(o => o.UserName == userName)
                 .Single();
             var user = winterIsComingContext
                 .User
                 .Where(o => o.IdentityUsersId == identityUser.Id)
                 .Single();
 
-            winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
-            winterIsComingContext.SaveChanges();
-        }
-
-        public User findUserByUserName()
-        {
-            return new User();
+            return user;
         }
 
         public void addDrinkToList(User user, string drinkId)

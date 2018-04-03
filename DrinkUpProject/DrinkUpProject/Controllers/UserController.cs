@@ -15,7 +15,12 @@ namespace DrinkUpProject.Controllers
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
-        
+        AccountRepository accountRepository;
+
+        public UserController(AccountRepository accountRepository)
+        {
+            this.accountRepository = accountRepository;
+        }
 
         [Route("Home")]
         public async Task<IActionResult> Home()
@@ -44,7 +49,7 @@ namespace DrinkUpProject.Controllers
         [Route("Recipe")]
         public async Task<IActionResult> Recipe(UserRecipeVM recipe)
         {
-
+            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
             return View();
         }
     }
