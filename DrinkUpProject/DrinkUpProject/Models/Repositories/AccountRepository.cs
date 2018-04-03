@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DrinkUpProject.Models.Repositories
 {
@@ -99,12 +100,17 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
+        public void logOut()
+        {
+            signInManager.SignOutAsync();
+        }
+
 
 
 
         //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         //{
-        //    var currentUser = await userManager.GetUserId(HttpContent.User);
+        //    var currentUser = await userManager.GetUserId();
 
         //    var userDrinks = currentUser
         //        .UserListDrinkId

@@ -4,12 +4,12 @@
         <h1>Welcome & Log In</h1>
 
         <form asp-controller="Account" asp-action="LogIn" method="post">
-            <label asp-for="LogInForm.UserName"></label><br />
+            <label style="font-size:25px" asp-for="LogInForm.UserName"></label><br />
             <input asp-for="LogInForm.UserName" /><br />
-            <span asp-validation-for="LogInForm.UserName"></span>
-            <label asp-for="LogInForm.Password"></label><br />
+            <span style="color:red" asp-validation-for="LogInForm.UserName"></span><br />
+            <label style="font-size:25px" asp-for="LogInForm.Password"></label><br />
             <input asp-for="LogInForm.Password" /><br />
-            <span asp-validation-for="LogInForm.Password"></span>
+            <span style="color:red" asp-validation-for="LogInForm.Password"></span><br />
             <input type="submit" class="btn btn-outline-primary" value="Log in" /><br />
 
         </form>

@@ -2,8 +2,37 @@
 <div id="recentlySavedBox">
     @if (Model.RecentlySaved != null)
     {
+            <h5>Recenty Saved Recipes</h5>
+
         @foreach (var item in Model.RecentlySaved)
         {
+            <div class="recentlySavedPosts">
+
+                <div>
+                    <span>@item.DrinkName</span>
+                    <img src="@item.ImgUrl" />
+                </div>
+
+            </div>
+
+            //repeating for testing purpose
+
+            <div class="recentlySavedPosts">
+
+                <div>
+                    <span>@item.DrinkName</span>
+                    <img src="@item.ImgUrl" />
+                </div>
+
+            </div>
+            <div class="recentlySavedPosts">
+
+                <div>
+                    <span>@item.DrinkName</span>
+                    <img src="@item.ImgUrl" />
+                </div>
+
+            </div>
             <div class="recentlySavedPosts">
 
                 <div>
