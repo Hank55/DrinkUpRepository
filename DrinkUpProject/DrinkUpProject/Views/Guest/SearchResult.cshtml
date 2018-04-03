@@ -7,27 +7,28 @@
 <div id="searchBox">
     @foreach (var item in Model)
     {
-        <div class="searchItems">
-
+    <div class="searchItems">
+        <a asp-controller="User" asp-action="Recipe" asp-route-value="@item.DrinkId">
             <div id="searchImg">
                 <button type="submit"><img src="@item.DrinkImg" /></button>
             </div>
             <span>
+
                 <h3>@item.DrinkName</h3>
                 <br />
                 <h4>
-                    @item.DrinkInfoShort  </h4>
-                    <br />
-
-
-                    @*Not working link to recipe just for visual test*@
+                    @item.DrinkInfoShort
+                </h4>
+                <br />
+                @*Not working link to recipe just for visual test*@
                 <h5>
-                    <a asp-controller="User" asp-action="Recipe">Go to the recipe</a>
+                    Go to the recipe
+
                 </h5>
 
             </span>
-
-        </div>
+        </a>
+    </div>
     }
 </div>
 

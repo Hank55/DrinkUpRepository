@@ -39,8 +39,8 @@ namespace DrinkUpProject.Controllers
         }
 
         [HttpGet]
-        [Route("Recipe")]
-        public async Task<IActionResult> Recipe()
+        [Route("Recipe/{id}")]
+        public async Task<IActionResult> Recipe(string id)
         {
             return View(await repository.GetRecipe());
         }
