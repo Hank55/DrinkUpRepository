@@ -10,7 +10,6 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class TestRepository
     {
-        public static List<User> users; //LÅT LIGGA KVAR ÅT SIMON FÖR NÄRVARANDE.
 
         public static List<GuestResultVM[]> searchResultListings = new List<GuestResultVM[]>();
         // ... Use HttpClient.
@@ -18,40 +17,6 @@ namespace DrinkUpProject.Models.Repositories
 
         public TestRepository()
         {
-            users = new List<User>
-            {
-                new User
-                {
-                    FirstName= "Hanna",
-                    LastName = "Pawahi",
-                    Email = "hanna.pawahi@test.se",
-                    Password = "hannaebäst",
-                    FavouriteDrink="Vatten och saft",
-                    UserListDrinkId = new List<string>
-                    {
-                        "13427",
-                        "13060",
-                        "16158",
-                        "12162",
-                        "13839",
-                        "12528",
-                        "11102"
-                    }
-                },
-
-                new User
-                {
-                    FirstName= "Åsa",
-                    LastName = "Tysk",
-                    Email = "asa.tysk@test.se",
-                    Password = "åsaeoxåbra",
-                    FavouriteDrink="Tequila",
-                     UserListDrinkId = new List<string>
-                    {
-                        "13060"
-                    }
-                }
-            };
         }
 
         public async Task<List<Drink>> GetDrinks(string searchURL)
@@ -181,6 +146,7 @@ namespace DrinkUpProject.Models.Repositories
 
         public async Task<UserHomeVM> GetRandomFactAboutDrink()
         {
+
             var listOfFact = new List<DrinkFacts>()
             {
                 new DrinkFacts{Id = 1 , Fact = "The production of alcohol has been traced back at least 12,000 years."},
@@ -212,12 +178,7 @@ namespace DrinkUpProject.Models.Repositories
 
         private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         {
-            var firstUser = users.First();
-            //User.Identity
-
-            var userDrinks = firstUser
-                .UserListDrinkId
-                .First();
+            string userDrinks = "13020";
 
             List<Drink> test = new List<Drink>()
             {
@@ -234,7 +195,7 @@ namespace DrinkUpProject.Models.Repositories
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
 
-                return recent;
+            return recent;
         }
 
         public async Task<UserRecipeVM> GetRecipe(string drinkName)
@@ -246,45 +207,7 @@ namespace DrinkUpProject.Models.Repositories
             //List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}");
             Drink drink = d.First();
-            return new UserRecipeVM {
-                DrinkName = drink.strDrink,
-                DrinkImg = drink.strDrinkThumb,
-                Instructions = drink.strInstructions,
-                Ingredient1 = drink.strIngredient1,
-                Ingredient2 = drink.strIngredient2,
-                Ingredient3 = drink.strIngredient3,
-                Ingredient4 = drink.strIngredient4,
-                Ingredient5 = drink.strIngredient5,
-                Ingredient6 = drink.strIngredient6,
-                Ingredient7 = drink.strIngredient7,
-                Ingredient8 = drink.strIngredient8,
-                Ingredient9 = drink.strIngredient9,
-                Ingredient10 = drink.strIngredient10,
-                Ingredient11 = drink.strIngredient11,
-                Ingredient12 = drink.strIngredient12,
-                Ingredient13 = drink.strIngredient13,
-                Ingredient14 = drink.strIngredient14,
-                Ingredient15 = drink.strIngredient15,
-                Measure1 = drink.strMeasure1,
-                Measure2 = drink.strMeasure2,
-                Measure3 = drink.strMeasure3,
-                Measure4 = drink.strMeasure4,
-                Measure5 = drink.strMeasure5,
-                Measure6 = drink.strMeasure6,
-                Measure7 = drink.strMeasure7,
-                Measure8 = drink.strMeasure8,
-                Measure9 = drink.strMeasure9,
-                Measure10 = drink.strMeasure10,
-                Measure11 = drink.strMeasure11,
-                Measure12 = drink.strMeasure12,
-                Measure13 = drink.strMeasure13,
-                Measure14 = drink.strMeasure14,
-                Measure15 = drink.strMeasure15,
-                Category = drink.strCategory,
-                IBA = drink.strIBA,
-                Alcoholic = drink.strAlcoholic,
-                Glass = drink.strGlass
-                };
+            return new UserRecipeVM { RecipeDrink = drink };
         }
     }
 }

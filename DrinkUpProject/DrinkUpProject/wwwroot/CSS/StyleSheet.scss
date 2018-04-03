@@ -153,5 +153,45 @@ div.col-md-12 {
     display: flex;
 }
 
+.recentlySavedPosts {
+    display: flex;
+    flex-flow: row;
+    width: 110px;
+    height: 140px;
+    border: 1px solid;
+    border-color: cornflowerblue;
+    border-radius: 9px;
+    padding: 3px;
+
+    div {
+        border: 1px solid;
+        border-radius: 5px;
 
 
+        span {
+            font-family: Verdana;
+            font-size: medium;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            padding: 2px;
+        }
+    }
+}
+
+
+
+#recentlySavedBox {
+    padding: 6px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    width: 240px;
+    height: 325px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 8px;
+    margin-top: 5%;
+    }

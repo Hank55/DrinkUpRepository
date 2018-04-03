@@ -15,11 +15,18 @@ namespace DrinkUpProject.Controllers
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
+        AccountRepository accountRepository;
+
+        public UserController(AccountRepository accountRepository)
+        {
+            this.accountRepository = accountRepository;
+        }
 
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
-                    
+
+            var user = HttpContext.User;
             var randomDrink = await repository.GetRandomFactAboutDrink();
 
             return View(randomDrink);
@@ -31,6 +38,7 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
+        [HttpGet]
         //[Route("Recipe")]
         //[HttpGet]
         //public async Task<IActionResult> Recipe()
@@ -43,6 +51,14 @@ namespace DrinkUpProject.Controllers
         public async Task<IActionResult> Recipe(UserRecipeVM recipeDrink)
         {
             return View(await repository.GetRecipe(recipeDrink.DrinkName));
+        }
+
+        [HttpPost]
+        [Route("Recipe")]
+        public async Task<IActionResult> Recipe(UserRecipeVM recipe)
+        {
+            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
+            return View();
         }
     }
 }
