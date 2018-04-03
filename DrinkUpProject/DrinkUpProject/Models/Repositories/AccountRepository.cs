@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -112,7 +113,7 @@ namespace DrinkUpProject.Models.Repositories
 
 
 
-        public async Task<UserHomeVM> GetRandomFactAboutDrink()
+        public async Task<UserHomeVM> GetRandomFactAboutDrink(ClaimsPrincipal user)
         {
 
             var listOfFact = new List<DrinkFacts>()
@@ -141,20 +142,34 @@ namespace DrinkUpProject.Models.Repositories
 
             Random rnd = new Random();
 
-            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact, RecentlySaved = await MethodRecentlySavedAsync() };
+            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact, RecentlySaved = await MethodRecentlySavedAsync(user) };
         }
 
 
 
 
 
-        private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+        public async Task<RecentlySavedVM[]> MethodRecentlySavedAsync(ClaimsPrincipal user)
         {
-            string userDrinks = "13020";
 
+            string userIdString = userManager.GetUserId(user);
+
+            var currentUserId = winterIsComingContext.User
+                .Where(u => u.IdentityUsersId == userIdString)
+                .FirstOrDefault();
+
+            var recentlySavedDrinks = winterIsComingContext
+                .UserDrinkList
+                .Where(u => u.KiwiUserId == currentUserId.Id)
+                .ToArray();
+
+
+
+
+                string j = recentlySavedDrinks[0].Id.ToString();
             List<Drink> test = new List<Drink>()
             {
-               new Drink{ idDrink = userDrinks}
+               new Drink{ idDrink = j}
             };
 
 
@@ -166,6 +181,8 @@ namespace DrinkUpProject.Models.Repositories
             {
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
+
+
 
             return recent;
         }
