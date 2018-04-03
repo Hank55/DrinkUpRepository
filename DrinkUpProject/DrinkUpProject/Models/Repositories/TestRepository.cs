@@ -31,7 +31,7 @@ namespace DrinkUpProject.Models.Repositories
             if (d == null || d.drinks == null)
             {
                 d = new DrinkDirectory();
-                d.drinks = new List<Drink>{new Drink{strDrink = "NoSearchResult" } };
+                d.drinks = new List<Drink> { new Drink { strDrink = "NoSearchResult" } };
             }
 
             return d.drinks;
@@ -50,7 +50,7 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions), DrinkId=drinkList[i].idDrink};
+                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions), DrinkId = drinkList[i].idDrink };
             }
 
             SaveToSearchResultList(listResults);
@@ -144,40 +144,9 @@ namespace DrinkUpProject.Models.Repositories
             return drinkList.First();
         }
 
-        
-
-            Random rnd = new Random();
-
-            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact, RecentlySaved = await MethodRecentlySavedAsync()};
-        }
-
-        private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
-        {
-            string userDrinks = "13020";
-
-            List<Drink> test = new List<Drink>()
-            {
-               new Drink{ idDrink = userDrinks}
-            };
 
 
-            var drinkById = await GetDrinksById(test);
 
-            RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
-
-            for (int i = 0; i < 1; i++)
-            {
-                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
-            }
-
-            return recent;
-        }
-
-        public async Task<UserRecipeVM> GetRecipe()
-        {
-            List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
-            Drink drink = d.First();
-            return new UserRecipeVM { RecipeDrink = drink };
-        }
     }
 }
+

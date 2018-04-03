@@ -187,13 +187,16 @@ namespace DrinkUpProject.Models.Repositories
             return recent;
         }
 
-        public async Task<UserRecipeVM> GetRecipe()
+        public async Task<UserRecipeVM> GetRecipe(int id)
         {
             List<Drink> d = await testRepository.GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             Drink drink = d.First();
             return new UserRecipeVM { RecipeDrink = drink };
         }
-        //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+
+
+
+        ////private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         //{
         //    var currentUser = await userManager.GetUserId();
 
