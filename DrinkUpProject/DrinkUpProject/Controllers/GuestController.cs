@@ -72,7 +72,7 @@ namespace DrinkUpProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Test()
         {
-            accountRepository.removeDrinkFromList(9, "16158");
+            //accountRepository.removeDrinkFromList(9, "11102");
             return View();
         }
 
