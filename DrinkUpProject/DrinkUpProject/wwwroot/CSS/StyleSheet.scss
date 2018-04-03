@@ -154,9 +154,18 @@ div.col-md-12 {
 #RecentlySavedDrinks {
     display: flex;
 }
+.recentlySavedPosts{
+    div{
+        span{
 
+        }
+        img{
+            height:120px;
+            width:120px;
+        }
+    }
+}
 //Here begins the recipe-view
-
 .RecipeView {
     display: flex;
     flex-flow: row;
