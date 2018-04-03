@@ -76,9 +76,9 @@ namespace DrinkUpProject.Controllers
 
         [HttpPost]
         [Route("LogOut")]
-        public IActionResult LogOut()
+        public IActionResult Logout()
         {
-            repository.logOut();
+            repository.Logout();
 
             return RedirectToAction(nameof(GuestController.Index), "Guest");
         }

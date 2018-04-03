@@ -49,7 +49,9 @@
             <div class="col-sm-5">
                 <div class="well">
                     <div style="text-align:center">
-                        <a asp-controller="Guest" asp-action="LogOut">Sign out</a>
+                        <form asp-controller="account" asp-action="Logout">
+                            <input class="btn-outline-unique" type="submit" value="Sign out" />
+                        </form>
                     </div>
                 </div>
                 <div class="well">
