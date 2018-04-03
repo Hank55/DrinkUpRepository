@@ -38,7 +38,7 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
-        [HttpGet]
+        //[HttpGet]
         //[Route("Recipe")]
         //[HttpGet]
         //public async Task<IActionResult> Recipe()
@@ -47,18 +47,18 @@ namespace DrinkUpProject.Controllers
         //}
 
         [Route("Recipe")]
-        //[HttpPost]
-        public async Task<IActionResult> Recipe(UserRecipeVM recipeDrink)
+        [HttpGet]
+        public async Task<IActionResult> Recipe(string drinkId)
         {
-            return View(await repository.GetRecipe(recipeDrink.DrinkName));
+            return View(await repository.GetRecipe(drinkId));
         }
 
-        [HttpPost]
-        [Route("Recipe")]
-        public async Task<IActionResult> Recipe(UserRecipeVM recipe)
-        {
-            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
-            return View();
-        }
+        //[HttpPost]
+        //[Route("Recipe")]
+        //public async Task<IActionResult> Recipe(UserRecipeVM recipe)
+        //{
+        //    accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
+        //    return View();
+        //}
     }
 }
