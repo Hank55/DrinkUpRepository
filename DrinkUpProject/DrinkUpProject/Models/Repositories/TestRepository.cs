@@ -198,9 +198,14 @@ namespace DrinkUpProject.Models.Repositories
             return recent;
         }
 
-        public async Task<UserRecipeVM> GetRecipe()
+        public async Task<UserRecipeVM> GetRecipe(string drinkName)
         {
-            List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+            //string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}";
+
+            //return await SearchResult(searchURL);
+
+            //List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+            List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}");
             Drink drink = d.First();
             return new UserRecipeVM { RecipeDrink = drink };
         }
