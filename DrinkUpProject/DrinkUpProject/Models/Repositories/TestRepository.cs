@@ -50,7 +50,8 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions), DrinkId=drinkList[i].idDrink};
+                Drink drink = drinkList[i];
+                listResults[i] = new GuestResultVM { DrinkName = drink.strDrink, DrinkImg = drink.strDrinkThumb, DrinkInfoShort = ToShortInfo(drink.strInstructions), DrinkId=drink.idDrink};
             }
 
             SaveToSearchResultList(listResults);
@@ -198,7 +199,7 @@ namespace DrinkUpProject.Models.Repositories
             return recent;
         }
 
-        public async Task<UserRecipeVM> GetRecipe(string drinkId)
+        public async Task<UserRecipeVM> GetRecipe(string id)
         {
             //string searchURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkId}";
 
@@ -206,7 +207,7 @@ namespace DrinkUpProject.Models.Repositories
 
             //List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
 
-            List<Drink> d = await GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkId}");
+            List<Drink> d = await GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
             Drink drink = d.First();
             return new UserRecipeVM { RecipeDrink = drink };
         }
