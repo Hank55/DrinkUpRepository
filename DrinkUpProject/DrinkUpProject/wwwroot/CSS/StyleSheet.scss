@@ -9,20 +9,19 @@
     flex-flow: row wrap;
     width: 400px;
     height: 200px;
-    border: 3px solid #73AD21;
+    border: 3px solid #E0EF96;
 }
 
+//SearchResult
 #searchBox {
-    padding: 6px;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
-    height: auto;
-    width: 918px;
-    border: 1px solid;
-    border-color: black;
-    border-radius: 8px;
-    margin-top: 5%;
+    height: 100%;
+    width: 75%;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    padding-left: 5%;
 }
 
 .searchItems {
@@ -30,24 +29,28 @@
     flex-flow: row;
     width: 300px;
     border: 1px solid;
-    border-color: cornflowerblue;
+    border-color: #E0EF96;
     border-radius: 9px;
-    padding: 3px;
+    padding: 1%;
 
     h3 {
-        font-family: Verdana;
+        padding: 2%;
+        font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
     }
 
     h4 {
-        font-family: Arial;
-        font-size: 14px;
+        padding: 1%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
+    }
+
+    h5 {
+        padding: 1%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
     }
 }
-
-/*.RenderBody {
-    margin: 15px;
-}*/
 
 .all {
     display: flex;
@@ -61,6 +64,7 @@
     flex-grow: 2;
     width: 100%;
     margin-top: 10% !important;
+    padding-left: 3%;
 }
 
 
@@ -83,6 +87,7 @@
     img {
         height: 150px;
         width: 150px;
+       
     }
 }
 
@@ -106,7 +111,7 @@
 }
 
 //Input-boxes, text and password starts here
-input[type=text], input[type='password'] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -168,15 +173,7 @@ div.col-md-12 {
             font-size:medium;
         }
 
-        img {
 
-            width:100px;
-            height:100px;
-            padding:2px;
-
-        }
-    }
-}
 
 #recentlySavedBox {
     padding: 6px;

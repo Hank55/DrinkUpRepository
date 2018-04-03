@@ -5,49 +5,51 @@
   flex-flow: row wrap;
   width: 400px;
   height: 200px;
-  border: 3px solid #73AD21; }
+  border: 3px solid #E0EF96; }
 
 #searchBox {
-  padding: 6px;
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
-  height: auto;
-  width: 918px;
-  border: 1px solid;
-  border-color: black;
-  border-radius: 8px;
-  margin-top: 5%; }
+  height: 100%;
+  width: 75%;
+  margin-top: 8%;
+  margin-bottom: 3%;
+  padding-left: 5%; }
 
 .searchItems {
   display: flex;
   flex-flow: row;
   width: 300px;
   border: 1px solid;
-  border-color: cornflowerblue;
+  border-color: #E0EF96;
   border-radius: 9px;
-  padding: 3px; }
+  padding: 1%; }
   .searchItems h3 {
-    font-family: Verdana;
+    padding: 2%;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 17px; }
   .searchItems h4 {
-    font-family: Arial;
-    font-size: 14px; }
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px; }
+  .searchItems h5 {
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px; }
 
-/*.RenderBody {
-    margin: 15px;
-}*/
 .all {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-end;
   height: auto !important; }
 
 .LogIn {
   flex-grow: 2;
   width: 100%;
-  margin-top: 10% !important; }
+  margin-top: 10% !important;
+  padding-left: 3%; }
 
 .SearchForm {
   flex-grow: 2;
@@ -78,7 +80,7 @@
 .form {
   font-size: 20px; }
 
-input[type=text], input[type='password'] {
+input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
