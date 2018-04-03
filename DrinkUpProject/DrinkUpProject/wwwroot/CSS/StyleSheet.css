@@ -102,7 +102,7 @@ div.col-md-12 {
   align-items: flex-start;
   background-color: #E0EF96;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  padding: 25px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -203,3 +203,10 @@ div.col-md-12 {
 .footer {
   z-index: 10000;
   position: fixed; }
+
+#valitationColerCreateUSer {
+  color: #7F7F7F; }
+
+#colorLabel {
+  color: black;
+  font-weight: bold; }

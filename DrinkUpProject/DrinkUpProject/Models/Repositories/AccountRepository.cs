@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -20,6 +21,26 @@ namespace DrinkUpProject.Models.Repositories
         WinterIsComingContext winterIsComingContext;
         IdentityDbContext identityContext;
         UserManager<IdentityUser> userManager;
+
+        internal GuestIndexLogInVM GetLoggedInUser(IIdentity user)
+        {
+            var ret = new GuestIndexLogInVM
+            {
+                IsLoggedIn = user.IsAuthenticated
+            };
+
+            if(user.IsAuthenticated)
+            {
+                ret.UserName = user.Name;
+            }
+            else
+            {
+
+            }
+            return ret;
+
+        }
+
         SignInManager<IdentityUser> signInManager;
 
         public AccountRepository(
