@@ -1,6 +1,12 @@
 ﻿@model DrinkUpProject.Models.ViewModels.GuestIndexLogInVM
+@using Microsoft.AspNetCore.Identity
 
-<div class="LoggedInAs">
-Logged in as:  @*@Model.UserName*@
-</div>
-  
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="LoggedInAs">
+        Logged in as:  @UserManager.GetUserName(User)
+    </div>
+}

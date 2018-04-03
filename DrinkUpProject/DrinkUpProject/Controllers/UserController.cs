@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DrinkUpProject.Models.Repositories;
 using DrinkUpProject.Models.ViewModels;
@@ -11,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrinkUpProject.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
@@ -25,12 +26,12 @@ namespace DrinkUpProject.Controllers
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
-
             var user = HttpContext.User;
-            var randomDrink = await repository.GetRandomFactAboutDrink();
+            var randomDrink = await accountRepository.GetRandomFactAboutDrink(user);
 
             return View(randomDrink);
         }
+        
 
         [Route("MyPage")]
         public IActionResult MyPage()
@@ -38,21 +39,15 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //[Route("Recipe")]
-        //[HttpGet]
-        //public async Task<IActionResult> Recipe()
-        //{
-        //    return View(new UserRecipeVM());
-        //}
-
-        [Route("Recipe")]
         [HttpGet]
-        public async Task<IActionResult> Recipe(string drinkId)
+        [Route("Recipe/{id}")]
+        public async Task<IActionResult> Recipe(string id)
         {
-            return View(await repository.GetRecipe(drinkId));
+            return View(await accountRepository.GetRecipe(id));
         }
 
+
+        // Kan inte bygga förrän routingen funkar till Recipe-vyn
         //[HttpPost]
         //[Route("Recipe")]
         //public async Task<IActionResult> Recipe(UserRecipeVM recipe)

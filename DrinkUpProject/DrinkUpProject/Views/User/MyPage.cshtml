@@ -1,15 +1,17 @@
-﻿
+﻿@model DrinkUpProject.Models.ViewModels.AccountMyPageVM
+
 <div class="all">
     <div>
         User drinklist   
     </div>
     <div>
         <img src="~/Imgs/Logo.png" /><br />
+
         <p class="Button">Placeholder for fav drink</p>
         <form>
             <input class="Button" type="submit" name="EditProfileButton" value="Edit Profile" />
         </form>
-        <form asp-controller="User" asp-action="Home">
+        <form asp-controller="User" asp-action="MyPage">
             <input class="Button" type="submit" name="BackToHomeButton" value="Back To Home" />
         </form>
     </div>
