@@ -39,12 +39,12 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
-        [HttpGet]
-        [Route("Recipe/{id}")]
-        public async Task<IActionResult> Recipe(string id)
-        {
-            return View(await repository.GetRecipe(id));
-        }
+        //[HttpGet]
+        //[Route("Recipe/{id}")]
+        //public async Task<IActionResult> Recipe(string id)
+        //{
+        //    return View(await repository.GetRecipe(id));
+        //}
 
         
         // Kan inte bygga förrän routingen funkar till Recipe-vyn
