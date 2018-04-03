@@ -106,7 +106,7 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
-        public void logOut()
+        public void Logout()
         {
             signInManager.SignOutAsync();
         }

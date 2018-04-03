@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrinkUpProject.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
@@ -40,18 +40,20 @@ namespace DrinkUpProject.Controllers
         }
 
         [HttpGet]
-        [Route("Recipe")]
-        public async Task<IActionResult> Recipe()
+        [Route("Recipe/{id}")]
+        public async Task<IActionResult> Recipe(string id)
         {
-            return View(await accountRepository.GetRecipe());
+            return View(await repository.GetRecipe(id));
         }
 
-        [HttpPost]
-        [Route("Recipe")]
-        public async Task<IActionResult> Recipe(UserRecipeVM recipe)
-        {
-            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
-            return View();
-        }
+        
+        // Kan inte bygga förrän routingen funkar till Recipe-vyn
+        //[HttpPost]
+        //[Route("Recipe")]
+        //public async Task<IActionResult> Recipe(UserRecipeVM recipe)
+        //{
+        //    accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
+        //    return View();
+        //}
     }
 }

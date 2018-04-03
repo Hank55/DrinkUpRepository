@@ -2,23 +2,64 @@
 
 @*Inte klar vy, inväntar att alla delar blir klara innan rätt delar läggs in.*@
 
+@*<div class="all">
+
+
+        <div id="RecentlySavedDrinks">
+            @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
+
+        </div>
+        <div>
+            <a asp-controller="Guest" asp-action="LogOut">Sign out</a>
+        </div>
+
+        <div id="DrinkFact">
+            @Model.DrinkFact
+        </div>
+        <div>
+            @Html.Partial("/Views/Shared/_LoggedInAs.cshtml", Model.LoggedInAs)
+        </div>
+
+        <div id="searchBox">
+            @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+        </div>
+    </div>*@
+
+
+
 <div class="all">
-
-
-    <div id="RecentlySavedDrinks">
-        @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
-
-    </div>
-
-
-    <div id="DrinkFact">
-        @Model.DrinkFact
-    </div>
-    <div>
-        @Html.Partial("/Views/Shared/_LoggedInAs.cshtml", Model.LoggedInAs)
-    </div>
-
-    <div id="searchBox">
-        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+    <div class="container-fluid" style="margin-top:180px">
+        <div class="row content">
+            <div class="col-sm-3">
+                <div>
+                    @Html.Partial("/Views/Shared/_LoggedInAs.cshtml", Model.LoggedInAs)
+                </div>
+                <div id="RecentlySavedDrinks" style="text-align:right">
+                    @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
+                </div>
+            </div>
+            <div class="col-sm-4 text-left">
+                <strong>
+                    Drink Fact :)!
+                </strong>
+                <div id="DrinkFact">
+                    @Model.DrinkFact
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="well">
+                    <div style="text-align:center">
+                        <form asp-controller="account" asp-action="Logout">
+                            <input class="btn-outline-unique" type="submit" value="Sign out" />
+                        </form>
+                    </div>
+                </div>
+                <div class="well">
+                    <div id="searchBox" style="text-align:left">
+                        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
