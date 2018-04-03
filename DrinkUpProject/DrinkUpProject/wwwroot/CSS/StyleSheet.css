@@ -52,7 +52,7 @@
 .SearchForm {
   flex-grow: 2;
   width: 100%;
-  margin-bottom: 5% !important; }
+  margin-bottom: 10% !important; }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
@@ -114,6 +114,7 @@ div.col-md-12 {
   display: flex;
   flex-flow: row;
   width: 110px;
+  height: 140px;
   border: 1px solid;
   border-color: cornflowerblue;
   border-radius: 9px;
@@ -134,8 +135,8 @@ div.col-md-12 {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
-  height: auto;
   width: 320px;
+  height: 300px;
   border: 1px solid;
   border-color: black;
   border-radius: 8px;

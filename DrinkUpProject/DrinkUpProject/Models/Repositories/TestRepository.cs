@@ -234,7 +234,7 @@ namespace DrinkUpProject.Models.Repositories
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
 
-                return recent;
+            return recent;
         }
 
         public async Task<UserRecipeVM> GetRecipe()
