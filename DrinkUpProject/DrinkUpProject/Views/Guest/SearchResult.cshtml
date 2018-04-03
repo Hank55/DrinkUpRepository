@@ -8,22 +8,24 @@
     @foreach (var item in Model)
     {
         <div class="searchItems">
-
-            <div id="searchImg">
+            <a asp-controller="User" asp-action="Recipe">
+                <img src="@item.DrinkImg" />
+                <div id="searchImg">
 
                     @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                    <a asp-controller="User" asp-action="Recipe"><img src="@item.DrinkImg" /></a>
-            </div>
-            <span>
-                <h3>@item.DrinkName
-                </h3>
-                <br />
-                <h4>
-                    @item.DrinkInfoShort  
-                </h4>
+
+                </div>
+                <span>
+                    <h3>
+                        @item.DrinkName
+                    </h3>
                     <br />
-            </span>
-            
+                    <h4>
+                        @item.DrinkInfoShort
+                    </h4>
+                    <br />
+                </span>
+            </a>
         </div>
     }
 </div>
