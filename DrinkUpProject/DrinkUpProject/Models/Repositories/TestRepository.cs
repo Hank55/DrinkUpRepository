@@ -146,6 +146,38 @@ namespace DrinkUpProject.Models.Repositories
 
         
 
-        
+            Random rnd = new Random();
+
+            return new UserHomeVM { DrinkFact = listOfFact[rnd.Next(listOfFact.Count)].Fact, RecentlySaved = await MethodRecentlySavedAsync()};
+        }
+
+        private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+        {
+            string userDrinks = "13020";
+
+            List<Drink> test = new List<Drink>()
+            {
+               new Drink{ idDrink = userDrinks}
+            };
+
+
+            var drinkById = await GetDrinksById(test);
+
+            RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
+
+            for (int i = 0; i < 1; i++)
+            {
+                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
+            }
+
+            return recent;
+        }
+
+        public async Task<UserRecipeVM> GetRecipe()
+        {
+            List<Drink> d = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+            Drink drink = d.First();
+            return new UserRecipeVM { RecipeDrink = drink };
+        }
     }
 }
