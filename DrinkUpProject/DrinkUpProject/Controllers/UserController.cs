@@ -15,6 +15,7 @@ namespace DrinkUpProject.Controllers
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
+        
 
         [Route("Home")]
         public async Task<IActionResult> Home()
