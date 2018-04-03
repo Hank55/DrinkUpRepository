@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrinkUpProject.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UserController : Controller
     {
         TestRepository repository = new TestRepository();
@@ -19,7 +19,7 @@ namespace DrinkUpProject.Controllers
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
-
+                    
             var randomDrink = await repository.GetRandomFactAboutDrink();
 
             return View(randomDrink);

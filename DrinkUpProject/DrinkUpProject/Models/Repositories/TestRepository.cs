@@ -213,6 +213,7 @@ namespace DrinkUpProject.Models.Repositories
         private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         {
             var firstUser = users.First();
+            //User.Identity
 
             var userDrinks = firstUser
                 .UserListDrinkId

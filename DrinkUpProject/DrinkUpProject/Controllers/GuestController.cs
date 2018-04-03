@@ -75,5 +75,13 @@ namespace DrinkUpProject.Controllers
             accountRepository.removeDrinkFromList(9, "16158");
             return View();
         }
+
+
+        [Route("AboutUs")]
+        [HttpGet]
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
     }
 }
