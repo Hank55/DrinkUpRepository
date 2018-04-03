@@ -10,7 +10,6 @@ namespace DrinkUpProject.Models.Repositories
 {
     public class TestRepository
     {
-        public static List<User> users; //LÅT LIGGA KVAR ÅT SIMON FÖR NÄRVARANDE.
 
         public static List<GuestResultVM[]> searchResultListings = new List<GuestResultVM[]>();
         // ... Use HttpClient.
@@ -18,40 +17,6 @@ namespace DrinkUpProject.Models.Repositories
 
         public TestRepository()
         {
-            users = new List<User>
-            {
-                new User
-                {
-                    FirstName= "Hanna",
-                    LastName = "Pawahi",
-                    Email = "hanna.pawahi@test.se",
-                    Password = "hannaebäst",
-                    FavouriteDrink="Vatten och saft",
-                    UserListDrinkId = new List<string>
-                    {
-                        "13427",
-                        "13060",
-                        "16158",
-                        "12162",
-                        "13839",
-                        "12528",
-                        "11102"
-                    }
-                },
-
-                new User
-                {
-                    FirstName= "Åsa",
-                    LastName = "Tysk",
-                    Email = "asa.tysk@test.se",
-                    Password = "åsaeoxåbra",
-                    FavouriteDrink="Tequila",
-                     UserListDrinkId = new List<string>
-                    {
-                        "13060"
-                    }
-                }
-            };
         }
 
         public async Task<List<Drink>> GetDrinks(string searchURL)
@@ -212,12 +177,8 @@ namespace DrinkUpProject.Models.Repositories
 
         private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         {
-            var firstUser = users.First();
-            //User.Identity
 
-            var userDrinks = firstUser
-                .UserListDrinkId
-                .First();
+            string userDrinks = "13020";
 
             List<Drink> test = new List<Drink>()
             {
@@ -234,7 +195,7 @@ namespace DrinkUpProject.Models.Repositories
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
 
-                return recent;
+            return recent;
         }
 
         public async Task<UserRecipeVM> GetRecipe()
