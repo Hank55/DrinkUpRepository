@@ -73,19 +73,6 @@ namespace DrinkUpProject.Models.Repositories
             return tempArray;
         }
 
-        internal void AddUser(GuestCreateUserVM model)
-        {
-            User user = new User
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                Password = model.Password,
-                FavouriteDrink = model.FavouriteDrink
-            };
-            users.Add(user);
-        }
-
         private string ToShortInfo(string strInstructions)
         {
             var shortInfo = "";
