@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DrinkUpProject.Models.Repositories
 {
@@ -56,13 +57,34 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
-        public void addDrinkToList(Models.Entities.User user, string drinkId)
+        public void addDrinkToList(string userName, string drinkId)
+        {
+            User user = FindUserByUserName(userName);
+
+            winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
+            winterIsComingContext.SaveChanges();
+        }
+
+        public User FindUserByUserName(string userName)
+        {
+            var identityUser = identityContext.Users
+                .Where(o => o.UserName == userName)
+                .Single();
+            var user = winterIsComingContext
+                .User
+                .Where(o => o.IdentityUsersId == identityUser.Id)
+                .Single();
+
+            return user;
+        }
+
+        public void addDrinkToList(User user, string drinkId)
         {
             winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
             winterIsComingContext.SaveChanges();
         }
 
-        public void removeDrinkFromList(Models.Entities.User user, string drinkId)
+        public void removeDrinkFromList(User user, string drinkId)
         {
             var d = winterIsComingContext.UserDrinkList
                 .Where(o => o.KiwiUserId == user.Id && o.Apiid == drinkId)
@@ -80,11 +102,17 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
+        public void logOut()
+        {
+            signInManager.SignOutAsync();
+        }
+
+
 
 
         //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         //{
-        //    var currentUser = await userManager.GetUserId(HttpContent.User);
+        //    var currentUser = await userManager.GetUserId();
 
         //    var userDrinks = currentUser
         //        .UserListDrinkId

@@ -10,21 +10,17 @@
         <div class="searchItems">
 
             <div id="searchImg">
-                <button type="submit"><img src="@item.DrinkImg" /></button>
+                @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
+                <a asp-controller="User" asp-action="Recipe"><img src="@item.DrinkImg" /></a>
             </div>
             <span>
-                <h3>@item.DrinkName</h3>
+                <h3>@item.DrinkName
+                </h3>
                 <br />
                 <h4>
-                    @item.DrinkInfoShort  </h4>
+                    @item.DrinkInfoShort  
+                </h4>
                     <br />
-
-
-                    @*Not working link to recipe just for visual test*@
-                <h5>
-                    <a asp-controller="User" asp-action="Recipe">Go to the recipe</a>
-                </h5>
-
             </span>
 
         </div>
