@@ -5,15 +5,16 @@
   flex-flow: row wrap;
   width: 400px;
   height: 200px;
-  border: 3px solid #73AD21; }
+  border: 3px solid #E0EF96; }
 
 #searchBox {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
-  height: auto;
+  height: 100%;
   width: 75%;
-  margin-top: 12%;
+  margin-top: 8%;
+  margin-bottom: 3%;
   padding-left: 5%; }
 
 .searchItems {
@@ -23,13 +24,19 @@
   border: 1px solid;
   border-color: #E0EF96;
   border-radius: 9px;
-  padding: 3px; }
+  padding: 1%; }
   .searchItems h3 {
+    padding: 2%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px; }
   .searchItems h4 {
+    padding: 1%;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 11px; }
+    font-size: 12px; }
+  .searchItems h5 {
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px; }
 
 /*.RenderBody {
     margin: 15px;
