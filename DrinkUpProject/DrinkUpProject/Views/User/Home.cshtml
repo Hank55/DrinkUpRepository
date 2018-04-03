@@ -1,24 +1,46 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserHomeVM
-
 @*Inte klar vy, inväntar att alla delar blir klara innan rätt delar läggs in.*@
 
-<div class="all">
-
-
-    <div id="RecentlySavedDrinks">
-        @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
-
-    </div>
-
-
-    <div id="DrinkFact">
-        @Model.DrinkFact
-    </div>
-    <div>
+@*<div>
         @Html.Partial("/Views/Shared/_LoggedInAs.cshtml", Model.LoggedInAs)
-    </div>
+    </div>*@
 
-    <div id="searchBox">
-        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+@*<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            @*<div id="RecentlySavedDrinks">
+                    @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
+
+                </div>*@
+        @*</div>
+        <div id="DrinkFact">
+            @Model.DrinkFact
+        </div>
+    </div>
+    <div class="col-sm-2 sidenav">
+        <div id="searchBox">
+            @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+        </div>
+    </div>
+</div>*@
+
+<div class="container-fluid">
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
+            </div>
+            <div class="col-sm-8 text-left">
+                <h1>Welcome</h1>
+                <div>
+                    @Model.DrinkFact
+                </div>
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
+                </div>
+            </div>
+        </div>
     </div>
 </div>
