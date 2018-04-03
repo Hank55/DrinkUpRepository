@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary top-bar fixed">
         <a class="navbar-brand" href="/"><img src="~/Imgs/LogoMini.png" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                    @*<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>*@
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
 
     </div>
 
-    <main class="text-center my-5">
+    <main class="text-center my-5 footer">
         <div class="col-md-12">
             &copy 2018 drinkit - sweden
             <a asp-controller="Guest" asp-action="AboutUs">about us</a>
