@@ -9,6 +9,7 @@ namespace DrinkUpProject.Models.ViewModels
     {
         public GuestIndexLogInVM LoggedInAs { get; set; }
         public SearchVM SearchForm { get; set; }
+        public Drink recipeDrinkDetails { get; set; }
 
         public string Category { get; set; }
         public string IBA { get; set; }

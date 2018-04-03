@@ -31,10 +31,18 @@ namespace DrinkUpProject.Controllers
             return View();
         }
 
+        //[Route("Recipe")]
+        //[HttpGet]
+        //public async Task<IActionResult> Recipe()
+        //{
+        //    return View(new UserRecipeVM());
+        //}
+
         [Route("Recipe")]
-        public async Task<IActionResult> Recipe()
+        //[HttpPost]
+        public async Task<IActionResult> Recipe(UserRecipeVM recipeDrink)
         {
-            return View(await repository.GetRecipe());
+            return View(await repository.GetRecipe(recipeDrink.DrinkName));
         }
     }
 }
