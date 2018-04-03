@@ -1,4 +1,6 @@
-﻿@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
+﻿
+
+@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
 
 
 
@@ -8,25 +10,26 @@
     @foreach (var item in Model)
     {
         <div class="searchItems">
-
-            <div id="searchImg">
-
+            <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
+                <div id="searchImg">
                     @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                    <a asp-controller="User" asp-action="Recipe"><img src="@item.DrinkImg" /></a>
-            </div>
-            <span>
-                <h3>@item.DrinkName
-                </h3>
-                <br />
-                <h4>
-                    @item.DrinkInfoShort  
-                </h4>
+                    <img src="@item.DrinkImg" />
+                </div>
+
+                <div>
+
+                    <h3>@item.DrinkName</h3>
+
                     <br />
-            </span>
-            
+                    <h4>
+                        @item.DrinkInfoShort
+                    </h4>
+                    <br />
+                </div>
+
+            </a>
         </div>
     }
 </div>
 
 @*test*@
-
