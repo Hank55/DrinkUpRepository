@@ -10,8 +10,9 @@
         <div class="searchItems">
 
             <div id="searchImg">
-                @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                <a asp-controller="User" asp-action="Recipe"><img src="@item.DrinkImg" /></a>
+
+                    @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
+                    <a asp-controller="User" asp-action="Recipe"><img src="@item.DrinkImg" /></a>
             </div>
             <span>
                 <h3>@item.DrinkName
@@ -22,7 +23,7 @@
                 </h4>
                     <br />
             </span>
-
+            
         </div>
     }
 </div>
