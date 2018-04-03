@@ -9,26 +9,28 @@
 <div id="searchBox">
     @foreach (var item in Model)
     {
+    <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
         <div class="searchItems">
-            <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
-                <div id="searchImg">
-                    @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                    <img src="@item.DrinkImg" />
-                </div>
 
-                <div>
+            <div id="searchImg">
+                @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
+                <img src="@item.DrinkImg" />
+            </div>
 
-                    <h3>@item.DrinkName</h3>
+            <div>
 
-                    <br />
-                    <h4>
-                        @item.DrinkInfoShort
-                    </h4>
-                    <br />
-                </div>
+                <h3>@item.DrinkName</h3>
 
-            </a>
+                <br />
+                <h4>
+                    @item.DrinkInfoShort
+                </h4>
+                <br />
+            </div>
+
+
         </div>
+    </a>
     }
 </div>
 
