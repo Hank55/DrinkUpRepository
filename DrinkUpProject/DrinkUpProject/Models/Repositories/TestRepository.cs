@@ -181,6 +181,7 @@ namespace DrinkUpProject.Models.Repositories
 
         public async Task<UserHomeVM> GetRandomFactAboutDrink()
         {
+
             var listOfFact = new List<DrinkFacts>()
             {
                 new DrinkFacts{Id = 1 , Fact = "The production of alcohol has been traced back at least 12,000 years."},
@@ -212,7 +213,11 @@ namespace DrinkUpProject.Models.Repositories
 
         private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         {
-            var firstUser = users.First();
+
+
+            var firstUser = users.FirstOrDefault();
+            
+           
             //User.Identity
 
             var userDrinks = firstUser

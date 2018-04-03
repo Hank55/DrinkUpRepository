@@ -19,6 +19,8 @@ namespace DrinkUpProject.Controllers
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
+
+            var user = HttpContext.User;
             var randomDrink = await repository.GetRandomFactAboutDrink();
 
             return View(randomDrink);
