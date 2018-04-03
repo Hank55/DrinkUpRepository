@@ -43,7 +43,7 @@ namespace DrinkUpProject.Controllers
         [Route("Recipe/{id}")]
         public async Task<IActionResult> Recipe(string id)
         {
-            return View(await repository.GetRecipe(id));
+            return View(await accountRepository.GetRecipe(id));
         }
 
         

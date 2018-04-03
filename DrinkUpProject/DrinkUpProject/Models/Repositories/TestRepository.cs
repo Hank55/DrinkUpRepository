@@ -144,8 +144,5 @@ namespace DrinkUpProject.Models.Repositories
             return drinkList.First();
         }
 
-        
-
-        
     }
 }
