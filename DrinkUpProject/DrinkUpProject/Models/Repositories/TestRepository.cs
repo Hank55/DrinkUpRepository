@@ -75,15 +75,15 @@ namespace DrinkUpProject.Models.Repositories
 
         internal void AddUser(GuestCreateUserVM model)
         {
-            //User user = new User
-            //{
-            //    //FirstName = model.FirstName,
-            //    //LastName = model.LastName,
-            //    Email = model.Email,
-            //    Password = model.Password,
-            //    FavouriteDrink = model.FavouriteDrink
-            //};
-            //users.Add(user);
+            User user = new User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Password = model.Password,
+                FavouriteDrink = model.FavouriteDrink
+            };
+            users.Add(user);
         }
 
         private string ToShortInfo(string strInstructions)
@@ -143,9 +143,6 @@ namespace DrinkUpProject.Models.Repositories
             List<Drink> drinkList = await GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
             return drinkList.First();
         }
-
-
-
 
     }
 }
