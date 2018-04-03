@@ -31,7 +31,7 @@ namespace DrinkUpProject.Models.Repositories
             if (d == null || d.drinks == null)
             {
                 d = new DrinkDirectory();
-                d.drinks = new List<Drink>{new Drink{strDrink = "NoSearchResult" } };
+                d.drinks = new List<Drink> { new Drink { strDrink = "NoSearchResult" } };
             }
 
             return d.drinks;
@@ -50,7 +50,7 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < listResults.Length; i++)
             {
-                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions), DrinkId=drinkList[i].idDrink};
+                listResults[i] = new GuestResultVM { DrinkName = drinkList[i].strDrink, DrinkImg = drinkList[i].strDrinkThumb, DrinkInfoShort = ToShortInfo(drinkList[i].strInstructions), DrinkId = drinkList[i].idDrink };
             }
 
             SaveToSearchResultList(listResults);
@@ -114,19 +114,6 @@ namespace DrinkUpProject.Models.Repositories
             return tempArray;
         }
 
-        internal void AddUser(GuestCreateUserVM model)
-        {
-            //User user = new User
-            //{
-            //    //FirstName = model.FirstName,
-            //    //LastName = model.LastName,
-            //    Email = model.Email,
-            //    Password = model.Password,
-            //    FavouriteDrink = model.FavouriteDrink
-            //};
-            //users.Add(user);
-        }
-
         private string ToShortInfo(string strInstructions)
         {
             var shortInfo = "";
@@ -187,3 +174,4 @@ namespace DrinkUpProject.Models.Repositories
 
     }
 }
+

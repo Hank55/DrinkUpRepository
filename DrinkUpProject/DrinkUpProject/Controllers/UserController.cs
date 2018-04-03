@@ -46,7 +46,7 @@ namespace DrinkUpProject.Controllers
             return View(await accountRepository.GetRecipe(id));
         }
 
-        
+
         // Kan inte bygga förrän routingen funkar till Recipe-vyn
         //[HttpPost]
         //[Route("Recipe")]
