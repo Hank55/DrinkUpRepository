@@ -12,58 +12,58 @@
     <br />
     <br />
     <br />
-    <h3>@Model.DrinkName</h3>
+    <h3>@Model.RecipeDrink.strDrink</h3>
     <div id="searchImg">
-        <img src="@Model.DrinkImg" />
+        <img src="@Model.RecipeDrink.strDrinkThumb" />
     </div>
     <br />
     <div id="drinkQuickFacts">
         <br />
-        Drink Category: @Model.Category
+        Drink Category: @Model.RecipeDrink.strCategory
         <br />
-        IBA Category: @Model.IBA
+        IBA Category: @Model.RecipeDrink.strIBA
         <br />
-        Drink Type: @Model.Alcoholic
+        Drink Type: @Model.RecipeDrink.strAlcoholic
         <br />
-        Glass Type: @Model.Glass
+        Glass Type: @Model.RecipeDrink.strGlass
     </div>
     <br />
     <div id="drinkIngredientsAndMeasures">
         <table>
             <tr>
-                <td>@Model.Measure1 @Model.Ingredient1</td>
-                <td>@Model.Measure6 @Model.Ingredient6</td>
-                <td>@Model.Measure11 @Model.Ingredient11</td>
+                <td>@Model.RecipeDrink.strMeasure1 @Model.RecipeDrink.strIngredient1</td>
+                <td>@Model.RecipeDrink.strMeasure6 @Model.RecipeDrink.strIngredient6</td>
+                <td>@Model.RecipeDrink.strMeasure11 @Model.RecipeDrink.strIngredient11</td>
             </tr>
 
             <tr>
-                <td>@Model.Measure2 @Model.Ingredient2</td>
-                <td>@Model.Measure7 @Model.Ingredient7</td>
-                <td>@Model.Measure12 @Model.Ingredient12</td>
+                <td>@Model.RecipeDrink.strMeasure2 @Model.RecipeDrink.strIngredient2</td>
+                <td>@Model.RecipeDrink.strMeasure7 @Model.RecipeDrink.strIngredient7</td>
+                <td>@Model.RecipeDrink.strMeasure12 @Model.RecipeDrink.strIngredient12</td>
+            </tr>        
+
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure3 @Model.RecipeDrink.strIngredient3</td>
+                <td>@Model.RecipeDrink.strMeasure8 @Model.RecipeDrink.strIngredient8</td>
+                <td>@Model.RecipeDrink.strMeasure13 @Model.RecipeDrink.strIngredient13</td>
             </tr>
 
             <tr>
-                <td>@Model.Measure3 @Model.Ingredient3</td>
-                <td>@Model.Measure8 @Model.Ingredient8</td>
-                <td>@Model.Measure13 @Model.Ingredient13</td>
+                <td>@Model.RecipeDrink.strMeasure4 @Model.RecipeDrink.strIngredient4</td>
+                <td>@Model.RecipeDrink.strMeasure9 @Model.RecipeDrink.strIngredient9</td>
+                <td>@Model.RecipeDrink.strMeasure14 @Model.RecipeDrink.strIngredient14</td>
             </tr>
 
             <tr>
-                <td>@Model.Measure4 @Model.Ingredient4</td>
-                <td>@Model.Measure9 @Model.Ingredient9</td>
-                <td>@Model.Measure14 @Model.Ingredient14</td>
-            </tr>
-
-            <tr>
-                <td>@Model.Measure5 @Model.Ingredient5</td>
-                <td>@Model.Measure10 @Model.Ingredient10</td>
-                <td>@Model.Measure15 @Model.Ingredient15</td>
+                <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
+                <td>@Model.RecipeDrink.strMeasure10 @Model.RecipeDrink.strIngredient10</td>
+                <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
             </tr>
         </table>
     </div>
     <br />
     <div id="drinkInstructions">
-        @Model.Instructions
+        @Model.RecipeDrink.strInstructions
     </div>
     <br />
 
