@@ -11,6 +11,7 @@ namespace DrinkUpProject.Models.ViewModels
         public string DrinkName { get; set; }
         public string DrinkImg { get; set; }
         public string DrinkInfoShort { get; set; }
+        public string DrinkId { get; set; }
         
     }
 }
