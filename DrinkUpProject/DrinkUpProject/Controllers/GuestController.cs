@@ -52,6 +52,7 @@ namespace DrinkUpProject.Controllers
         [Route("RandomDrink")]
         public async Task<IActionResult> RandomDrink()
         {
+            
             return View(await repository.GetRandomDrink());
         }
 

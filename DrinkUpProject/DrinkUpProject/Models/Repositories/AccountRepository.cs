@@ -166,18 +166,23 @@ namespace DrinkUpProject.Models.Repositories
 
 
 
-                string j = recentlySavedDrinks[0].Id.ToString();
-            List<Drink> test = new List<Drink>()
+            string j = recentlySavedDrinks[0].Apiid.ToString();
+            List<Drink> temp = new List<Drink>();
+
+            for (int i = 0; i < 4; i++)
             {
-               new Drink{ idDrink = j}
-            };
+                temp.Add(new Drink { idDrink = recentlySavedDrinks[i].Apiid.ToString() });
+
+                if (recentlySavedDrinks.Length <= temp.Count)
+                    break;
+            }
 
 
-            var drinkById = await testRepository.GetDrinksById(test);
+            var drinkById = await testRepository.GetDrinksById(temp);
 
-            RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
+            RecentlySavedVM[] recent = new RecentlySavedVM[temp.Count];
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < drinkById.Count; i++)
             {
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
@@ -187,13 +192,16 @@ namespace DrinkUpProject.Models.Repositories
             return recent;
         }
 
-        public async Task<UserRecipeVM> GetRecipe()
+        public async Task<UserRecipeVM> GetRecipe(string id)
         {
-            List<Drink> d = await testRepository.GetDrinks("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+            List<Drink> d = await testRepository.GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
             Drink drink = d.First();
             return new UserRecipeVM { RecipeDrink = drink };
         }
-        //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+
+
+
+        ////private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         //{
         //    var currentUser = await userManager.GetUserId();
 
