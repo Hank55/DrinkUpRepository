@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DrinkUpProject.Models.Repositories;
 using DrinkUpProject.Models.ViewModels;
@@ -25,12 +26,12 @@ namespace DrinkUpProject.Controllers
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
-
             var user = HttpContext.User;
-            var randomDrink = await repository.GetRandomFactAboutDrink();
+            var randomDrink = await accountRepository.GetRandomFactAboutDrink(user);
 
             return View(randomDrink);
         }
+        
 
         [Route("MyPage")]
         public IActionResult MyPage()
