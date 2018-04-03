@@ -38,9 +38,6 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px; }
 
-/*.RenderBody {
-    margin: 15px;
-}*/
 .all {
   display: flex;
   flex-flow: row;
@@ -83,7 +80,7 @@
 .form {
   font-size: 20px; }
 
-input[type=text], input[type='password'] {
+input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
