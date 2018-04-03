@@ -37,5 +37,8 @@ namespace DrinkUpProject.Controllers
         {
             return View(await repository.GetRecipe());
         }
+
+
+        
     }
 }

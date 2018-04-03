@@ -81,6 +81,11 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
+        public void logOut()
+        {
+            signInManager.SignOutAsync();
+        }
+
 
 
         //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()

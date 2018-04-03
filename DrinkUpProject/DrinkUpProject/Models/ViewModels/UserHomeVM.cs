@@ -10,5 +10,8 @@ namespace DrinkUpProject.Models.ViewModels
         public string DrinkFact { get; set; }
         public SearchVM SearchForm { get; set; }
         public RecentlySavedVM[] RecentlySaved { get; set; }
+        public GuestIndexLogInVM LoggedInAs { get; set; }
+
+        public string UserName { get; set; }
     }
 }

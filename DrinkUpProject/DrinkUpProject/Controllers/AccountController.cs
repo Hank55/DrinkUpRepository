@@ -35,9 +35,6 @@ namespace DrinkUpProject.Controllers
                 return View("/Views/Guest/Index.cshtml", new GuestIndexVM { LogInForm = viewModel });
 
 
-            //return RedirectToAction(nameof(GuestController.Index), "Guest", viewModel);
-
-            //RedirectToAction(nameof(GuestController.Index), "Guest");
 
             // Check if credentials is valid (and set auth cookie)
             if (!await repository.TryLoginAsync(viewModel))
@@ -71,7 +68,19 @@ namespace DrinkUpProject.Controllers
 
             await repository.TryLoginAsync(new GuestIndexLogInVM { UserName = model.UserName, Password = model.Password });
 
+
+
             return RedirectToAction(nameof(UserController.Home), "User");
+        }
+
+
+        [HttpPost]
+        [Route("LogOut")]
+        public IActionResult LogOut()
+        {
+            repository.logOut();
+
+            return RedirectToAction(nameof(GuestController.Index), "Guest");
         }
     }
 }
