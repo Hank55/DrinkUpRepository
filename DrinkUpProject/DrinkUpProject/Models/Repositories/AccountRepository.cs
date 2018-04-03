@@ -193,7 +193,10 @@ namespace DrinkUpProject.Models.Repositories
             Drink drink = d.First();
             return new UserRecipeVM { RecipeDrink = drink };
         }
-        //private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
+
+
+
+        ////private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
         //{
         //    var currentUser = await userManager.GetUserId();
 
