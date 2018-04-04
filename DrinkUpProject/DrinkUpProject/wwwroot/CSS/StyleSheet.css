@@ -9,7 +9,6 @@
   flex-flow: row wrap;
   width: 600px;
   height: 200px;
-  background-color: rgba(224, 239, 150, 0.4);
   border-right: 5px solid #E0EF96; }
   #DrinkFact p {
     color: black; }
@@ -31,7 +30,7 @@
   border: 1px solid;
   border-color: #E0EF96;
   border-radius: 9px;
-  padding: 1; }
+  padding: 1px; }
   .searchItems h3 {
     padding: 2%;
     font-family: 'Times New Roman', Times, serif;
@@ -237,5 +236,16 @@ input#LogInForm_UserName {
 input#LogInForm_Password {
   width: 210px; }
 
-input.btn-outline-primary {
+input#buttonLoggIn {
   width: 200px; }
+
+input#buttonCreateUser {
+  width: 200px; }
+
+#SearchShakeDrink {
+  width: 19%;
+  height: 19%;
+  margin-top: 10% !important; }
+
+.navbar.navbar-light .breadcrumb .nav-item.active > .nav-link, .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  background: #E0EF96; }

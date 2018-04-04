@@ -1,7 +1,7 @@
 ﻿@model DrinkUpProject.Models.ViewModels.GuestIndexVM
 <div class="all">
     <div class="LogIn">
-        <h1>Welcome & Log In</h1>
+        <h1>Welcome</h1>
         <form asp-controller="Account" asp-action="LogIn" method="post">
             <label style="font-size:25px" asp-for="LogInForm.UserName"></label><br />
             <input asp-for="LogInForm.UserName" /><br />
@@ -9,12 +9,14 @@
             <label style="font-size:25px" asp-for="LogInForm.Password"></label><br />
             <input asp-for="LogInForm.Password" /><br />
             <span style="color:red" asp-validation-for="LogInForm.Password"></span><br />
-            <input type="submit" class="btn btn-outline-primary" value="Log in" /><br />
+            <input type="submit" id="buttonLoggIn" class="btn btn-outline-primary" value="Log in" /><br />
         </form>
         <form asp-controller="Account" asp-action="CreateUser" method="get">
-            <input type="submit" class="btn btn-outline-primary" value="Create new user" />
+            <input type="submit" id="buttonCreateUser" class="btn btn-outline-primary" value="Create new user" />
         </form>
     </div>
+    <img id="SearchShakeDrink"src="~/Imgs/Slogan.png" />
+    <br/>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
