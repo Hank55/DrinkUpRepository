@@ -237,5 +237,5 @@ input#buttonCreateUser {
   height: 19%;
   margin-top: 10% !important; }
 
-.navbar.navbar-light .breadcrumb .nav-item.active > .nav-link, .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
-  background: #E0EF96; }
+.nav-link {
+  color: #7f7f7f; }
