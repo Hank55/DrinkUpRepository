@@ -1,41 +1,33 @@
-﻿
-
-@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
+﻿@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
 
 
+<div class="all">
+    <div id="searchBox">
+        @foreach (var item in Model)
+        {
+            <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
+                <div class="searchItems">
 
+                    <div id="searchImg">
+                       <img src="@item.DrinkImg" />
+                    </div>
 
+                    <div>
 
-<div id="searchBox">
-    @foreach (var item in Model)
-    {
-        <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
-            <div class="searchItems">
+                        <h3>@item.DrinkName</h3>
 
-                <div id="searchImg">
-                    @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                    <img src="@item.DrinkImg" />
+                        <br />
+                        <h4>
+                            @item.DrinkInfoShort
+                        </h4>
+                    </div>
                 </div>
+            </a>
+        }
+    </div>
 
-                <div>
-
-                    <h3>@item.DrinkName</h3>
-
-                    <br />
-                    <h4>
-                        @item.DrinkInfoShort
-                    </h4>
-                    <br />
-                </div>
-
-
-            </div>
-        </a>
-    }
+    <div id="SearchFormResult" class="SearchForm">
+        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model[0].SearchForm)
+    </div>
 </div>
 
-<div class="SearchForm">
-    @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model[0].SearchForm)
-</div>
-
-@*test*@
