@@ -53,8 +53,6 @@
                 <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
             </tr>
         </table>
-    </div>
-    <br />
     <div id="drinkInstructions">
         @Model.RecipeDrink.strInstructions
     </div>
@@ -65,6 +63,8 @@
         </form>
     </div>*@
 
+    </div>
+    <br />
 
         <div class="SearchFormRec">
             @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
