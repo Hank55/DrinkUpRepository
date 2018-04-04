@@ -24,16 +24,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    @*<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>*@
-                </li>
+               
             </ul>
         </div>
     @await Component.InvokeAsync("LoggedInAsUser")
     </nav>
+
     <div class="RenderBody">
         @RenderBody()
     </div>
+
+
     <main class="text-center my-5 footer">
         <div class="col-md-12">
             &copy 2018 DrinkIt - Sweden
