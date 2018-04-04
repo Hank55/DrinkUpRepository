@@ -1,4 +1,4 @@
-﻿@model DrinkUpProject.Models.ViewModels.AccountMyPageVM
+﻿@model DrinkUpProject.Models.ViewModels.AccountMyPageAsyncVM
 
 <div class="all">
     <div>
@@ -9,16 +9,16 @@
 
         <h5>My Drinks</h5>
 
-        @if (Model.RecentlySaved != null)
+        @if (Model.DrinkList != null)
         {
 
-            @foreach (var item in Model.RecentlySaved)
+            @foreach (var item in Model.DrinkList)
             {
                 <div class="drinkList">
 
                     <div>
-                        <span>@item.DrinkName</span>
-                        <img src="@item.ImgUrl" />
+                        <span>@item.strDrink</span>
+                        <img src="@item.strDrinkThumb" />
                     </div>
 
                 </div>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DrinkUpProject.Models.ViewModels
 {
-    public class AccountMyPageVM
+    public class AccountMyPageAsyncVM
     {
-        public RecentlySavedVM[] RecentlySaved { get; set; }
-        public string DrinkId { get; set; }
+        public List<Drink> DrinkList { get; set; }
+        public ICollection<UserDrinkList> UserDrinkList { get; set; }
 
 
 
