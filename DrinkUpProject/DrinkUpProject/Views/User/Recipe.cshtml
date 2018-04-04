@@ -1,13 +1,6 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserRecipeVM
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Recipe</title>
 
-
-</head>
-<body>
     <div class="RecipeView">
         <div id="LeftBox">
             <h3>@Model.RecipeDrink.strDrink</h3>
@@ -66,16 +59,14 @@
         @Model.RecipeDrink.strInstructions
     </div>
     <br />
-    <div>
+    @*<div>
         <form asp-controller="UserController" asp-action="Recipe">
             <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
         </form>
-    </div>
+    </div>*@
 
 
         <div class="SearchFormRec">
             @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
         </div>
     </div>
-</body>
-</html>
