@@ -31,12 +31,14 @@ namespace DrinkUpProject.Controllers
 
             return View(randomDrink);
         }
-        
+
 
         [Route("MyPage")]
-        public IActionResult MyPage()
+        public IActionResult MyPage(int userId)
         {
-            return View();
+
+
+            return View(accountRepository.FindDrinkListByUserId(userId));
         }
 
         [HttpGet]

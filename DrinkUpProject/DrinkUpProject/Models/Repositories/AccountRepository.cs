@@ -228,5 +228,27 @@ namespace DrinkUpProject.Models.Repositories
 
         //    return recent;
         //}
+
+
+        public AccountMyPageVM[] FindDrinkListByUserId(int userId)
+        {
+
+            AccountMyPageVM[] userDrink = winterIsComingContext
+                .UserDrinkList
+                .Where(o => o.KiwiUserId == userId)
+                .Select(o => new AccountMyPageVM
+                {
+                    DrinkId = o.Apiid,
+                })
+                .ToArray();
+
+            return userDrink;
+        }
+
+        //public UserDrinkList GetUserDrinkList(string userName)
+        //{
+
+        //    return null;
+        //}
     }
 }
