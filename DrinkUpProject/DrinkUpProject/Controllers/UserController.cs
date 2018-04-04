@@ -57,7 +57,14 @@ namespace DrinkUpProject.Controllers
             return View(nameof(Recipe), await accountRepository.GetRecipe(id));
         }
 
-       
+        [HttpPost]
+        [Route("UpdateDrinkList")]
+        public async Task<IActionResult> UpdateDrinkList(string drinkId, bool isAdd)
+        {
+            await accountRepository.UpdateDrinkList(User, drinkId, isAdd);
+            return Ok();
+        }
+
 
     }
 }
