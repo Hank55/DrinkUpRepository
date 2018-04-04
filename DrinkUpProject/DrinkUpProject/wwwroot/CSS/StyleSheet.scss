@@ -214,7 +214,7 @@ div.col-md-12 {
 #IngTable {
     margin-bottom: 15% !important;
     box-sizing: border-box;
-    border: 3px solid #FCE17C;
+    border: 0px solid #FCE17C;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -225,7 +225,7 @@ div.col-md-12 {
 
 #drinkInstructions {
     box-sizing: border-box;
-    border: 3px solid #FCE17C;
+    border: 0px solid #FCE17C;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -242,7 +242,7 @@ div.col-md-12 {
 
 #drinkQuickFacts {
     box-sizing: border-box;
-    border: 3px solid #FCE17C;
+    border: 0px solid #FCE17C;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -296,5 +296,20 @@ div.col-md-12 {
     font-weight: bold;
 }
 
+#headerpic{
+width: 150px;
+}
+
+input#LogInForm_UserName {
+    width: 210px;
+}
+input#LogInForm_Password {
+    width: 210px;
+}
+
+input.btn-outline-primary {
+    
+        width: 200px;
+}
 
 
