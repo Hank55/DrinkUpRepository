@@ -26,10 +26,10 @@
                 </li>
             </ul>
         </div>
+    @await Component.InvokeAsync("LoggedInAsUser")
     </nav>
     <div class="RenderBody">
         @RenderBody()
-    @await Component.InvokeAsync("LoggedInAsUser")
     </div>
     <main class="text-center my-5 footer">
         <div class="col-md-12">
