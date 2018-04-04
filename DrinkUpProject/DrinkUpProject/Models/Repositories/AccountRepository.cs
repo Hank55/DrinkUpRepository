@@ -1,5 +1,6 @@
 ﻿using DrinkUpProject.Models.Entities;
 using DrinkUpProject.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
@@ -56,6 +57,7 @@ namespace DrinkUpProject.Models.Repositories
             this.signInManager = signInManager;
             this.winterIsComingContext = winterIsComingContext;
         }
+        
 
         public async Task<bool> TryLoginAsync(GuestIndexLogInVM viewModel)
         {
@@ -274,6 +276,79 @@ namespace DrinkUpProject.Models.Repositories
         //    }
 
         //    return recent;
+        //}
+
+
+        public async Task<AccountMyPageAsyncVM> FindDrinkListByUserIdAsync(ClaimsPrincipal claimsPrincipal)
+        {
+            var aspNetUserId = userManager.GetUserId(claimsPrincipal);
+            //IdentityUser kiwiUserId = await userManager.FindByIdAsync(aspNetUserId);
+            //string strKiwiUserId = kiwiUserId.ToString();
+            string strAspNetUserId = aspNetUserId.ToString();
+            
+
+            AccountMyPageAsyncVM userDrink = winterIsComingContext
+                .User
+                //.Where(o => o.KiwiUserId.ToString() == strKiwiUserId)
+                .Where(o => o.IdentityUsersId.ToString() == strAspNetUserId)
+                .Select(o => new AccountMyPageAsyncVM
+                {
+                    UserDrinkList = o.UserDrinkList,
+                })
+                .Single();
+
+            List<string> listOfAPIDrinkIds = new List<string>();
+
+            foreach (var item in userDrink.UserDrinkList)
+            {
+                listOfAPIDrinkIds.Add(item.Apiid);
+            }
+
+            var tempArray = new List<Drink>();
+
+            for (int i = 0; i < listOfAPIDrinkIds.Count; i++)
+            {
+                var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={listOfAPIDrinkIds[i]}";
+                var tempListDrink = await testRepository.GetDrinks(findDrinkByIdURL);
+                tempArray.Add(new Drink { strDrink = tempListDrink[0].strDrink, strDrinkThumb = tempListDrink[0].strDrinkThumb });
+            }
+
+            AccountMyPageAsyncVM accountMyPageVM = new AccountMyPageAsyncVM();
+
+            accountMyPageVM.DrinkList = tempArray;
+
+            return accountMyPageVM;
+            
+        }
+
+        //public async Task<List<Drink>> GetDrinksById(UserDrinkList userDrink)
+        //{
+        //    List<int> arrayOfDrinkAPIIds = new List<int>();
+
+        //    foreach (var item in userDrink.Apiid)
+        //    {
+        //        arrayOfDrinkAPIIds.Add(item);
+        //    }
+
+
+        //    //var tempArray = new List<Drink>();
+
+        //    //for (int i = 0; i < userDrink.Count; i++)
+        //    //{
+        //    //    var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
+        //    //    var tempListDrink = await GetDrinks(findDrinkByIdURL);
+        //    //    tempArray.Add(tempListDrink[0]);
+        //    //}
+
+        //    //return tempArray;
+
+        //    return null;
+        //}
+
+        //public UserDrinkList GetUserDrinkList(string userName)
+        //{
+
+        //    return null;
         //}
     }
 }
