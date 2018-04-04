@@ -192,7 +192,9 @@ div.col-md-12 {
     align-items: center;
     padding-right: 8%;
     margin-right: 3%;
-    margin-top: 5%;
+    margin-top: 8%;
+    
+
 
 
     p {
@@ -205,6 +207,7 @@ div.col-md-12 {
     margin-bottom: 15% !important;
     box-sizing: border-box;
     border: 0px solid #FCE17C;
+    border-right: 5px solid #E0EF96;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -216,6 +219,7 @@ div.col-md-12 {
 #drinkInstructions {
     box-sizing: border-box;
     border: 0px solid #FCE17C;
+    border-right: 5px solid #E0EF96;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -233,6 +237,7 @@ div.col-md-12 {
 #drinkQuickFacts {
     box-sizing: border-box;
     border: 0px solid #FCE17C;
+    border-right: 5px solid #E0EF96;
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -240,10 +245,11 @@ div.col-md-12 {
     padding-bottom: 4%;
 }
 
-#searchImg {
-    margin-left: 8%;
-    height: 200px !important;
-    width: 200px !important;
+#recipeImg {
+    img {
+        height: 260px !important;
+        width: 260px !important;
+    }
 }
 
 .buttonsRec{
