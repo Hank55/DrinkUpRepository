@@ -40,7 +40,7 @@ namespace DrinkUpProject.Controllers
             if (!await repository.TryLoginAsync(viewModel))
             {
                 // Show login error
-                ModelState.AddModelError(nameof(GuestIndexLogInVM.UserName), "Invalid credentials");
+                ModelState.AddModelError(nameof(GuestIndexVM.LogInForm), "Invalid credentials");
                 return RedirectToAction(nameof(GuestController.Index), "Guest");
             }
             else

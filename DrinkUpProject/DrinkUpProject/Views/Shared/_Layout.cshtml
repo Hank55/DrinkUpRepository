@@ -6,7 +6,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="~/Scripts/IndexImageFlow.js"></script>
-    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
 
     <link href="~/CSS/RecentlySaved.css" rel="stylesheet" />
 
@@ -15,19 +14,22 @@
     <link href="/Nav-Bar/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Nav-Bar/css/mdb.min.css" rel="stylesheet">
     <link href="/Nav-Bar/css/style.css" rel="stylesheet">
+    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary top-bar fixed">
-        <a class="navbar-brand" href="/"><img src="~/Imgs/LogoMini.png" /></a>
+        <a class="navbar-brand" href="/"><img id="headerpic"src="~/Imgs/LogoPontusProoved.png" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-               
+                <li class="nav-item active">
+                    <a class="nav-link" href="MyPage">My Page<span class="sr-only">(current)</span></a>
+                </li>
             </ul>
         </div>
-    @await Component.InvokeAsync("LoggedInAsUser")
+        @await Component.InvokeAsync("LoggedInAsUser")
     </nav>
 
     <div class="RenderBody">
