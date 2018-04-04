@@ -49,12 +49,7 @@ namespace DrinkUpProject.Controllers
             return RedirectToAction(nameof(SearchResult));
         }
 
-        [Route("RandomDrink")]
-        public async Task<IActionResult> RandomDrink()
-        {
-            
-            return View(await repository.GetRandomDrink());
-        }
+     
 
         [Route("SearchResult")]
         public async Task<IActionResult> SearchResult()
@@ -68,6 +63,14 @@ namespace DrinkUpProject.Controllers
             return View(drinks);
 
         }
+        [Route("RandomDrink")]
+        public async Task<IActionResult> RandomDrink()
+        {
+            var drink = await repository.GetRandomDrink();
+
+            return RedirectToAction("Recipe","User", new { id = drink.idDrink });
+        }
+
 
         [Route("Test")]
         [HttpGet]

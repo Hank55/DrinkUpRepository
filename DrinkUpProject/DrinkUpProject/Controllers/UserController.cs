@@ -54,5 +54,8 @@ namespace DrinkUpProject.Controllers
             accountRepository.addDrinkToList(userDetails.UserName, id);
             return View(nameof(Recipe), await accountRepository.GetRecipe(id));
         }
+
+       
+
     }
 }
