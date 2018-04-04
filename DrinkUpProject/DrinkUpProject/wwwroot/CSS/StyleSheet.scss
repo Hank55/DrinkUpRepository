@@ -3,10 +3,10 @@
 
 //SearchResult
 #SearchFormResult {
-    width: 5%
+    width: 5% !important;
 }
 
-#DrinkFact {
+#DrinkFact 
     position: relative;
     display: flex;
     flex-flow: row wrap;
