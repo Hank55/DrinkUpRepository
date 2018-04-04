@@ -46,13 +46,13 @@ namespace DrinkUpProject.Controllers
             return View(await accountRepository.GetRecipe(id));
         }
 
-
-       [HttpPost]
-       [Route("Recipe")]
-        public IActionResult Recipe(UserRecipeVM recipe)
+        [HttpPost]
+        [Route("Recipe/{id}")]
+        public async Task<IActionResult> SaveRecipe(string id)
         {
-            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
-            return View();
+            var userDetails = accountRepository.GetLoggedInUser(User.Identity);
+            accountRepository.addDrinkToList(userDetails.UserName, id);
+            return View(nameof(Recipe), await accountRepository.GetRecipe(id));
         }
     }
 }
