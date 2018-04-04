@@ -2,12 +2,13 @@
 <div class="all">
     <div class="container-fluid" style="margin-top:180px">
         <div class="row content">
+            @*row content*@
             <div class="col-sm-3">
-                <div id="RecentlySavedDrinks" style="text-align:right">
+                <div id="RecentlySavedDrinks" style="text-align:right; margin:auto">
                     @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 text-left">
                 <strong>
                     Drink Fact :)!
                 </strong>
@@ -17,7 +18,7 @@
             </div>
             <div class="col-sm-5">
                 <div class="well">
-                    <div id="searchBox" style="text-align:left">
+                    <div id="searchBox" style="text-align:left; margin:auto">
                         @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
                     </div>
                 </div>
