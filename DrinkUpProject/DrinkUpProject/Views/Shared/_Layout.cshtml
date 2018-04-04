@@ -1,33 +1,18 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" class="full-height">
-
 <head>
-
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=2, shrink-to-fit=no">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <script src="~/Scripts/IndexImageFlow.js"></script>
-
     <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
-
     <link rel="shortcut icon" type="image/png" href="~/Imgs/shortcutlogo.png" />
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link href="Nav-Bar/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="Nav-Bar/css/mdb.min.css" rel="stylesheet">
-
     <link href="Nav-Bar/css/style.css" rel="stylesheet">
-
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary top-bar fixed">
         <a class="navbar-brand" href="/"><img src="~/Imgs/LogoMini.png" /></a>
@@ -42,34 +27,19 @@
             </ul>
         </div>
     </nav>
-
-
-
-    <div>
-
-    </div>
-
     <div class="RenderBody">
-
         @RenderBody()
-
+    @await Component.InvokeAsync("LoggedInAsUser")
     </div>
-
     <main class="text-center my-5 footer">
         <div class="col-md-12">
-            &copy 2018 drinkit - sweden
+            &copy 2018 DrinkIt - Sweden
             <a asp-controller="Guest" asp-action="AboutUs">about us</a>
         </div>
     </main>
-
 </body>
-
 </html>
-
 <script type="text/javascript" src="~/Nav-Bar/JS/jquery-3.2.1.min.js"></script>
-
 <script type="text/javascript" src="Nav-Bar/js/popper.min.js"></script>
-
 <script type="text/javascript" src="Nav-Bar/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="Nav-Bar/js/mdb.min.js"></script>

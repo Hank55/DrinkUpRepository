@@ -18,5 +18,7 @@ namespace DrinkUpProject.Models.ViewModels
         [DataType(DataType.Password)]
         [Required(ErrorMessage ="Enter password")]
         public string Password { get; set; }
+
+        public bool IsLoggedIn { get; set; }
     }
 }
