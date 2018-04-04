@@ -239,8 +239,11 @@ div.col-md-12 {
     width: 200px !important;
 }
 
+.buttonsRec{
+    display: flex;
+    flex-direction: row !important;
+}
 //Create user view starts here
-
 .container {
     display: flex;
     flex-flow: row;

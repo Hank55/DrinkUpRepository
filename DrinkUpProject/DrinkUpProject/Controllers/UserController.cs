@@ -31,7 +31,7 @@ namespace DrinkUpProject.Controllers
 
             return View(randomDrink);
         }
-        
+
 
         [Route("MyPage")]
         public IActionResult MyPage()
@@ -54,5 +54,16 @@ namespace DrinkUpProject.Controllers
             accountRepository.addDrinkToList(userDetails.UserName, id);
             return View(nameof(Recipe), await accountRepository.GetRecipe(id));
         }
+
+        [HttpPost]
+        [Route("DeleteRecipe")]
+        public async Task<IActionResult> DeleteRecipe(string id)
+        {
+            var userDetails = accountRepository.GetLoggedInUser(User.Identity);
+            accountRepository.RemoveDrinkFromList(userDetails.UserName, id);
+            return View(nameof(Recipe), await accountRepository.GetRecipe(id));
+        }
+
+
     }
 }

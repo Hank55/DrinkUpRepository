@@ -182,6 +182,10 @@ div.col-md-12 {
   height: 200px !important;
   width: 200px !important; }
 
+.buttonsRec {
+  display: flex;
+  flex-direction: row !important; }
+
 .container {
   display: flex;
   flex-flow: row;

@@ -109,12 +109,11 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
-        public void removeDrinkFromList(User user, string drinkId)
+        public void RemoveDrinkFromList(string userName, string drinkId)
         {
-            var d = winterIsComingContext.UserDrinkList
-                .Where(o => o.KiwiUserId == user.Id && o.Apiid == drinkId)
-                .First();
-            winterIsComingContext.UserDrinkList.Remove(d);
+            User user = FindUserByUserName(userName);
+
+            winterIsComingContext.UserDrinkList.Remove(new UserDrinkList { Apiid = drinkId, KiwiUserId = user.Id, KiwiUser = winterIsComingContext.User.Find(user.Id) });
             winterIsComingContext.SaveChanges();
         }
 
