@@ -2,12 +2,12 @@
 <div class="all">
     <div class="container-fluid" style="margin-top:180px">
         <div class="row content">
-            <div class="col-sm-3">
+            <div style="float:left">
                 <div id="RecentlySavedDrinks" style="text-align:right">
                     @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
                 </div>
             </div>
-            <div class="col-sm-4 text-left">
+            <div style="float:left">
                 <strong>
                     Drink Fact :)!
                 </strong>
@@ -15,7 +15,7 @@
                     <p>@Model.DrinkFact</p>
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div style="float:left">
                 <div class="well">
                     <div style="text-align:center">
                         <form asp-controller="account" asp-action="Logout">
