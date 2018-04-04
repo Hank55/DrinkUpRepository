@@ -2,7 +2,6 @@
 <div class="all">
     <div class="LogIn">
         <h1>Welcome & Log In</h1>
-
         <form asp-controller="Account" asp-action="LogIn" method="post">
             <label style="font-size:25px" asp-for="LogInForm.UserName"></label><br />
             <input asp-for="LogInForm.UserName" /><br />
@@ -11,13 +10,11 @@
             <input asp-for="LogInForm.Password" /><br />
             <span style="color:red" asp-validation-for="LogInForm.Password"></span><br />
             <input type="submit" class="btn btn-outline-primary" value="Log in" /><br />
-
         </form>
         <form asp-controller="Account" asp-action="CreateUser" method="get">
             <input type="submit" class="btn btn-outline-primary" value="Create new user" />
         </form>
     </div>
-
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
@@ -31,7 +28,6 @@
             </div>
         </div>
     </div>
-
     <div class="SearchForm">
         @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
     </div>
