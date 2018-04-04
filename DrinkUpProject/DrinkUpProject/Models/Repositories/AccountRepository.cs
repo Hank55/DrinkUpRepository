@@ -3,6 +3,7 @@ using DrinkUpProject.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,21 @@ namespace DrinkUpProject.Models.Repositories
             return loginResult.Succeeded;
         }
 
+        internal async Task UpdateDrinkList(ClaimsPrincipal user, string drinkId, bool isAdd)
+        {
+            User userToUpdate = FindUserByUserName(user.Identity.Name);
+            if (isAdd)
+            {
+                winterIsComingContext.UserDrinkList.Add(new UserDrinkList { Apiid = drinkId, KiwiUserId = userToUpdate.Id, KiwiUser = winterIsComingContext.User.Find(userToUpdate.Id) });
+            }
+            else
+            {
+                var itemToDelete = await winterIsComingContext.UserDrinkList
+               .FirstAsync(o => o.Apiid == drinkId && o.KiwiUserId == userToUpdate.Id);
+                winterIsComingContext.UserDrinkList.Remove(itemToDelete);
+            }
+            await winterIsComingContext.SaveChangesAsync();
+        }
 
         internal async Task AddUserAsync(GuestCreateUserVM model)
         {
@@ -111,12 +127,13 @@ namespace DrinkUpProject.Models.Repositories
             winterIsComingContext.SaveChanges();
         }
 
-        public void removeDrinkFromList(User user, string drinkId)
+        public void RemoveDrinkFromList(string userName, string drinkId)
         {
-            var d = winterIsComingContext.UserDrinkList
-                .Where(o => o.KiwiUserId == user.Id && o.Apiid == drinkId)
-                .First();
-            winterIsComingContext.UserDrinkList.Remove(d);
+            User user = FindUserByUserName(userName);
+
+            var itemToDelete = winterIsComingContext.UserDrinkList
+                .First(o => o.Apiid == drinkId && o.KiwiUserId == user.Id);
+            winterIsComingContext.UserDrinkList.Remove(itemToDelete);
             winterIsComingContext.SaveChanges();
         }
 

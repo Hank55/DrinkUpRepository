@@ -49,12 +49,12 @@
                 <td>@Model.RecipeDrink.strMeasure14 @Model.RecipeDrink.strIngredient14</td>
             </tr>
 
-                <tr>
-                    <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
-                    <td>@Model.RecipeDrink.strMeasure10 @Model.RecipeDrink.strIngredient10</td>
-                    <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
-                </tr>
-            </table>
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
+                <td>@Model.RecipeDrink.strMeasure10 @Model.RecipeDrink.strIngredient10</td>
+                <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
+            </tr>
+        </table>
         <br />
 
         <p><strong>Instruction</strong></p>
@@ -63,14 +63,17 @@
             @Model.RecipeDrink.strInstructions
         </div>
         <br />
-        <div>
-            <form asp-controller="UserController" asp-action="SaveRecipe" asp-route-id="@Model.RecipeDrink.idDrink">
-                <input type="submit" class="btn btn-outline-primary" value="Save To Drink List" /><br />
-            </form>
+        <div class="buttonsRec">
+            @*<form asp-controller="UserController" asp-action="SaveRecipe" asp-route-id="@Model.RecipeDrink.idDrink">
+                <input type="submit" class="btn btn-outline-primary" value="Save To Drinks List" /><br />
+            </form>*@
+            <button id="SaveDeleteButton" class="btn btn-outline-primary" value="Remove" />Remove From Drinks List<br />
         </div>
-        </div>
+    </div>
 
     <div class="SearchFormRec">
         @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
     </div>
+
+    <script src="~/Scripts/SaveDeleteDrink.js"></script>
 </div>
