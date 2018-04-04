@@ -1,51 +1,51 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserRecipeVM
 
 
-    <div class="RecipeView">
-        <div id="LeftBox">
-            <h3>@Model.RecipeDrink.strDrink</h3>
-            <div id="searchImg">
-                <img id="ImgRec" src="@Model.RecipeDrink.strDrinkThumb" />
-            </div>
+<div class="RecipeView">
+    <div id="LeftBox">
+        <h3>@Model.RecipeDrink.strDrink</h3>
+        <div id="searchImg">
+            <img id="ImgRec" src="@Model.RecipeDrink.strDrinkThumb" />
+        </div>
+        <br />
+        <div id="drinkQuickFacts">
             <br />
-            <div id="drinkQuickFacts">
-                <br />
-                Drink Category: @Model.RecipeDrink.strCategory
-                <br />
-                IBA Category: @Model.RecipeDrink.strIBA
-                <br />
-                Drink Type: @Model.RecipeDrink.strAlcoholic
-                <br />
-                Glass Type: @Model.RecipeDrink.strGlass
-            </div>
+            Drink Category: @Model.RecipeDrink.strCategory
+            <br />
+            IBA Category: @Model.RecipeDrink.strIBA
+            <br />
+            Drink Type: @Model.RecipeDrink.strAlcoholic
+            <br />
+            Glass Type: @Model.RecipeDrink.strGlass
             <br />
         </div>
-        <div id="MiddleBox">
-            <p>Ingredients</p>
-            <table id="IngTable">
-                <tr>
-                    <td>@Model.RecipeDrink.strMeasure1 @Model.RecipeDrink.strIngredient1</td>
-                    <td>@Model.RecipeDrink.strMeasure6 @Model.RecipeDrink.strIngredient6</td>
-                    <td>@Model.RecipeDrink.strMeasure11 @Model.RecipeDrink.strIngredient11</td>
-                </tr>
+    </div>
+    <div id="MiddleBox">
+        <p>Ingredients</p>
+        <table id="IngTable">
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure1 @Model.RecipeDrink.strIngredient1</td>
+                <td>@Model.RecipeDrink.strMeasure6 @Model.RecipeDrink.strIngredient6</td>
+                <td>@Model.RecipeDrink.strMeasure11 @Model.RecipeDrink.strIngredient11</td>
+            </tr>
 
-                <tr>
-                    <td>@Model.RecipeDrink.strMeasure2 @Model.RecipeDrink.strIngredient2</td>
-                    <td>@Model.RecipeDrink.strMeasure7 @Model.RecipeDrink.strIngredient7</td>
-                    <td>@Model.RecipeDrink.strMeasure12 @Model.RecipeDrink.strIngredient12</td>
-                </tr>
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure2 @Model.RecipeDrink.strIngredient2</td>
+                <td>@Model.RecipeDrink.strMeasure7 @Model.RecipeDrink.strIngredient7</td>
+                <td>@Model.RecipeDrink.strMeasure12 @Model.RecipeDrink.strIngredient12</td>
+            </tr>
 
-                <tr>
-                    <td>@Model.RecipeDrink.strMeasure3 @Model.RecipeDrink.strIngredient3</td>
-                    <td>@Model.RecipeDrink.strMeasure8 @Model.RecipeDrink.strIngredient8</td>
-                    <td>@Model.RecipeDrink.strMeasure13 @Model.RecipeDrink.strIngredient13</td>
-                </tr>
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure3 @Model.RecipeDrink.strIngredient3</td>
+                <td>@Model.RecipeDrink.strMeasure8 @Model.RecipeDrink.strIngredient8</td>
+                <td>@Model.RecipeDrink.strMeasure13 @Model.RecipeDrink.strIngredient13</td>
+            </tr>
 
-                <tr>
-                    <td>@Model.RecipeDrink.strMeasure4 @Model.RecipeDrink.strIngredient4</td>
-                    <td>@Model.RecipeDrink.strMeasure9 @Model.RecipeDrink.strIngredient9</td>
-                    <td>@Model.RecipeDrink.strMeasure14 @Model.RecipeDrink.strIngredient14</td>
-                </tr>
+            <tr>
+                <td>@Model.RecipeDrink.strMeasure4 @Model.RecipeDrink.strIngredient4</td>
+                <td>@Model.RecipeDrink.strMeasure9 @Model.RecipeDrink.strIngredient9</td>
+                <td>@Model.RecipeDrink.strMeasure14 @Model.RecipeDrink.strIngredient14</td>
+            </tr>
 
                 <tr>
                     <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
@@ -64,9 +64,8 @@
                 <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
             </form>
         </div>
-    <br />
 
-        <div class="SearchFormRec">
-            @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
-        </div>
+    <div class="SearchFormRec">
+        @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
     </div>
+</div>
