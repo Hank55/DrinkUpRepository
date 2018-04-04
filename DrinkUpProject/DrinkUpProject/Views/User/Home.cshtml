@@ -17,13 +17,6 @@
             </div>
             <div style="float:left">
                 <div class="well">
-                    <div style="text-align:center">
-                        <form asp-controller="account" asp-action="Logout">
-                            <input class="btn-outline-unique" type="submit" value="Sign out" />
-                        </form>
-                    </div>
-                </div>
-                <div class="well">
                     <div id="searchBox" style="text-align:left">
                         @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
                     </div>
