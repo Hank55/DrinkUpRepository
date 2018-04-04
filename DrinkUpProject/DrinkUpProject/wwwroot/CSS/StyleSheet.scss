@@ -6,26 +6,13 @@
     width: 5% !important;
 }
 
-#DrinkFact 
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    width: 600px;
-    height: 200px;
-    background-color:rgba(224,239,150,0.4);
-    border-right: 5px solid #E0EF96;
-    p{
-        color: black;
-    }
-
-}
 
 #searchBox {
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
     height: 100%;
-    width: 75%;
+    width: 210%;
     margin-top: 8%;
     margin-bottom: 3%;
     padding-left: 5%;
