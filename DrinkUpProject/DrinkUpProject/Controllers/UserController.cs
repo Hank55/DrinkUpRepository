@@ -58,12 +58,11 @@ namespace DrinkUpProject.Controllers
         }
 
         [HttpPost]
-        [Route("DeleteRecipe")]
-        public async Task<IActionResult> DeleteRecipe(string id)
+        [Route("UpdateDrinkList")]
+        public async Task<IActionResult> UpdateDrinkList(string drinkId, bool isAdd)
         {
-            var userDetails = accountRepository.GetLoggedInUser(User.Identity);
-            accountRepository.RemoveDrinkFromList(userDetails.UserName, id);
-            return View(nameof(Recipe), await accountRepository.GetRecipe(id));
+            await accountRepository.UpdateDrinkList(User, drinkId, isAdd);
+            return Ok();
         }
 
 
