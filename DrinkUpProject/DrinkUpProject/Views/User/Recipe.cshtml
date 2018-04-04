@@ -67,7 +67,7 @@
     </div>
     <br />
     <div>
-        <form asp-controller="UserController" asp-action="Recipe">
+        <form asp-controller="UserController" asp-action="Recipe" asp-route-id="@Model.RecipeDrink.idDrink">
             <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
         </form>
     </div>
