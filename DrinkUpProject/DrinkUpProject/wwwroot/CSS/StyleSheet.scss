@@ -13,6 +13,10 @@
 }
 
 //SearchResult
+#SearchFormResult{
+    width:5%
+}
+
 #searchBox {
     display: flex;
     flex-flow: row wrap;
@@ -31,7 +35,10 @@
     border: 1px solid;
     border-color: #E0EF96;
     border-radius: 9px;
-    padding: 1%;
+    padding: 1;
+
+
+    
 
     h3 {
         padding: 2%;
@@ -94,7 +101,7 @@
 }
 
 
-.Button {
+/*.Button {
     background-color: grey;
     border: none;
     color: white;
@@ -105,7 +112,9 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
+    
+}*/
+
 
 
 .form {
@@ -113,6 +122,13 @@
 }
 
 //Input-boxes, text and password starts here
+.btn-outline-primary:hover {
+    border: 2px solid #FCE17C !important;
+    background-color: transparent !important;
+    color: #FCE17C !important;
+}
+
+
 input[type=text], input[type=password], input[type=email] {
     /*width: 100%;
     padding: 12px 20px;
@@ -121,7 +137,12 @@ input[type=text], input[type=password], input[type=email] {
     border: 3px solid #e0ef96;
     /*transition: 0.5s;
     outline: none;*/
+    height:44px;
     
+}
+
+input#ParamUrl {
+    margin-left: 4%;
 }
 
 
@@ -153,17 +174,6 @@ div.col-md-12 {
 //Home
 #RecentlySavedDrinks {
     display: flex;
-}
-.recentlySavedPosts{
-    div{
-        span{
-
-        }
-        img{
-            height:120px;
-            width:120px;
-        }
-    }
 }
 //Here begins the recipe-view
 .RecipeView {
@@ -205,7 +215,6 @@ div.col-md-12 {
     margin-bottom: 15% !important;
     box-sizing: border-box;
     border: 3px solid #FCE17C;
-
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -243,10 +252,9 @@ div.col-md-12 {
 
 #searchImg {
     margin-left: 8%;
-    height:200px !important;
-    width:200px !important;
-    
-    }
+    height: 200px !important;
+    width: 200px !important;
+}
 
 //Create user view starts here
 

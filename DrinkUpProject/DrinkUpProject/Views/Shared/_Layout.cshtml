@@ -6,12 +6,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="~/Scripts/IndexImageFlow.js"></script>
-    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
+
+    <link href="~/CSS/RecentlySaved.css" rel="stylesheet" />
+
     <link rel="shortcut icon" type="image/png" href="~/Imgs/shortcutlogo.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="Nav-Bar/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Nav-Bar/css/mdb.min.css" rel="stylesheet">
-    <link href="Nav-Bar/css/style.css" rel="stylesheet">
+    <link href="/Nav-Bar/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Nav-Bar/css/mdb.min.css" rel="stylesheet">
+    <link href="/Nav-Bar/css/style.css" rel="stylesheet">
+    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary top-bar fixed">
@@ -26,11 +29,14 @@
                 </li>
             </ul>
         </div>
-    @await Component.InvokeAsync("LoggedInAsUser")
+        @await Component.InvokeAsync("LoggedInAsUser")
     </nav>
+
     <div class="RenderBody">
         @RenderBody()
     </div>
+
+
     <main class="text-center my-5 footer">
         <div class="col-md-12">
             &copy 2018 DrinkIt - Sweden
