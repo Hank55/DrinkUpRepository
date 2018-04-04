@@ -13,6 +13,10 @@
 }
 
 //SearchResult
+#SearchFormResult{
+    width:5%
+}
+
 #searchBox {
     display: flex;
     flex-flow: row wrap;
@@ -194,7 +198,6 @@ div.col-md-12 {
     margin-bottom: 15% !important;
     box-sizing: border-box;
     border: 3px solid #FCE17C;
-
     transition: 0.5s;
     outline: none;
     width: 200px;
@@ -232,10 +235,9 @@ div.col-md-12 {
 
 #searchImg {
     margin-left: 8%;
-    height:200px !important;
-    width:200px !important;
-    
-    }
+    height: 200px !important;
+    width: 200px !important;
+}
 
 //Create user view starts here
 

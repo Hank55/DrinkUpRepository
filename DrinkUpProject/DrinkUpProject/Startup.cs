@@ -56,7 +56,12 @@ namespace DrinkUpProject
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/Error/ServerError");
+                app.UseStatusCodePagesWithRedirects("/Error/HttpError/{0}");
+                //app.UseDeveloperExceptionPage();
+            }
+            else
+            {
             }
 
             app.UseAuthentication();
