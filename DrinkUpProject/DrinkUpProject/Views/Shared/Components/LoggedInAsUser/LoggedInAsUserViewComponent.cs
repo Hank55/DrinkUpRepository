@@ -21,6 +21,4 @@ namespace DrinkUpProject.Views.Shared.Components.LoggedInAsUser
             return View(repository.GetLoggedInUser(User.Identity));
         }
     }
-
-
 }

@@ -44,7 +44,7 @@ namespace DrinkUpProject.Controllers
                 return RedirectToAction(nameof(GuestController.Index), "Guest");
             }
             else
-                return RedirectToAction(nameof(UserController.Home), "User");
+                return RedirectToAction(nameof(GuestController.Index), "Guest");
         }
 
         [Route("CreateUser")]
