@@ -3,29 +3,16 @@
 
 //SearchResult
 #SearchFormResult {
-    width: 5%
+    width: 5% !important;
 }
 
-#DrinkFact {
-
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    width: 600px;
-    height: 200px;
-    border-right: 5px solid #E0EF96;
-    p{
-        color: black;
-    }
-
-}
 
 #searchBox {
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
     height: 100%;
-    width: 75%;
+    width: 210%;
     margin-top: 8%;
     margin-bottom: 3%;
     padding-left: 5%;
@@ -38,7 +25,7 @@
     border: 1px solid;
     border-color: #E0EF96;
     border-radius: 9px;
-    padding: 1px;
+    padding: 1;
 
 
     
