@@ -27,7 +27,7 @@
   border: 1px solid;
   border-color: #E0EF96;
   border-radius: 9px;
-  padding: 1%; }
+  padding: 1; }
   .searchItems h3 {
     padding: 2%;
     font-family: 'Times New Roman', Times, serif;
@@ -68,20 +68,26 @@
   height: 150px;
   width: 150px; }
 
-.Button {
-  background-color: grey;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer; }
-
+/*.Button {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}*/
 .form {
   font-size: 20px; }
+
+.btn-outline-primary:hover {
+  border: 2px solid #FCE17C !important;
+  background-color: transparent !important;
+  color: #FCE17C !important; }
 
 input[type=text], input[type=password], input[type=email] {
   /*width: 100%;
