@@ -2,8 +2,15 @@
 
 @if (Model.IsLoggedIn)
 {
-<div>   
-  Logged in as: @Model.UserName
-</div>
+    <div>
+        <strong style="font-size:20px">
+            Logged in as: @Model.UserName
+        </strong>
+    </div>
+    <br />
+    <div style="padding:20px">
+        <form asp-controller="account" asp-action="Logout">
+            <input class="btn-outline-teal" type="submit" value="Sign out" />
+        </form>
+    </div>
 }
-
