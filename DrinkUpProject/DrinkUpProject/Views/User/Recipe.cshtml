@@ -54,24 +54,23 @@
                     <td>@Model.RecipeDrink.strMeasure14 @Model.RecipeDrink.strIngredient14</td>
                 </tr>
 
-            <tr>
-                <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
-                <td>@Model.RecipeDrink.strMeasure10 @Model.RecipeDrink.strIngredient10</td>
-                <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
-            </tr>
-        </table>
-    </div>
-    <br />
-    <div id="drinkInstructions">
-        @Model.RecipeDrink.strInstructions
-    </div>
-    <br />
-    <div>
-        <form asp-controller="UserController" asp-action="Recipe" asp-route-id="@Model.RecipeDrink.idDrink">
-            <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
-        </form>
-    </div>
-
+                <tr>
+                    <td>@Model.RecipeDrink.strMeasure5 @Model.RecipeDrink.strIngredient5</td>
+                    <td>@Model.RecipeDrink.strMeasure10 @Model.RecipeDrink.strIngredient10</td>
+                    <td>@Model.RecipeDrink.strMeasure15 @Model.RecipeDrink.strIngredient15</td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <div id="drinkInstructions">
+            @Model.RecipeDrink.strInstructions
+        </div>
+        <br />
+        <div>
+            <form asp-controller="UserController" asp-action="SaveRecipe" asp-route-id="@Model.RecipeDrink.idDrink">
+                <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
+            </form>
+        </div>
 
         <div class="SearchFormRec">
             @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
