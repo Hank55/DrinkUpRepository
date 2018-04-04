@@ -8,6 +8,7 @@ namespace DrinkUpProject.Models.ViewModels
     public class GuestResultVM
     {
         public GuestIndexLogInVM LoggedInAs { get; set; }
+        public SearchVM SearchForm { get; set; }
         public string DrinkName { get; set; }
         public string DrinkImg { get; set; }
         public string DrinkInfoShort { get; set; }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -20,6 +21,26 @@ namespace DrinkUpProject.Models.Repositories
         WinterIsComingContext winterIsComingContext;
         IdentityDbContext identityContext;
         UserManager<IdentityUser> userManager;
+
+        internal GuestIndexLogInVM GetLoggedInUser(IIdentity user)
+        {
+            var ret = new GuestIndexLogInVM
+            {
+                IsLoggedIn = user.IsAuthenticated
+            };
+
+            if(user.IsAuthenticated)
+            {
+                ret.UserName = user.Name;
+            }
+            else
+            {
+
+            }
+            return ret;
+
+        }
+
         SignInManager<IdentityUser> signInManager;
 
         public AccountRepository(
@@ -151,30 +172,36 @@ namespace DrinkUpProject.Models.Repositories
 
         public async Task<RecentlySavedVM[]> MethodRecentlySavedAsync(ClaimsPrincipal user)
         {
-
             string userIdString = userManager.GetUserId(user);
-
+            
             var currentUserId = winterIsComingContext.User
                 .Where(u => u.IdentityUsersId == userIdString)
                 .FirstOrDefault();
 
-            var recentlySavedDrinks = winterIsComingContext
+            var savedDrinks = winterIsComingContext
                 .UserDrinkList
                 .Where(u => u.KiwiUserId == currentUserId.Id)
+                .DefaultIfEmpty()
                 .ToArray();
 
 
 
-
-            string j = recentlySavedDrinks[0].Apiid.ToString();
             List<Drink> temp = new List<Drink>();
-
-            for (int i = 0; i < 4; i++)
+            if (savedDrinks[0] == null)
             {
-                temp.Add(new Drink { idDrink = recentlySavedDrinks[i].Apiid.ToString() });
+                temp.Add(new Drink { });
+            }
+            else
+            { 
+                 var recentlySavedDrinks = GetLastFourSaved(savedDrinks);
 
-                if (recentlySavedDrinks.Length <= temp.Count)
-                    break;
+                for (int i = 0; i < 4; i++)
+                {
+                    temp.Add(new Drink { idDrink = recentlySavedDrinks[i].Apiid.ToString() });
+
+                    if (recentlySavedDrinks.Length <= temp.Count)
+                        break;
+                }
             }
 
 
@@ -184,12 +211,32 @@ namespace DrinkUpProject.Models.Repositories
 
             for (int i = 0; i < drinkById.Count; i++)
             {
+                if (drinkById[0].idDrink == null)
+                {
+                    recent[0] = new RecentlySavedVM { DrinkName = "Nothing saved" };
+                    break;
+
+                }
                 recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
             }
 
-
-
             return recent;
+        }
+
+        private UserDrinkList[] GetLastFourSaved(UserDrinkList[] savedDrinks)
+        {
+            
+                var tempArray = new UserDrinkList[savedDrinks.Count()];
+            if (tempArray.Count() > 4)
+                tempArray = new UserDrinkList[4];
+
+            for (int i = 0; i < tempArray.Count(); i++)
+            {
+                tempArray[i] = savedDrinks[savedDrinks.Count() -i -1];
+                if (savedDrinks.Count() - i == 0)
+                    break;
+            }
+            return tempArray;
         }
 
         public async Task<UserRecipeVM> GetRecipe(string id)

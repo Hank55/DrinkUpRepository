@@ -1,4 +1,6 @@
-﻿@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
+﻿
+
+@model DrinkUpProject.Models.ViewModels.GuestResultVM[]
 
 
 
@@ -7,26 +9,33 @@
 <div id="searchBox">
     @foreach (var item in Model)
     {
-    <div class="searchItems">
         <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
-            <div id="searchImg">
-                @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
-                <img src="@item.DrinkImg" />
+            <div class="searchItems">
+
+                <div id="searchImg">
+                    @*<button type="submit"><img src="@item.DrinkImg" /></button>*@
+                    <img src="@item.DrinkImg" />
+                </div>
+
+                <div>
+
+                    <h3>@item.DrinkName</h3>
+
+                    <br />
+                    <h4>
+                        @item.DrinkInfoShort
+                    </h4>
+                    <br />
+                </div>
+
+
             </div>
-
-            <div>
-
-                <h3>@item.DrinkName</h3>
-
-                <br />
-                <h4>
-                    @item.DrinkInfoShort
-                </h4>
-                <br />
-            </div>
-
         </a>
-        </div>
     }
 </div>
 
+<div class="SearchForm">
+    @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model[0].SearchForm)
+</div>
+
+@*test*@

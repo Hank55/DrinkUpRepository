@@ -49,13 +49,12 @@ namespace DrinkUpProject.Controllers
         }
 
 
-        // Kan inte bygga förrän routingen funkar till Recipe-vyn
-        //[HttpPost]
-        //[Route("Recipe")]
-        //public async Task<IActionResult> Recipe(UserRecipeVM recipe)
-        //{
-        //    accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
-        //    return View();
-        //}
+       [HttpPost]
+       [Route("Recipe")]
+        public IActionResult Recipe(UserRecipeVM recipe)
+        {
+            accountRepository.addDrinkToList(recipe.LoggedInAs.UserName, recipe.RecipeDrink.idDrink);
+            return View();
+        }
     }
 }

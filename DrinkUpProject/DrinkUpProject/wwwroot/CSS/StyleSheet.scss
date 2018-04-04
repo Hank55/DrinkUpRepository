@@ -113,15 +113,15 @@
 }
 
 //Input-boxes, text and password starts here
-input[type=text], input[type=password] {
-    width: 100%;
+input[type=text], input[type=password], input[type=email] {
+    /*width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #E0EF96;
-    transition: 0.5s;
-    outline: none;
-    width: 200px;
+    box-sizing: border-box;*/
+    border: 3px solid #e0ef96;
+    /*transition: 0.5s;
+    outline: none;*/
+    
 }
 
 
@@ -141,7 +141,7 @@ div.col-md-12 {
     align-items: flex-start;
     background-color: #E0EF96;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    padding: 25px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -154,9 +154,18 @@ div.col-md-12 {
 #RecentlySavedDrinks {
     display: flex;
 }
+.recentlySavedPosts{
+    div{
+        span{
 
+        }
+        img{
+            height:120px;
+            width:120px;
+        }
+    }
+}
 //Here begins the recipe-view
-
 .RecipeView {
     display: flex;
     flex-flow: row;
@@ -238,3 +247,46 @@ div.col-md-12 {
     width:200px !important;
     
     }
+
+//Create user view starts here
+
+.container {
+    display: flex;
+    flex-flow: row;
+    /*justify-content: space-around;*/
+    align-items: flex-start;
+    margin-top: 10.1%;
+    height: auto !important;
+    max-height: 250px;
+}
+
+
+
+.img1{
+    width:150px;
+    height:150px;
+}
+.navbar{
+    z-index: 10000;
+    position:fixed;
+
+}
+
+.footer {
+    z-index: 10000;
+    position: fixed;
+}
+
+
+#valitationColerCreateUSer{
+    color:#7F7F7F
+}
+
+
+#colorLabel {
+    color: black;
+    font-weight: bold;
+}
+
+
+

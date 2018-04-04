@@ -1,49 +1,51 @@
 ﻿@model DrinkUpProject.Models.ViewModels.GuestCreateUserVM
 
 <div class="container">
-    <h1>Create User</h1>
+    <div>
+        <h1>Create Account</h1>
+    </div>
     <form class="form-control" asp-controller="Guest" asp-action="CreateUser">
         <div class="form-row">
-            <div class="col-md-4 mb-3 ">
-                <label asp-for="FirstName"></label>
+            <div class="col-md-5 mb-3 ">
+                <label id="colorLabel" asp-for="FirstName"></label>
                 <input class="form-control" asp-for="FirstName" />
-                <span asp-validation-for="FirstName"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="FirstName"></span>
             </div>
-            <div class="col-md-4 mb-3">
-                <label asp-for="LastName"></label>
+            <div class="col-md-5 mb-3">
+                <label id="colorLabel" asp-for="LastName"></label>
                 <input class="form-control" asp-for="LastName" />
-                <span asp-validation-for="LastName"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="LastName"></span>
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-6 mb-3">
-                <label asp-for="Email"></label>
+            <div class="col-md-10 mb-3">
+                <label id="colorLabel" asp-for="Email"></label>
                 <input class="form-control" asp-for="Email" />
-                <span asp-validation-for="Email"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="Email"></span>
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-4 mb-3 ">
-                <label asp-for="UserName"></label>
+            <div class="col-md-5 mb-3 ">
+                <label id="colorLabel" asp-for="UserName"></label>
                 <input class="form-control" asp-for="UserName" />
-                <span asp-validation-for="UserName"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="UserName"></span>
             </div>
-            <div class="col-md-4 mb-3">
-                <label asp-for="FavouriteDrink"></label>
+            <div class="col-md-5 mb-3">
+                <label id="colorLabel" asp-for="FavouriteDrink"></label>
                 <input class="form-control" asp-for="FavouriteDrink" />
-                <span asp-validation-for="FavouriteDrink"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="FavouriteDrink"></span>
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-4 mb-3 ">
-                <label asp-for="Password"></label>
+            <div class="col-md-5 mb-3 ">
+                <label id="colorLabel" asp-for="Password"></label>
                 <input class="form-control" asp-for="Password" />
-                <span asp-validation-for="Password"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="Password"></span>
             </div>
-            <div class="col-md-4 mb-3">
-                <label asp-for="ReEnterPassword"></label>
+            <div class="col-md-5 mb-3">
+                <label id="colorLabel" asp-for="ReEnterPassword"></label>
                 <input class="form-control" asp-for="ReEnterPassword" />
-                <span asp-validation-for="ReEnterPassword"></span>
+                <span id="valitationColerCreateUSer" asp-validation-for="ReEnterPassword"></span>
             </div>
         </div>
         <div class="form-row">
@@ -52,9 +54,13 @@
             </div>
     </form>
     <div class="col-md-4 mb-3">
-        <form asp-controller="Guest" asp-action="index" method="get">
+        <form style="text-align:right" asp-controller="Guest" asp-action="index" method="get">
             <button class="btn btn-outline-danger" type="submit">Cancel</button>
         </form>
     </div>
 </div>
 </div>
+
+@*<div>
+    <img class="Img1" src="https://www.thecocktaildb.com/images/media/drink/rxtqps1478251029.jpg" style="width:85%">
+</div>*@
