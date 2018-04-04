@@ -111,10 +111,6 @@ div.col-md-12 {
 #RecentlySavedDrinks {
   display: flex; }
 
-.recentlySavedPosts div img {
-  height: 120px;
-  width: 120px; }
-
 .RecipeView {
   display: flex;
   flex-flow: row;

@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/CSS/CreateUser.css",
     "inputFile": "wwwroot/CSS/CreateUser.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/RecentlySaved.css",
+    "inputFile": "wwwroot/CSS/RecentlySaved.scss"
   }
 ]
