@@ -1,17 +1,34 @@
 ﻿
+
+
+#recentlySavedBox {
+
+    width:270px;
+}
 .recentlySavedPosts {
+
     div {
+        height: 100px;
+        width: 260px;
+
         span {
+
+
+            padding-top: 40px;            
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 55%;
+            float:left;
         }
 
         img {
-            height: 120px;
-            width: 120px;
+            height: 100px;
+            width: 100px;
+            float:right;
+            border-right:solid 5px #FCE17C;
         }
     }
 }
 
-
-#recentlySavedBox{
-
-}
