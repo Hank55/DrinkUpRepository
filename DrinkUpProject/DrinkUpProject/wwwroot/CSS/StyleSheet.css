@@ -229,5 +229,16 @@ input#LogInForm_UserName {
 input#LogInForm_Password {
   width: 210px; }
 
-input.btn-outline-primary {
+input#buttonLoggIn {
   width: 200px; }
+
+input#buttonCreateUser {
+  width: 200px; }
+
+#SearchShakeDrink {
+  width: 19%;
+  height: 19%;
+  margin-top: 10% !important; }
+
+.navbar.navbar-light .breadcrumb .nav-item.active > .nav-link, .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  background: #E0EF96; }
