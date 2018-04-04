@@ -8,9 +8,10 @@
             <img id="ImgRec" src="@Model.RecipeDrink.strDrinkThumb" />
         </div>
         <br />
+        <p><strong>Drink inforamtion</strong></p>
+        <br/>
         <div id="drinkQuickFacts">
-            <br />
-            Drink Category: @Model.RecipeDrink.strCategory
+                      Drink Category: @Model.RecipeDrink.strCategory
             <br />
             IBA Category: @Model.RecipeDrink.strIBA
             <br />
@@ -21,7 +22,8 @@
         </div>
     </div>
     <div id="MiddleBox">
-        <p>Ingredients</p>
+        <p><strong>Ingredients</strong></p>
+        <br/>
         <table id="IngTable">
             <tr>
                 <td>@Model.RecipeDrink.strMeasure1 @Model.RecipeDrink.strIngredient1</td>
@@ -54,13 +56,16 @@
                 </tr>
             </table>
         <br />
+
+        <p><strong>Instruction</strong></p>
+        <br/>
         <div id="drinkInstructions">
             @Model.RecipeDrink.strInstructions
         </div>
         <br />
         <div>
             <form asp-controller="UserController" asp-action="SaveRecipe" asp-route-id="@Model.RecipeDrink.idDrink">
-                <input type="submit" class="btn btn-outline-primary" value="Save" /><br />
+                <input type="submit" class="btn btn-outline-primary" value="Save To Drink List" /><br />
             </form>
         </div>
         </div>
