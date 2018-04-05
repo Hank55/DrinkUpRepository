@@ -1,25 +1,14 @@
 ﻿@charset "UTF-8";
 ﻿
 #SearchFormResult {
-  width: 5%; }
-
-#DrinkFact {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  width: 600px;
-  height: 200px;
-  background-color: rgba(224, 239, 150, 0.4);
-  border-right: 5px solid #E0EF96; }
-  #DrinkFact p {
-    color: black; }
+  width: 5% !important; }
 
 #searchBox {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
   height: 100%;
-  width: 75%;
+  width: 210%;
   margin-top: 8%;
   margin-bottom: 3%;
   padding-left: 5%; }
@@ -31,7 +20,7 @@
   border: 1px solid;
   border-color: #E0EF96;
   border-radius: 9px;
-  padding: 1; }
+  padding: 1px; }
   .searchItems h3 {
     padding: 2%;
     font-family: 'Times New Roman', Times, serif;
@@ -152,7 +141,7 @@ div.col-md-12 {
   align-items: center;
   padding-right: 8%;
   margin-right: 3%;
-  margin-top: 5%; }
+  margin-top: 8%; }
   #MiddleBox p {
     padding-right: 67%; }
 
@@ -160,6 +149,7 @@ div.col-md-12 {
   margin-bottom: 15% !important;
   box-sizing: border-box;
   border: 0px solid #FCE17C;
+  border-right: 5px solid #E0EF96;
   transition: 0.5s;
   outline: none;
   width: 200px;
@@ -170,6 +160,7 @@ div.col-md-12 {
 #drinkInstructions {
   box-sizing: border-box;
   border: 0px solid #FCE17C;
+  border-right: 5px solid #E0EF96;
   transition: 0.5s;
   outline: none;
   width: 200px;
@@ -185,16 +176,16 @@ div.col-md-12 {
 #drinkQuickFacts {
   box-sizing: border-box;
   border: 0px solid #FCE17C;
+  border-right: 5px solid #E0EF96;
   transition: 0.5s;
   outline: none;
   width: 200px;
   padding-left: 2%;
   padding-bottom: 4%; }
 
-#searchImg {
-  margin-left: 8%;
-  height: 200px !important;
-  width: 200px !important; }
+#recipeImg img {
+  height: 260px !important;
+  width: 260px !important; }
 
 .buttonsRec {
   display: flex;
@@ -237,5 +228,22 @@ input#LogInForm_UserName {
 input#LogInForm_Password {
   width: 210px; }
 
-input.btn-outline-primary {
+input#buttonLoggIn {
   width: 200px; }
+
+input#buttonCreateUser {
+  width: 200px; }
+
+#SearchShakeDrink {
+  width: 19%;
+  height: 19%;
+  margin-top: 10% !important; }
+
+.nav-link {
+  color: #7f7f7f; }
+
+.MembersDiv {
+  width: 180px; }
+
+#paddingMyPageButton {
+  padding-top: 30px; }
