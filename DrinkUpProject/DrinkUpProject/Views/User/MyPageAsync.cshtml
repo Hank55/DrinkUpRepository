@@ -26,12 +26,13 @@
                 }
             </div>
             <div class="col-sm">
-                <p class="Button">Placeholder for fav drink</p>
+                <p class="Button">Favourite Drink: @Model.FavDrink</p>
+                <p class="Button">First Name: @Model.FirstName</p>
+                <p class="Button">Last Name: @Model.LastName</p>
+                <p class="Button">Email: @Model.Email</p>
+                <p class="Button">Username: @Model.UserName</p>
                 <form>
                     <input class="btn btn-outline-primary" type="submit" name="EditProfileButton" value="Edit Profile" />
-                </form>
-                <form asp-controller="User" asp-action="MyPage">
-                    <input class="btn btn-outline-primary" type="submit" name="BackToHomeButton" value="Back To Home" />
                 </form>
             </div>
         </div>
