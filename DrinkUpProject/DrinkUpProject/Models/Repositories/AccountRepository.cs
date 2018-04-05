@@ -40,7 +40,10 @@ namespace DrinkUpProject.Models.Repositories
 
             }
             return ret;
+
         }
+
+
 
         SignInManager<IdentityUser> signInManager;
 
