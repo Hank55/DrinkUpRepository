@@ -20,16 +20,20 @@
   border: 1px solid;
   border-color: #E0EF96;
   border-radius: 9px;
-  padding: 1px; }
+  padding: 1px;
+  color: black; }
   .searchItems h3 {
+    color: black;
     padding: 2%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px; }
   .searchItems h4 {
+    color: black;
     padding: 1%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px; }
   .searchItems h5 {
+    color: black;
     padding: 1%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px; }
