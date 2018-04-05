@@ -18,7 +18,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary top-bar fixed">
-       @await Component.InvokeAsync("LogoWhenLoggedIn")
+        @await Component.InvokeAsync("LogoWhenLoggedIn")
         @await Component.InvokeAsync("HeaderLogo")
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,10 +40,13 @@
 
 
     <main class="text-center my-5 footer">
-        <div class="col-md-12">
-            &copy 2018 DrinkIt - Sweden
-            <a asp-controller="Guest" asp-action="AboutUs">about us</a>
-        </div>
+       
+            <div class="col-md-12">
+                &copy 2018 DrinkIt - Sweden
+                <a asp-controller="Guest" asp-action="AboutUs">about us</a>
+            </div>
+      
+
     </main>
     <script type="text/javascript" src="/Nav-Bar/JS/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/Nav-Bar/js/popper.min.js"></script>
