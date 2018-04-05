@@ -58,7 +58,6 @@ namespace DrinkUpProject.Models.Repositories
             this.signInManager = signInManager;
             this.winterIsComingContext = winterIsComingContext;
         }
-        
 
         public async Task<bool> TryLoginAsync(GuestIndexLogInVM viewModel)
         {
@@ -266,57 +265,29 @@ namespace DrinkUpProject.Models.Repositories
         }
 
 
-
-        ////private async Task<RecentlySavedVM[]> MethodRecentlySavedAsync()
-        //{
-        //    var currentUser = await userManager.GetUserId();
-
-        //    var userDrinks = currentUser
-        //        .UserListDrinkId
-        //        .First();
-
-        //    List<Drink> test = new List<Drink>()
-        //    {
-        //       new Drink{ idDrink = userDrinks}
-        //    };
-
-
-        //    var user = Ge.User;
-
-        //    var drinkById = await GetDrinksById(user);
-
-        //    RecentlySavedVM[] recent = new RecentlySavedVM[drinkById.Count];
-
-        //    for (int i = 0; i < 1; i++)
-        //    {
-        //        recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
-        //    }
-
-        //    return recent;
-        //}
-
-
-        public async Task<AccountMyPageAsyncVM> FindDrinkListByUserIdAsync(ClaimsPrincipal claimsPrincipal)
+        public async Task<AccountMyPageAsyncVM> GetMyPageDetails(ClaimsPrincipal claimsPrincipal)
         {
             var aspNetUserId = userManager.GetUserId(claimsPrincipal);
-            //IdentityUser kiwiUserId = await userManager.FindByIdAsync(aspNetUserId);
-            //string strKiwiUserId = kiwiUserId.ToString();
             string strAspNetUserId = aspNetUserId.ToString();
             
 
-            AccountMyPageAsyncVM userDrink = winterIsComingContext
+            AccountMyPageAsyncVM savedUserDrinks = winterIsComingContext
                 .User
-                //.Where(o => o.KiwiUserId.ToString() == strKiwiUserId)
                 .Where(o => o.IdentityUsersId.ToString() == strAspNetUserId)
                 .Select(o => new AccountMyPageAsyncVM
                 {
+
                     UserDrinkList = o.UserDrinkList,
+                    FavDrink = o.FavDrink,
+                    FirstName = o.FirstName,
+                    LastName = o.LastName,
+
                 })
                 .Single();
 
             List<string> listOfAPIDrinkIds = new List<string>();
 
-            foreach (var item in userDrink.UserDrinkList)
+            foreach (var item in savedUserDrinks.UserDrinkList)
             {
                 listOfAPIDrinkIds.Add(item.Apiid);
             }
@@ -333,39 +304,13 @@ namespace DrinkUpProject.Models.Repositories
             AccountMyPageAsyncVM accountMyPageVM = new AccountMyPageAsyncVM();
 
             accountMyPageVM.DrinkList = tempArray;
+            accountMyPageVM.FavDrink = savedUserDrinks.FavDrink;
+            accountMyPageVM.FirstName = savedUserDrinks.FirstName;
+            accountMyPageVM.LastName = savedUserDrinks.LastName;
 
             return accountMyPageVM;
             
         }
 
-        //public async Task<List<Drink>> GetDrinksById(UserDrinkList userDrink)
-        //{
-        //    List<int> arrayOfDrinkAPIIds = new List<int>();
-
-        //    foreach (var item in userDrink.Apiid)
-        //    {
-        //        arrayOfDrinkAPIIds.Add(item);
-        //    }
-
-
-        //    //var tempArray = new List<Drink>();
-
-        //    //for (int i = 0; i < userDrink.Count; i++)
-        //    //{
-        //    //    var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drinkList[i].idDrink}";
-        //    //    var tempListDrink = await GetDrinks(findDrinkByIdURL);
-        //    //    tempArray.Add(tempListDrink[0]);
-        //    //}
-
-        //    //return tempArray;
-
-        //    return null;
-        //}
-
-        //public UserDrinkList GetUserDrinkList(string userName)
-        //{
-
-        //    return null;
-        //}
     }
 }
