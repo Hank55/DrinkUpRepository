@@ -253,5 +253,8 @@ input#buttonCreateUser {
 .nav-link {
   color: #7f7f7f; }
 
+.MembersDiv {
+  width: 180px; }
+
 #paddingMyPageButton {
   padding-top: 30px; }
