@@ -5,27 +5,30 @@
 <div class="all">
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm-9">
 
                 <h5 class="text-success">My Awesome Drinks</h5>
-
-                @if (Model.DrinkList != null)
+                <div id="userDrinkList">
+                    @if (Model.DrinkList != null)
                 {
 
                     @foreach (var item in Model.DrinkList)
-                    {
-                        <div class="drinkList">
+                {
+                    <div class="drinkListItems">
 
-                            <div>
-                                <span>@item.strDrink</span>
+                        <div>
+                            <span>@item.strDrink</span>
+                            <div id="searchImg2">
                                 <img src="@item.strDrinkThumb" />
                             </div>
-
                         </div>
-                    }
-                }
+
+                    </div>
+            }
+            }
+                </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-3">
                 <p class="Button">Placeholder for fav drink</p>
                 <form>
                     <input class="btn btn-outline-primary" type="submit" name="EditProfileButton" value="Edit Profile" />
@@ -38,3 +41,28 @@
     </div>
 </div>
 
+
+
+@*<div id="searchBox">
+        @foreach (var item in Model)
+        {
+            <a asp-controller="User" asp-action="Recipe" method="get" asp-route-id="@item.DrinkId">
+                <div class="searchItems">
+
+                    <div id="searchImg">
+                        <img src="@item.DrinkImg" />
+                    </div>
+
+                    <div>
+
+                        <h3>@item.DrinkName</h3>
+
+                        <br />
+                        <h4>
+                            @item.DrinkInfoShort
+                        </h4>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>*@
