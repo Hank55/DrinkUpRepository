@@ -262,3 +262,17 @@ input#buttonCreateUser {
 
 .MembersDiv {
   width: 180px; }
+
+.ErrorM {
+  margin-top: 180px; }
+
+.ErrorImg {
+  padding-left: 41%; }
+
+.ErrorText {
+  padding-left: 29%;
+  color: black;
+  font-size: larger; }
+
+.ErrorText:hover {
+  color: #FCE17C; }
