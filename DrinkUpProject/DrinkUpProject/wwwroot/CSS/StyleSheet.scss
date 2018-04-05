@@ -26,28 +26,36 @@
     border-color: #E0EF96;
     border-radius: 9px;
     padding: 1px;
+    color:black;
 
 
     
 
     h3 {
+        color: black;
         padding: 2%;
         font-family: 'Times New Roman', Times, serif;
         font-size: 17px;
+        
     }
 
     h4 {
+        color:black;
+        padding: 1%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
+        
+    }
+
+    h5 {
+        color:black;
         padding: 1%;
         font-family: 'Times New Roman', Times, serif;
         font-size: 12px;
     }
 
-    h5 {
-        padding: 1%;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 12px;
-    }
 }
+
 
 //View for ""
 .all {
@@ -329,7 +337,7 @@ input#buttonCreateUser {
 
     padding-top:30px;
 }
-}
+
 
 .MembersDiv{
     width:180px;
