@@ -43,6 +43,8 @@ namespace DrinkUpProject.Models.Repositories
 
         }
 
+
+
         SignInManager<IdentityUser> signInManager;
 
         public AccountRepository(
@@ -149,6 +151,15 @@ namespace DrinkUpProject.Models.Repositories
         public void Logout()
         {
             signInManager.SignOutAsync();
+        }
+
+        public async Task<bool> DrinkIsInList(ClaimsPrincipal user, string drinkId)
+        {
+            User userToCheck = FindUserByUserName(user.Identity.Name);
+            if (await winterIsComingContext.UserDrinkList.FirstOrDefaultAsync(o => o.KiwiUserId == userToCheck.Id && o.Apiid == drinkId) != null)
+                return true;
+            else
+                return false;
         }
 
 
@@ -262,7 +273,32 @@ namespace DrinkUpProject.Models.Repositories
         {
             List<Drink> d = await testRepository.GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
             Drink drink = d.First();
-            return new UserRecipeVM { RecipeDrink = drink };
+            return new UserRecipeVM {
+                RecipeDrink = drink
+            };
+        }
+
+        public async Task<UserRecipeVM> GetRecipe(string id, ClaimsPrincipal user)
+        {
+            List<Drink> d = await testRepository.GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
+            Drink drink = d.First();
+            User currentUser = FindUserByUserName(user.Identity.Name);
+            if (currentUser != null && winterIsComingContext.UserDrinkList
+               .FirstOrDefault(o => o.Apiid == id && o.KiwiUserId == currentUser.Id).Apiid == id)
+            {
+                return new UserRecipeVM
+                {
+                    RecipeDrink = drink,
+                    IsInList = "true" 
+                };
+            }
+            else
+                return new UserRecipeVM
+                {
+                    RecipeDrink = drink,
+                    IsInList = "false"
+                };
+
         }
 
 

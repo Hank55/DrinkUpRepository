@@ -2,10 +2,11 @@
     $("#SaveDeleteButton").click(function () {
 
         let id = getDrinkId();
-        if ($("#SaveDeleteButton").val() === "Remove") {
+        alert($("#SaveDeleteButton").val());
+        if ($("#SaveDeleteButton").val() === "True") {
             doAjaxCallUpdate(id, false);
         }
-        else if ($("#SaveDeleteButton").val() === "Save") {
+        else if ($("#SaveDeleteButton").val() === "False") {
             doAjaxCallUpdate(id, true);
         }
     });
@@ -26,14 +27,14 @@ function doAjaxCallUpdate(id, isAdd) {
         data: { "drinkId": id, "isAdd": isAdd },
         success: function (result) {
             if (isAdd) {
-                $("#SaveDeleteButton").val("Remove");
+                $("#SaveDeleteButton").val("True");
                 $("#SaveDeleteButton").text("Remove From Drink List");
             }
             else {
-                $("#SaveDeleteButton").val("Save");
+                $("#SaveDeleteButton").val("False");
                 $("#SaveDeleteButton").text("Save To Drink List");
             }
-
+            alert("Updated");
         }
     });
 
