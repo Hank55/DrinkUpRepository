@@ -65,6 +65,5 @@ namespace DrinkUpProject.Controllers
             return Ok();
         }
 
-
     }
 }

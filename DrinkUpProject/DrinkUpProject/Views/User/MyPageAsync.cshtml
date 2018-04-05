@@ -2,7 +2,7 @@
 
 
 
-<div class="all" >
+<div class="all">
     <div class="container" style="padding-top: 20px">
         <div class="row">
             <div class="col-sm-8">
@@ -14,21 +14,22 @@
 
                         @foreach (var item in Model.DrinkList)
                         {
+
                             <div class="drinkListItems">
-
-                                <div>
-                                    <span>@item.strDrink</span>
-                                    <div id="searchImg2">
-                                        <img src="@item.strDrinkThumb" />
+                                <a asp-action="Recipe" asp-controller="User" asp-route-id="@item.idDrink">
+                                    <div>
+                                        <span>@item.strDrink </span>
+                                        <div id="searchImg2">
+                                            <img src="@item.strDrinkThumb" />
+                                        </div>
                                     </div>
-                                </div>
-
+                                </a>
                             </div>
                         }
                     }
                 </div>
             </div>
-            <div id="userInfo" class="col-sm-3" >
+            <div id="userInfo" class="col-sm-3">
                 <p class="Button">Favourite Drink: @Model.FavDrink</p>
                 <p class="Button">First Name: @Model.FirstName</p>
                 <p class="Button">Last Name: @Model.LastName</p>

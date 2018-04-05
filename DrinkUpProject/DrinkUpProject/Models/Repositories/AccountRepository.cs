@@ -325,14 +325,12 @@ namespace DrinkUpProject.Models.Repositories
                 .Where(o => o.IdentityUsersId.ToString() == strAspNetUserId)
                 .Select(o => new AccountMyPageAsyncVM
                 {
-
                     UserDrinkList = o.UserDrinkList,
                     FavDrink = o.FavDrink,
                     FirstName = o.FirstName,
                     LastName = o.LastName
                 })
                 .Single();
-
 
             List<string> listOfAPIDrinkIds = new List<string>();
 
@@ -347,7 +345,8 @@ namespace DrinkUpProject.Models.Repositories
             {
                 var findDrinkByIdURL = $"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={listOfAPIDrinkIds[i]}";
                 var tempListDrink = await testRepository.GetDrinks(findDrinkByIdURL);
-                tempArray.Add(new Drink { strDrink = tempListDrink[0].strDrink, strDrinkThumb = tempListDrink[0].strDrinkThumb });
+                var item = tempListDrink[0];
+                tempArray.Add(new Drink { idDrink= item.idDrink, strDrink = item.strDrink, strDrinkThumb = item.strDrinkThumb });
             }
 
             savedUserDrinks.Email = user.Email;
