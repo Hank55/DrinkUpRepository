@@ -1,12 +1,20 @@
 ﻿$(document).ready(function () {
+    $(function () {
+        if ($("#SaveDeleteButton").val() === "true") {
+            $("#SaveDeleteButton").text("Remove From Drink List");
+        }
+        else {
+            $("#SaveDeleteButton").text("Save To Drink List");
+        }
+    });
+
     $("#SaveDeleteButton").click(function () {
 
         let id = getDrinkId();
-        alert($("#SaveDeleteButton").val());
-        if ($("#SaveDeleteButton").val() === "True") {
+        if ($("#SaveDeleteButton").val() === "true") {
             doAjaxCallUpdate(id, false);
         }
-        else if ($("#SaveDeleteButton").val() === "False") {
+        else if ($("#SaveDeleteButton").val() === "false") {
             doAjaxCallUpdate(id, true);
         }
     });
@@ -27,14 +35,13 @@ function doAjaxCallUpdate(id, isAdd) {
         data: { "drinkId": id, "isAdd": isAdd },
         success: function (result) {
             if (isAdd) {
-                $("#SaveDeleteButton").val("True");
+                $("#SaveDeleteButton").val("true");
                 $("#SaveDeleteButton").text("Remove From Drink List");
             }
             else {
-                $("#SaveDeleteButton").val("False");
+                $("#SaveDeleteButton").val("false");
                 $("#SaveDeleteButton").text("Save To Drink List");
             }
-            alert("Updated");
         }
     });
 
