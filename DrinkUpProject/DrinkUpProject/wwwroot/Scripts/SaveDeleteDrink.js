@@ -1,11 +1,19 @@
 ﻿$(document).ready(function () {
+    $(function () {
+        if ($("#SaveDeleteButton").val() === "true") {
+            $("#SaveDeleteButton").text("Remove From Drink List");
+        }
+        else {
+            $("#SaveDeleteButton").text("Save To Drink List");
+        }
+    });
+
     $("#SaveDeleteButton").click(function () {
-        //alert("It's happening!");
         let id = getDrinkId();
-        if ($("#SaveDeleteButton").val() === "Remove") {
+        if ($("#SaveDeleteButton").val() === "true") {
             doAjaxCallUpdate(id, false);
         }
-        else if ($("#SaveDeleteButton").val() === "Save") {
+        else if ($("#SaveDeleteButton").val() === "false") {
             doAjaxCallUpdate(id, true);
         }
     });
@@ -26,16 +34,13 @@ function doAjaxCallUpdate(id, isAdd) {
         data: { "drinkId": id, "isAdd": isAdd },
         success: function (result) {
             if (isAdd) {
-                $("#SaveDeleteButton").val("Remove");
+                $("#SaveDeleteButton").val("true");
                 $("#SaveDeleteButton").text("Remove From Drink List");
-                alert("You SAVED it. Maybe. It's javascript...");
             }
             else {
-                $("#SaveDeleteButton").val("Save");
+                $("#SaveDeleteButton").val("false");
                 $("#SaveDeleteButton").text("Save To Drink List");
-                alert("You deleted it. Maybe. It's javascript...");
             }
-
         }
     });
 

@@ -46,7 +46,7 @@ namespace DrinkUpProject.Controllers
         [Route("Recipe/{id}")]
         public async Task<IActionResult> Recipe(string id)
         {
-            return View(await accountRepository.GetRecipe(id));
+            return View(await accountRepository.GetRecipe(id, HttpContext.User));
         }
 
         [HttpPost]
@@ -55,7 +55,7 @@ namespace DrinkUpProject.Controllers
         {
             var userDetails = accountRepository.GetLoggedInUser(User.Identity);
             accountRepository.addDrinkToList(userDetails.UserName, id);
-            return View(nameof(Recipe), await accountRepository.GetRecipe(id));
+            return View(nameof(Recipe), await accountRepository.GetRecipe(id, HttpContext.User));
         }
 
         [HttpPost]

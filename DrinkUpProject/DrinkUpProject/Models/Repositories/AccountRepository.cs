@@ -31,7 +31,7 @@ namespace DrinkUpProject.Models.Repositories
                 IsLoggedIn = user.IsAuthenticated
             };
 
-            if(user.IsAuthenticated)
+            if (user.IsAuthenticated)
             {
                 ret.UserName = user.Name;
             }
@@ -42,6 +42,8 @@ namespace DrinkUpProject.Models.Repositories
             return ret;
 
         }
+
+
 
         SignInManager<IdentityUser> signInManager;
 
@@ -58,6 +60,7 @@ namespace DrinkUpProject.Models.Repositories
             this.signInManager = signInManager;
             this.winterIsComingContext = winterIsComingContext;
         }
+
 
         public async Task<bool> TryLoginAsync(GuestIndexLogInVM viewModel)
         {
@@ -150,6 +153,15 @@ namespace DrinkUpProject.Models.Repositories
             signInManager.SignOutAsync();
         }
 
+        public async Task<bool> DrinkIsInList(ClaimsPrincipal user, string drinkId)
+        {
+            User userToCheck = FindUserByUserName(user.Identity.Name);
+            if (await winterIsComingContext.UserDrinkList.FirstOrDefaultAsync(o => o.KiwiUserId == userToCheck.Id && o.Apiid == drinkId) != null)
+                return true;
+            else
+                return false;
+        }
+
 
 
         public async Task<UserHomeVM> GetRandomFactAboutDrink(ClaimsPrincipal user)
@@ -191,7 +203,7 @@ namespace DrinkUpProject.Models.Repositories
         public async Task<RecentlySavedVM[]> MethodRecentlySavedAsync(ClaimsPrincipal user)
         {
             string userIdString = userManager.GetUserId(user);
-            
+
             var currentUserId = winterIsComingContext.User
                 .Where(u => u.IdentityUsersId == userIdString)
                 .FirstOrDefault();
@@ -210,8 +222,8 @@ namespace DrinkUpProject.Models.Repositories
                 temp.Add(new Drink { });
             }
             else
-            { 
-                 var recentlySavedDrinks = GetLastFourSaved(savedDrinks);
+            {
+                var recentlySavedDrinks = GetLastFourSaved(savedDrinks);
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -235,7 +247,7 @@ namespace DrinkUpProject.Models.Repositories
                     break;
 
                 }
-                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
+                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb, RecipeId= drinkById[i].idDrink };
             }
 
             return recent;
@@ -243,14 +255,14 @@ namespace DrinkUpProject.Models.Repositories
 
         private UserDrinkList[] GetLastFourSaved(UserDrinkList[] savedDrinks)
         {
-            
-                var tempArray = new UserDrinkList[savedDrinks.Count()];
+
+            var tempArray = new UserDrinkList[savedDrinks.Count()];
             if (tempArray.Count() > 4)
                 tempArray = new UserDrinkList[4];
 
             for (int i = 0; i < tempArray.Count(); i++)
             {
-                tempArray[i] = savedDrinks[savedDrinks.Count() -i -1];
+                tempArray[i] = savedDrinks[savedDrinks.Count() - i - 1];
                 if (savedDrinks.Count() - i == 0)
                     break;
             }
@@ -261,7 +273,43 @@ namespace DrinkUpProject.Models.Repositories
         {
             List<Drink> d = await testRepository.GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
             Drink drink = d.First();
-            return new UserRecipeVM { RecipeDrink = drink };
+            return new UserRecipeVM
+            {
+                RecipeDrink = drink
+            };
+        }
+
+        public async Task<UserRecipeVM> GetRecipe(string id, ClaimsPrincipal user)
+        {
+            List<Drink> d = await testRepository.GetDrinks($"https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={id}");
+            Drink drink = d.First();
+            User currentUser = null;
+            currentUser = FindUserByUserName(user.Identity.Name);
+            if (currentUser != null)
+            {
+                UserDrinkList userDrink = await winterIsComingContext.UserDrinkList.SingleOrDefaultAsync(o => o.Apiid == id && o.KiwiUserId == currentUser.Id);
+                if (userDrink !=null)
+                {
+                    return new UserRecipeVM
+                    {
+                        RecipeDrink = drink,
+                        IsInList = "true"
+                    };
+                }
+                else return new UserRecipeVM
+                {
+                    RecipeDrink = drink,
+                    IsInList = "false"
+                };
+            }
+
+            else
+                return new UserRecipeVM
+                {
+                    RecipeDrink = drink,
+                    IsInList = "false"
+                };
+
         }
 
 
@@ -269,7 +317,7 @@ namespace DrinkUpProject.Models.Repositories
         {
             var aspNetUserId = userManager.GetUserId(claimsPrincipal);
             string strAspNetUserId = aspNetUserId.ToString();
-            
+
 
             AccountMyPageAsyncVM savedUserDrinks = winterIsComingContext
                 .User
@@ -309,7 +357,7 @@ namespace DrinkUpProject.Models.Repositories
             accountMyPageVM.LastName = savedUserDrinks.LastName;
 
             return accountMyPageVM;
-            
+
         }
 
     }

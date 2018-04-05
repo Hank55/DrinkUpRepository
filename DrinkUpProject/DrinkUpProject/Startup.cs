@@ -54,11 +54,11 @@ namespace DrinkUpProject
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
+           if (env.IsDevelopment())
+           {
+               app.UseDeveloperExceptionPage();
+           }
+           else
             {
                 app.UseExceptionHandler("/Error/ServerError");
                 app.UseStatusCodePagesWithRedirects("/Error/HttpError/{0}");

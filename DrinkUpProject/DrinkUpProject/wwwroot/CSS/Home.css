@@ -1,0 +1,18 @@
+﻿#DrinkFact {
+  padding-left: 70px; }
+  #DrinkFact strong {
+    font-size: 18px; }
+  #DrinkFact div {
+    padding-left: 30px;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    height: auto;
+    border-right: 5px solid #E0EF96; }
+    #DrinkFact div p {
+      padding-top: 15px;
+      color: black; }
+
+#RecentlySavedDrinks {
+  display: flex; }
