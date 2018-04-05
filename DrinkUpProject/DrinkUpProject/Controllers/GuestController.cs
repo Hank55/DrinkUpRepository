@@ -36,8 +36,16 @@ namespace DrinkUpProject.Controllers
             var valueOf = Request.Form["SearchParameter"];
 
             GuestResultVM[] drinks;
-            if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem))
+            if (String.IsNullOrWhiteSpace(homeIndexVM.SearchItem)) { 
+
+                
+                if (HttpContext.User.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction(nameof(UserController.Home), "User");
+                }
+                else
                 return View(new GuestIndexVM());
+            }
 
             if (valueOf == "Drink")
             {
@@ -57,6 +65,12 @@ namespace DrinkUpProject.Controllers
             var drinks = repository.GetLastSearchResult();
             if (drinks[0].DrinkName == "NoSearchResult")
             {
+                var user = HttpContext.User;
+                
+                if (user.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction(nameof(UserController.Home), "User");
+                }
                 return RedirectToAction(nameof(Index));
             }
 
