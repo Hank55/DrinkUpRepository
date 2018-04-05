@@ -247,7 +247,7 @@ input#buttonCreateUser {
   padding-top: 30px; }
 
 .MembersDiv {
-  width: 180px; }
+  width: 190px; }
 
 .ErrorM {
   margin-top: 180px; }
@@ -266,5 +266,49 @@ input#buttonCreateUser {
 #SaveDeleteButton {
   margin-bottom: 60px; }
 
+#userDrinkList {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  height: 100%;
+  width: 700px;
+  margin-top: 8%;
+  margin-bottom: 3%;
+  padding-left: 5%; }
+
+#searchImg2 img {
+  height: 150px;
+  width: 150px; }
+
+.drinkListItems {
+  display: flex;
+  flex-flow: row;
+  width: 220px;
+  height: 200px;
+  border: 1px solid;
+  border-color: #E0EF96;
+  border-radius: 9px;
+  padding: 25px;
+  color: black; }
+  .drinkListItems h3 {
+    color: black;
+    padding: 2%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px; }
+  .drinkListItems h4 {
+    color: black;
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px; }
+  .drinkListItems h5 {
+    color: black;
+    padding: 1%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px; }
+
 .col-md-12 {
   justify-content: space-between !important; }
+
+#userInfo {
+  margin-top: 50px;
+  margin-left: 80px; }
