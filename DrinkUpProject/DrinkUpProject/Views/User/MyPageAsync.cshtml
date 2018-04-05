@@ -1,37 +1,40 @@
 ﻿@model DrinkUpProject.Models.ViewModels.AccountMyPageAsyncVM
 
+
+
 <div class="all">
-    <div>
-        User drinklist
-    </div>
-    <div>
-        <img src="~/Imgs/Logo.png" /><br />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
 
-        <h5>My Drinks</h5>
+                <h5 class="text-success">My Awesome Drinks</h5>
 
-        @if (Model.DrinkList != null)
-        {
+                @if (Model.DrinkList != null)
+                {
 
-            @foreach (var item in Model.DrinkList)
-            {
-                <div class="drinkList">
+                    @foreach (var item in Model.DrinkList)
+                    {
+                        <div class="drinkList">
 
-                    <div>
-                        <span>@item.strDrink</span>
-                        <img src="@item.strDrinkThumb" />
-                    </div>
+                            <div>
+                                <span>@item.strDrink</span>
+                                <img src="@item.strDrinkThumb" />
+                            </div>
 
-                </div>
-            }
-        }
-
-
-        <p class="Button">Placeholder for fav drink</p>
-        <form>
-            <input class="Button" type="submit" name="EditProfileButton" value="Edit Profile" />
-        </form>
-        <form asp-controller="User" asp-action="MyPage">
-            <input class="Button" type="submit" name="BackToHomeButton" value="Back To Home" />
-        </form>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-sm">
+                <p class="Button">Placeholder for fav drink</p>
+                <form>
+                    <input class="btn btn-outline-primary" type="submit" name="EditProfileButton" value="Edit Profile" />
+                </form>
+                <form asp-controller="User" asp-action="MyPage">
+                    <input class="btn btn-outline-primary" type="submit" name="BackToHomeButton" value="Back To Home" />
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+

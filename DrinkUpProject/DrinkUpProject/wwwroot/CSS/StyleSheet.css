@@ -3,24 +3,13 @@
 #SearchFormResult {
   width: 5% !important; }
 
-#DrinkFact {
-  padding-left: 30px;
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  width: 90%;
-  height: 200px;
-  border-right: 5px solid #E0EF96; }
-  #DrinkFact p {
-    color: black; }
-
 #searchBox {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
   height: 100%;
   width: 210%;
-  margin-top: 8%;
+  /*margin-top: 8%;*/
   margin-bottom: 3%;
   padding-left: 5%; }
 
@@ -65,7 +54,7 @@
 .SearchForm {
   flex-grow: 2;
   width: 100%;
-  margin-top: 9%; }
+  margin-top: 1%; }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
@@ -128,9 +117,6 @@ div.col-md-12 {
   bottom: 0;
   left: 0;
   right: 0; }
-
-#RecentlySavedDrinks {
-  display: flex; }
 
 .RecipeView {
   display: flex;
@@ -262,3 +248,6 @@ input#buttonCreateUser {
 
 .MembersDiv {
   width: 180px; }
+
+#SaveDeleteButton {
+  margin-bottom: 60px; }
