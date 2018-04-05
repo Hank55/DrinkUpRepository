@@ -1,9 +1,10 @@
 ﻿#DrinkFact {
+  padding-top: 80px;
   padding-left: 70px; }
   #DrinkFact strong {
     font-size: 18px; }
   #DrinkFact div {
-    padding-left: 30px;
+    padding-left: 35px;
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -15,4 +16,15 @@
       color: black; }
 
 #RecentlySavedDrinks {
-  display: flex; }
+  display: flex;
+  padding-top: 80px; }
+
+#searchBoxHome {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  height: 100%;
+  width: 210%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+  padding-left: 5%; }
