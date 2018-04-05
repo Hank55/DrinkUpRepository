@@ -1,35 +1,38 @@
 ﻿@model DrinkUpProject.Models.ViewModels.AccountMyPageAsyncVM
+
 <div class="all">
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <div id="searchBox">
+
+                <h5 class="text-success">My Awesome Drinks</h5>
+
+                @if (Model.DrinkList != null)
+                {
+
                     @foreach (var item in Model.DrinkList)
                     {
-                        <a asp-controller="User" asp-action="Recipe" method="get">
-                            <div class="searchItems">
-                                <div id="searchImg">
-                                    <img src="@item.strDrinkThumb" />
-                                </div>
-                                <div>
-                                    <h3>@item.strDrink</h3>
+                        <div class="drinkList">
 
-                                    <br />
-                                    <h4>
-                                        @item.strAlcoholic
-                                    </h4>
-                                </div>
+                            <div>
+                                <span>@item.strDrink</span>
+                                <img src="@item.strDrinkThumb" />
                             </div>
-                        </a>
-                    }
 
-                </div>
+                        </div>
+                    }
+                }
             </div>
             <div class="col-sm">
-                <form asp-controller="User" asp-action="home">
-                    <input class="btn btn-outline-primary" type="submit" value="Home" />
+                <p class="Button">Placeholder for fav drink</p>
+                <form>
+                    <input class="btn btn-outline-primary" type="submit" name="EditProfileButton" value="Edit Profile" />
+                </form>
+                <form asp-controller="User" asp-action="MyPage">
+                    <input class="btn btn-outline-primary" type="submit" name="BackToHomeButton" value="Back To Home" />
                 </form>
             </div>
         </div>
     </div>
 </div>
+
