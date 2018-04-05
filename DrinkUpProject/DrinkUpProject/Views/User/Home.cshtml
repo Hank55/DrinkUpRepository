@@ -1,6 +1,6 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserHomeVM
 <div class="all">
-    <div class="container-fluid" style="margin-top:180px">
+    <div class="container-fluid" style="margin-top:100px">
             <div >
                 <div id="RecentlySavedDrinks" style="text-align:right; margin:auto; float:left">
                     @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
@@ -16,12 +16,13 @@
                 </div>
             </div>
             <div class="col-sm-5">
+                
                 <div class="well">
                     <div id="searchBoxHome" style="text-align:left; margin:auto">
                         @await Html.PartialAsync("~/Views/Shared/_SearchBox.cshtml", Model.SearchForm)
                     </div>
                 </div>
-            </div>
+            </divclass="col-sm-5">
         </div>
     </div>
 </div>
