@@ -6,19 +6,7 @@
     width: 5% !important;
 }
 
-#DrinkFact {
-    padding-left:30px;
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    width: 90%;
-    height: 200px;
-    border-right: 5px solid #E0EF96;
 
-    p {
-        color: black;
-    }
-}
 
 #searchBox {
     display: flex;
@@ -181,11 +169,6 @@ div.col-md-12 {
 }
 //FOOTER ENDS HERE
 
-
-//Home
-#RecentlySavedDrinks {
-    display: flex;
-}
 //Here begins the recipe-view
 .RecipeView {
     display: flex;

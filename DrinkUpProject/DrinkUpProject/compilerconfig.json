@@ -10,5 +10,9 @@
   {
     "outputFile": "wwwroot/CSS/RecentlySaved.css",
     "inputFile": "wwwroot/CSS/RecentlySaved.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Home.css",
+    "inputFile": "wwwroot/CSS/Home.scss"
   }
 ]

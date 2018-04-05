@@ -1,17 +1,17 @@
 ﻿@model DrinkUpProject.Models.ViewModels.UserHomeVM
 <div class="all">
     <div class="container-fluid" style="margin-top:180px">
-        <div class="row content">
-            <div class="col-sm-3">
-                <div id="RecentlySavedDrinks" style="text-align:right; margin:auto">
+            <div >
+                <div id="RecentlySavedDrinks" style="text-align:right; margin:auto; float:left">
                     @await Html.PartialAsync("~/Views/Shared/_RecentlySaved.cshtml", Model)
                 </div>
             </div>
-            <div class="col-sm-4 text-left">
+        <div class="row content">
+            <div class="col-sm-7 text-left" id="DrinkFact">
                 <strong>
                    You will never get enough fact about drinks
                 </strong>
-                <div id="DrinkFact">
+                <div >
                     <p>@Model.DrinkFact</p>
                 </div>
             </div>
