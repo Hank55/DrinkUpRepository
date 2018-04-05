@@ -3,17 +3,6 @@
 #SearchFormResult {
   width: 5% !important; }
 
-#DrinkFact {
-  padding-left: 30px;
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  width: 90%;
-  height: 200px;
-  border-right: 5px solid #E0EF96; }
-  #DrinkFact p {
-    color: black; }
-
 #searchBox {
   display: flex;
   flex-flow: row wrap;
@@ -128,9 +117,6 @@ div.col-md-12 {
   bottom: 0;
   left: 0;
   right: 0; }
-
-#RecentlySavedDrinks {
-  display: flex; }
 
 .RecipeView {
   display: flex;
@@ -276,3 +262,7 @@ input#buttonCreateUser {
 
 .ErrorText:hover {
   color: #FCE17C; }
+
+#SaveDeleteButton {
+    margin-bottom: 60px;
+}

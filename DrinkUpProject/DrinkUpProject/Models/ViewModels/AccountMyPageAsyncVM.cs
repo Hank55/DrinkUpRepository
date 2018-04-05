@@ -10,8 +10,5 @@ namespace DrinkUpProject.Models.ViewModels
     {
         public List<Drink> DrinkList { get; set; }
         public ICollection<UserDrinkList> UserDrinkList { get; set; }
-
-
-
     }
 }
