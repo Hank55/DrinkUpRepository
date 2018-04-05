@@ -247,7 +247,7 @@ namespace DrinkUpProject.Models.Repositories
                     break;
 
                 }
-                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb };
+                recent[i] = new RecentlySavedVM { DrinkName = drinkById[i].strDrink, ImgUrl = drinkById[i].strDrinkThumb, RecipeId= drinkById[i].idDrink };
             }
 
             return recent;
