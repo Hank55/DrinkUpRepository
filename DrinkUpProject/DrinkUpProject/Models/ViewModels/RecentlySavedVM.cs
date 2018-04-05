@@ -9,6 +9,7 @@ namespace DrinkUpProject.Models.ViewModels
     {
         public string DrinkName { get; set; }
         public string ImgUrl { get; set; }
+        public string RecipeId { get; set; }
 
     }
 }

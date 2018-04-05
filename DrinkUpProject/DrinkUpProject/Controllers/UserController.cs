@@ -37,7 +37,8 @@ namespace DrinkUpProject.Controllers
         [Route("MyPage")]
         public async Task<IActionResult> MyPageAsync()
         {
-            var model = await accountRepository.FindDrinkListByUserIdAsync(User);
+            var model = await accountRepository.GetMyPageDetails(User);
+            //model.FavDrink = accountRepository.FindUserFavouriteDrink(User);
             return View(model);
         }
 

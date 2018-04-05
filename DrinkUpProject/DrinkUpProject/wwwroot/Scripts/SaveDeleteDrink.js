@@ -9,7 +9,6 @@
     });
 
     $("#SaveDeleteButton").click(function () {
-
         let id = getDrinkId();
         if ($("#SaveDeleteButton").val() === "true") {
             doAjaxCallUpdate(id, false);
