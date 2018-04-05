@@ -305,7 +305,10 @@ input#buttonCreateUser {
     padding: 1%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12px; }
-  margin-bottom: 60px; }
 
 .col-md-12 {
   justify-content: space-between !important; }
+
+#userInfo {
+  margin-top: 50px;
+  margin-left: 80px; }
