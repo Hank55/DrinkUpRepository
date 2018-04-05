@@ -359,8 +359,11 @@ input#buttonCreateUser {
     color:#FCE17C;
 }
 
-}
 
 #SaveDeleteButton {
    margin-bottom:60px;
+}
+
+.col-md-12 {
+    justify-content: space-between !important;
 }
