@@ -316,6 +316,7 @@ namespace DrinkUpProject.Models.Repositories
         public async Task<AccountMyPageAsyncVM> GetMyPageDetails(ClaimsPrincipal claimsPrincipal)
         {
             var aspNetUserId = userManager.GetUserId(claimsPrincipal);
+            IdentityUser user = await userManager.FindByIdAsync(aspNetUserId);
             string strAspNetUserId = aspNetUserId.ToString();
 
 
@@ -328,10 +329,10 @@ namespace DrinkUpProject.Models.Repositories
                     UserDrinkList = o.UserDrinkList,
                     FavDrink = o.FavDrink,
                     FirstName = o.FirstName,
-                    LastName = o.LastName,
-
+                    LastName = o.LastName
                 })
                 .Single();
+
 
             List<string> listOfAPIDrinkIds = new List<string>();
 
@@ -349,16 +350,15 @@ namespace DrinkUpProject.Models.Repositories
                 tempArray.Add(new Drink { strDrink = tempListDrink[0].strDrink, strDrinkThumb = tempListDrink[0].strDrinkThumb });
             }
 
-            AccountMyPageAsyncVM accountMyPageVM = new AccountMyPageAsyncVM();
+            savedUserDrinks.Email = user.Email;
+            savedUserDrinks.UserName = user.UserName;
+            savedUserDrinks.DrinkList = tempArray;
+            
 
-            accountMyPageVM.DrinkList = tempArray;
-            accountMyPageVM.FavDrink = savedUserDrinks.FavDrink;
-            accountMyPageVM.FirstName = savedUserDrinks.FirstName;
-            accountMyPageVM.LastName = savedUserDrinks.LastName;
-
-            return accountMyPageVM;
+            return savedUserDrinks;
 
         }
+        
 
     }
 }
